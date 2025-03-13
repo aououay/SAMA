@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pcwk.ehr.videopost.mapper.VideoPostMapper">
+
+    <!-- 🎬 영상 추가 -->
+    <insert id="insertVideoPost" parameterType="com.pcwk.ehr.videopost.domain.VideoPostVO">
+        INSERT INTO VIDEO_POST (VIDEO_UUID, VIDEO_TITLE, VIDEO_DESCRIPTION,
+        VIDEO_THUMBNAIL_URL, VIDEO_ORIGINAL_URL, VIDEO_ENCODED_URL, VIDEO_UPLOADED, VIDEO_CATEGORY)
+        VALUES (#{videoUuid}, #{videoTitle}, #{videoDescription},
+        #{videoThumbnailUrl}, #{videoOriginalUrl}, #{videoEncodedUrl, jdbcType=VARCHAR}, SYSDATE, #{videoCategory})
+    </insert>
+
+    <!-- 🎬 특정 영상 조회 -->
+    <select id="getVideoPostById" parameterType="String" resultType="com.pcwk.ehr.videopost.domain.VideoPostVO">
+        SELECT VIDEO_UUID, VIDEO_TITLE, VIDEO_DESCRIPTION, VIDEO_THUMBNAIL_URL,
+        VIDEO_ORIGINAL_URL, VIDEO_ENCODED_URL, VIDEO_UPLOADED, VIDEO_CATEGORY
+        FROM VIDEO_POST
+        WHERE VIDEO_UUID = #{videoUuid}
+    </select>
+
+    <!-- 🔍 검색 기능 -->
+    <select id="searchVideos" parameterType="map" resultType="com.pcwk.ehr.videopost.domain.VideoPostVO">
+        SELECT VIDEO_UUID, VIDEO_TITLE, VIDEO_DESCRIPTION, VIDEO_THUMBNAIL_URL,
+        VIDEO_ORIGINAL_URL, VIDEO_ENCODED_URL, VIDEO_UPLOADED, VIDEO_CATEGORY
+        FROM VIDEO_POST
+        WHERE 
+        <choose>
+            <when test="searchType == 'title'">
+                VIDEO_TITLE LIKE '%' || #{searchKeyword} || '%'
+            </when>
+            <when test="searchType == 'description'">
+                VIDEO_DESCRIPTION LIKE '%' || #{searchKeyword} || '%'
+            </when>
+            <otherwise>
+                1=1
+            </otherwise>
+        </choose>
+        ORDER BY VIDEO_UPLOADED DESC
+    </select>
+
+    <!-- 📝 **페이징 기능 추가** -->
+    <select id="getVideosWithPagination" parameterType="map"
+        resultType="com.pcwk.ehr.videopost.domain.VideoPostVO">
+        SELECT VIDEO_UUID, VIDEO_TITLE, VIDEO_DESCRIPTION, VIDEO_THUMBNAIL_URL,
+               VIDEO_ORIGINAL_URL, VIDEO_ENCODED_URL, VIDEO_UPLOADED, VIDEO_CATEGORY
+        FROM VIDEO_POST
+        ORDER BY VIDEO_UPLOADED DESC
+        OFFSET #{offset} ROWS FETCH NEXT #{pageSize} ROWS ONLY
+    </select>
+
+    <!-- 📊 **전체 데이터 개수 조회** -->
+    <select id="getTotalVideoCount" resultType="int">
+        SELECT COUNT(*) FROM VIDEO_POST
+    </select>
+
+</mapper>

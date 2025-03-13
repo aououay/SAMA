@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pcwk.ehr.ewsf.mapper.EwsfMapper">
+
+<select id="getEWSF">
+	SELECT SGG,SGG_FCLT,PUMP_TON_ FROM EWSF
+</select>
+
+</mapper>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pcwk.ehr.typ.mapper.TypMapper">
+
+    <!-- 검색 조건을 공통으로 처리하는 SQL -->
+    <sql id="doRetrieveWhere">
+        <if test="'' != searchDiv">
+            <choose>
+                <when test="10 == searchDiv">
+
+                </when>
+                <when test="20 == searchDiv">
+                    AND TYP_EFF LIKE '상륙'
+                </when>
+                <when test="30 == searchDiv">
+                    AND TYP_EFF LIKE '직접'
+                </when>
+            </choose>
+        </if>
+    </sql>
+
+    <select id="getTyp" resultType="com.pcwk.ehr.typ.domain.TypVO" parameterType="com.pcwk.ehr.cmn.SearchVO">
+        SELECT TYP_NUM, TYP_NAME, TYP_ST, TYP_ED, TYP_MIN_PRESSURE, TYP_MAX_WIND, TYP_KOR_NAME, TYP_EFF
+        FROM TYP
+        WHERE TYP_ST LIKE #{searchWord} || '%'
+        <include refid="doRetrieveWhere"/>
+        ORDER BY TYP_ST
+    </select>
+
+</mapper>

@@ -1,0 +1,84 @@
+body {
+	background-color: #f8f9fa;
+	font-family: 'Nanum Gothic', sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+	flex-direction: column;
+	/* 로고와 로그인 박스를 수직 배치 */
+}
+
+.logo {
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.custom-logo-img {
+	height: 60px;
+	/* 로고 높이 조정 */
+}
+
+.admin-login-container {
+	background-color: #fff;
+	padding: 30px;
+	border-radius: 10px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	width: 100%;
+	max-width: 400px;
+	text-align: center;
+}
+
+.admin-login-card {
+	border-radius: 8px;
+	border: none;
+}
+
+.admin-login-card-header {
+	background-color: #fff;
+	color: #333;
+	font-weight: bold;
+	padding: 20px;
+	font-size: 1.5rem;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+}
+
+.admin-login-card-body {
+	padding: 20px;
+}
+
+.form-control {
+	height: 45px;
+	margin-bottom: 15px;
+	border-radius: 5px;
+	border: 1px solid #ddd;
+	padding: 10px;
+}
+
+.form-control:focus {
+	border-color: #03c75a;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-login {
+	width: 100%;
+	height: 45px;
+	background-color: #365281;
+	color: white;
+	font-weight: bold;
+	border: none;
+	border-radius: 5px;
+}
+
+.btn-login:hover {
+	background-color: #1b2c49;
+	color: #fff;
+}
+
+.error-message {
+	color: red;
+	font-size: 0.9em;
+	margin-bottom: 10px;
+}

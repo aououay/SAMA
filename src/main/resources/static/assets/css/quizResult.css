@@ -1,0 +1,37 @@
+@charset "UTF-8";
+    body {
+      background-color: #f4f4f4;
+      font-family: 'Roboto', sans-serif;
+    }
+    .result-card {
+      max-width: 600px;
+      margin: 70px auto;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .card-header {
+      background-color: #343a40;
+      color: #ffffff;
+      font-weight: 700;
+      text-align: center;
+      padding: 20px; /* 상하 좌우 여백 추가 */
+    }
+    .card-header h2 {
+      margin: 0; /* 기본 마진 제거 */
+      padding: 0;
+    }
+    .card-body {
+      background-color: #ffffff;
+      padding: 30px;
+    }
+    .card-body p {
+      text-align: left;
+    }
+    .btn-primary {
+      background-color: #6c757d;
+      border: none;
+    }
+    .btn-primary:hover {
+      background-color: #5a6268;
+    }

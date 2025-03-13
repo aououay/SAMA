@@ -1,0 +1,1182 @@
+2025-02-13 18:23:50.097  INFO 23680 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Starting BoardControllerJunit using Java 21.0.4 with PID 23680 (started by acorn in D:\JAP_20240909\04_SPRING\boot\workspace\board_fc)
+2025-02-13 18:23:50.100  INFO 23680 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : No active profile set, falling back to 1 default profile: "default"
+2025-02-13 18:23:50.648  INFO 23680 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-02-13 18:23:50.661  INFO 23680 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 JDBC repository interfaces.
+2025-02-13 18:23:50.872  INFO 23680 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 18:23:50.872  INFO 23680 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **BoardController()**                 │
+2025-02-13 18:23:50.872  INFO 23680 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 18:23:50.875  INFO 23680 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : ┌───────────────────────────────────────┐
+2025-02-13 18:23:50.875  INFO 23680 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : │ **BoardServiceImpl()**                │
+2025-02-13 18:23:50.875  INFO 23680 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : └───────────────────────────────────────┘
+2025-02-13 18:23:51.543  INFO 23680 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : ┌────────────────────────┐
+2025-02-13 18:23:51.543  INFO 23680 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : │ TimeController()       │
+2025-02-13 18:23:51.543  INFO 23680 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : └────────────────────────┘
+2025-02-13 18:23:51.545  INFO 23680 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : ┌────────────────────────┐
+2025-02-13 18:23:51.545  INFO 23680 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : │ TimeServiceImpl()      │
+2025-02-13 18:23:51.545  INFO 23680 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : └────────────────────────┘
+2025-02-13 18:23:51.733  INFO 23680 --- [board_fc] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-02-13 18:23:52.072  INFO 23680 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-13 18:23:52.379  INFO 23680 --- [board_fc] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@22da200e
+2025-02-13 18:23:52.381  INFO 23680 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-13 18:23:52.618  INFO 23680 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Started BoardControllerJunit in 2.968 seconds (process running for 3.766)
+2025-02-13 18:23:53.207  INFO 23680 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 18:23:53.207  INFO 23680 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ setUp()                                                 │
+2025-02-13 18:23:53.207  INFO 23680 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 18:23:53.211  INFO 23680 --- [board_fc] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-02-13 18:23:53.211  INFO 23680 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-02-13 18:23:53.212  INFO 23680 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-02-13 18:23:53.223 DEBUG 23680 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 18:23:53.291 DEBUG 23680 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 18:23:53.339 DEBUG 23680 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 18:23:53.342 DEBUG 23680 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 18:23:53.343 DEBUG 23680 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 18:23:53.344 DEBUG 23680 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 18:23:53.345 DEBUG 23680 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 18:23:53.346 DEBUG 23680 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 18:23:53.350 DEBUG 23680 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 18:23:53.351  INFO 23680 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : seq01:4331
+2025-02-13 18:23:53.353  INFO 23680 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌───────────────────────────────────────┐
+2025-02-13 18:23:53.353  INFO 23680 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ **doSave()**                          │
+2025-02-13 18:23:53.353  INFO 23680 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └───────────────────────────────────────┘
+2025-02-13 18:23:53.355 DEBUG 23680 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==>  Preparing: DELETE FROM board
+2025-02-13 18:23:53.355 DEBUG 23680 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==> Parameters: 
+2025-02-13 18:23:53.357 DEBUG 23680 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : <==    Updates: 0
+2025-02-13 18:23:53.393  INFO 23680 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 18:23:53.393  INFO 23680 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **doSave()**                          │
+2025-02-13 18:23:53.393  INFO 23680 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 18:23:53.400  INFO 23680 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : paran:BoardVO [seq=0, title=제목01, contents=내용01, div=10, readCnt=0, regId=ADMIN, regDt=null, modId=ADMIN, modDt=null, toString()=DTO [no=0, totalCnt=0, pageSize=0, pageNo=0, optionDiv=null]]
+2025-02-13 18:23:53.400  INFO 23680 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : ┌───────────────────────────────────────┐
+2025-02-13 18:23:53.400  INFO 23680 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : │ **doSave()**                          │
+2025-02-13 18:23:53.400  INFO 23680 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : └───────────────────────────────────────┘
+2025-02-13 18:23:53.401 DEBUG 23680 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 18:23:53.401 DEBUG 23680 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 18:23:53.402 DEBUG 23680 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 18:23:53.402  INFO 23680 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : inVO.etSeq4334
+2025-02-13 18:23:53.403 DEBUG 23680 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : ==>  Preparing: INSERT INTO board ( seq, title, contents, div, read_cnt, reg_id, reg_dt, mod_id, mod_dt ) VALUES ( ?, ?, ?, ?, ?, ?, SYSDATE, ?, SYSDATE )
+2025-02-13 18:23:53.409 DEBUG 23680 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : ==> Parameters: 4334(Integer), 제목01(String), 내용01(String), 10(String), 0(Integer), ADMIN(String), ADMIN(String)
+2025-02-13 18:23:53.424 DEBUG 23680 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : <==    Updates: 1
+2025-02-13 18:23:53.430  INFO 23680 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : jsonString:{"messageId":1,"message":"게시글이 등록 되었습니다.","no":0,"totalCnt":0,"pageSize":0,"pageNo":0}
+2025-02-13 18:23:53.443  INFO 23680 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 18:23:53.444  INFO 23680 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ tearDown()                                              │
+2025-02-13 18:23:53.445  INFO 23680 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 18:23:53.466  INFO 23680 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-13 18:23:53.500  INFO 23680 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-13 18:26:25.293  INFO 21928 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Starting BoardControllerJunit using Java 21.0.4 with PID 21928 (started by acorn in D:\JAP_20240909\04_SPRING\boot\workspace\board_fc)
+2025-02-13 18:26:25.295  INFO 21928 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : No active profile set, falling back to 1 default profile: "default"
+2025-02-13 18:26:25.872  INFO 21928 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-02-13 18:26:25.889  INFO 21928 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 JDBC repository interfaces.
+2025-02-13 18:26:26.108  INFO 21928 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 18:26:26.108  INFO 21928 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **BoardController()**                 │
+2025-02-13 18:26:26.108  INFO 21928 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 18:26:26.110  INFO 21928 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : ┌───────────────────────────────────────┐
+2025-02-13 18:26:26.110  INFO 21928 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : │ **BoardServiceImpl()**                │
+2025-02-13 18:26:26.110  INFO 21928 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : └───────────────────────────────────────┘
+2025-02-13 18:26:26.553  INFO 21928 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : ┌────────────────────────┐
+2025-02-13 18:26:26.554  INFO 21928 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : │ TimeController()       │
+2025-02-13 18:26:26.554  INFO 21928 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : └────────────────────────┘
+2025-02-13 18:26:26.556  INFO 21928 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : ┌────────────────────────┐
+2025-02-13 18:26:26.556  INFO 21928 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : │ TimeServiceImpl()      │
+2025-02-13 18:26:26.556  INFO 21928 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : └────────────────────────┘
+2025-02-13 18:26:26.776  INFO 21928 --- [board_fc] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-02-13 18:26:27.164  INFO 21928 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-13 18:26:27.559  INFO 21928 --- [board_fc] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@66a82a13
+2025-02-13 18:26:27.560  INFO 21928 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-13 18:26:27.794  INFO 21928 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Started BoardControllerJunit in 2.8 seconds (process running for 3.651)
+2025-02-13 18:26:28.342  INFO 21928 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 18:26:28.342  INFO 21928 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ setUp()                                                 │
+2025-02-13 18:26:28.342  INFO 21928 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 18:26:28.345  INFO 21928 --- [board_fc] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-02-13 18:26:28.345  INFO 21928 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-02-13 18:26:28.346  INFO 21928 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-02-13 18:26:28.356 DEBUG 21928 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 18:26:28.424 DEBUG 21928 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 18:26:28.473 DEBUG 21928 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 18:26:28.479 DEBUG 21928 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 18:26:28.480 DEBUG 21928 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 18:26:28.487 DEBUG 21928 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 18:26:28.487 DEBUG 21928 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 18:26:28.488 DEBUG 21928 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 18:26:28.489 DEBUG 21928 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 18:26:28.490  INFO 21928 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : seq01:4350
+2025-02-13 18:26:28.492  INFO 21928 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌───────────────────────────────────────┐
+2025-02-13 18:26:28.492  INFO 21928 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ **doSave()**                          │
+2025-02-13 18:26:28.492  INFO 21928 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └───────────────────────────────────────┘
+2025-02-13 18:26:28.493 DEBUG 21928 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==>  Preparing: DELETE FROM board
+2025-02-13 18:26:28.493 DEBUG 21928 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==> Parameters: 
+2025-02-13 18:26:28.495 DEBUG 21928 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : <==    Updates: 1
+2025-02-13 18:26:28.531  INFO 21928 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 18:26:28.532  INFO 21928 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **doSave()**                          │
+2025-02-13 18:26:28.532  INFO 21928 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 18:26:28.538  INFO 21928 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : paran:BoardVO [seq=0, title=제목01, contents=내용01, div=10, readCnt=0, regId=ADMIN, regDt=null, modId=ADMIN, modDt=null, toString()=DTO [no=0, totalCnt=0, pageSize=0, pageNo=0, optionDiv=null]]
+2025-02-13 18:26:28.538  INFO 21928 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : ┌───────────────────────────────────────┐
+2025-02-13 18:26:28.538  INFO 21928 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : │ **doSave()**                          │
+2025-02-13 18:26:28.538  INFO 21928 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : └───────────────────────────────────────┘
+2025-02-13 18:26:28.538 DEBUG 21928 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 18:26:28.538 DEBUG 21928 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 18:26:28.539 DEBUG 21928 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 18:26:28.539  INFO 21928 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : inVO.etSeq4353
+2025-02-13 18:26:28.540 DEBUG 21928 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : ==>  Preparing: INSERT INTO board ( seq, title, contents, div, read_cnt, reg_id, reg_dt, mod_id, mod_dt ) VALUES ( ?, ?, ?, ?, ?, ?, SYSDATE, ?, SYSDATE )
+2025-02-13 18:26:28.547 DEBUG 21928 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : ==> Parameters: 4353(Integer), 제목01(String), 내용01(String), 10(String), 0(Integer), ADMIN(String), ADMIN(String)
+2025-02-13 18:26:28.557 DEBUG 21928 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : <==    Updates: 1
+2025-02-13 18:26:28.563  INFO 21928 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : jsonString:{"messageId":1,"message":"게시글이 등록 되었습니다.","no":0,"totalCnt":0,"pageSize":0,"pageNo":0}
+2025-02-13 18:26:28.584  INFO 21928 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 18:26:28.584  INFO 21928 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ tearDown()                                              │
+2025-02-13 18:26:28.584  INFO 21928 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 18:26:28.605  INFO 21928 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-13 18:26:28.623  INFO 21928 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-13 18:26:41.712  INFO 20108 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Starting BoardControllerJunit using Java 21.0.4 with PID 20108 (started by acorn in D:\JAP_20240909\04_SPRING\boot\workspace\board_fc)
+2025-02-13 18:26:41.715  INFO 20108 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : No active profile set, falling back to 1 default profile: "default"
+2025-02-13 18:26:42.385  INFO 20108 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-02-13 18:26:42.405  INFO 20108 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 JDBC repository interfaces.
+2025-02-13 18:26:42.636  INFO 20108 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 18:26:42.636  INFO 20108 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **BoardController()**                 │
+2025-02-13 18:26:42.636  INFO 20108 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 18:26:42.639  INFO 20108 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : ┌───────────────────────────────────────┐
+2025-02-13 18:26:42.639  INFO 20108 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : │ **BoardServiceImpl()**                │
+2025-02-13 18:26:42.639  INFO 20108 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : └───────────────────────────────────────┘
+2025-02-13 18:26:43.135  INFO 20108 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : ┌────────────────────────┐
+2025-02-13 18:26:43.135  INFO 20108 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : │ TimeController()       │
+2025-02-13 18:26:43.135  INFO 20108 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : └────────────────────────┘
+2025-02-13 18:26:43.137  INFO 20108 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : ┌────────────────────────┐
+2025-02-13 18:26:43.138  INFO 20108 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : │ TimeServiceImpl()      │
+2025-02-13 18:26:43.138  INFO 20108 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : └────────────────────────┘
+2025-02-13 18:26:43.359  INFO 20108 --- [board_fc] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-02-13 18:26:43.841  INFO 20108 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-13 18:26:44.251  INFO 20108 --- [board_fc] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@4438938e
+2025-02-13 18:26:44.252  INFO 20108 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-13 18:26:44.542  INFO 20108 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Started BoardControllerJunit in 3.181 seconds (process running for 3.976)
+2025-02-13 18:26:45.150  INFO 20108 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 18:26:45.151  INFO 20108 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ setUp()                                                 │
+2025-02-13 18:26:45.151  INFO 20108 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 18:26:45.153  INFO 20108 --- [board_fc] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-02-13 18:26:45.153  INFO 20108 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-02-13 18:26:45.154  INFO 20108 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-02-13 18:26:45.165 DEBUG 20108 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 18:26:45.243 DEBUG 20108 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 18:26:45.298 DEBUG 20108 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 18:26:45.300 DEBUG 20108 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 18:26:45.300 DEBUG 20108 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 18:26:45.301 DEBUG 20108 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 18:26:45.301 DEBUG 20108 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 18:26:45.302 DEBUG 20108 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 18:26:45.302 DEBUG 20108 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 18:26:45.303  INFO 20108 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : seq01:4354
+2025-02-13 18:26:45.305  INFO 20108 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌───────────────────────────────────────┐
+2025-02-13 18:26:45.305  INFO 20108 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ **doSave()**                          │
+2025-02-13 18:26:45.305  INFO 20108 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └───────────────────────────────────────┘
+2025-02-13 18:26:45.305 DEBUG 20108 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==>  Preparing: DELETE FROM board
+2025-02-13 18:26:45.306 DEBUG 20108 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==> Parameters: 
+2025-02-13 18:26:45.308 DEBUG 20108 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : <==    Updates: 1
+2025-02-13 18:26:45.349  INFO 20108 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 18:26:45.349  INFO 20108 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **doSave()**                          │
+2025-02-13 18:26:45.350  INFO 20108 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 18:26:45.356  INFO 20108 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : paran:BoardVO [seq=0, title=제목01, contents=내용01, div=10, readCnt=0, regId=ADMIN, regDt=null, modId=ADMIN, modDt=null, toString()=DTO [no=0, totalCnt=0, pageSize=0, pageNo=0, optionDiv=null]]
+2025-02-13 18:26:45.358  INFO 20108 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : ┌───────────────────────────────────────┐
+2025-02-13 18:26:45.358  INFO 20108 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : │ **doSave()**                          │
+2025-02-13 18:26:45.358  INFO 20108 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : └───────────────────────────────────────┘
+2025-02-13 18:26:45.358 DEBUG 20108 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 18:26:45.358 DEBUG 20108 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 18:26:45.360 DEBUG 20108 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 18:26:45.360  INFO 20108 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : inVO.etSeq4357
+2025-02-13 18:26:45.361 DEBUG 20108 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : ==>  Preparing: INSERT INTO board ( seq, title, contents, div, read_cnt, reg_id, reg_dt, mod_id, mod_dt ) VALUES ( ?, ?, ?, ?, ?, ?, SYSDATE, ?, SYSDATE )
+2025-02-13 18:26:45.365 DEBUG 20108 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : ==> Parameters: 4357(Integer), 제목01(String), 내용01(String), 10(String), 0(Integer), ADMIN(String), ADMIN(String)
+2025-02-13 18:26:45.371 DEBUG 20108 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : <==    Updates: 1
+2025-02-13 18:26:45.377  INFO 20108 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : jsonString:{"messageId":1,"message":"게시글이 등록 되었습니다.","no":0,"totalCnt":0,"pageSize":0,"pageNo":0}
+2025-02-13 18:26:45.398  INFO 20108 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 18:26:45.399  INFO 20108 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ tearDown()                                              │
+2025-02-13 18:26:45.399  INFO 20108 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 18:26:45.427  INFO 20108 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-13 18:26:45.442  INFO 20108 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-13 18:30:56.530  INFO 5104 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Starting BoardControllerJunit using Java 21.0.4 with PID 5104 (started by acorn in D:\JAP_20240909\04_SPRING\boot\workspace\board_fc)
+2025-02-13 18:30:56.534  INFO 5104 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : No active profile set, falling back to 1 default profile: "default"
+2025-02-13 18:30:57.115  INFO 5104 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-02-13 18:30:57.132  INFO 5104 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 JDBC repository interfaces.
+2025-02-13 18:30:57.354  INFO 5104 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 18:30:57.355  INFO 5104 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **BoardController()**                 │
+2025-02-13 18:30:57.355  INFO 5104 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 18:30:57.357  INFO 5104 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : ┌───────────────────────────────────────┐
+2025-02-13 18:30:57.357  INFO 5104 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : │ **BoardServiceImpl()**                │
+2025-02-13 18:30:57.357  INFO 5104 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : └───────────────────────────────────────┘
+2025-02-13 18:30:57.741  INFO 5104 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : ┌────────────────────────┐
+2025-02-13 18:30:57.741  INFO 5104 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : │ TimeController()       │
+2025-02-13 18:30:57.742  INFO 5104 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : └────────────────────────┘
+2025-02-13 18:30:57.743  INFO 5104 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : ┌────────────────────────┐
+2025-02-13 18:30:57.743  INFO 5104 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : │ TimeServiceImpl()      │
+2025-02-13 18:30:57.743  INFO 5104 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : └────────────────────────┘
+2025-02-13 18:30:57.955  INFO 5104 --- [board_fc] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-02-13 18:30:58.355  INFO 5104 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-13 18:30:58.699  INFO 5104 --- [board_fc] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@7871d261
+2025-02-13 18:30:58.701  INFO 5104 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-13 18:30:58.975  INFO 5104 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Started BoardControllerJunit in 2.751 seconds (process running for 3.512)
+2025-02-13 18:30:59.565  INFO 5104 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 18:30:59.565  INFO 5104 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ setUp()                                                 │
+2025-02-13 18:30:59.565  INFO 5104 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 18:30:59.569  INFO 5104 --- [board_fc] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-02-13 18:30:59.569  INFO 5104 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-02-13 18:30:59.570  INFO 5104 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-02-13 18:30:59.580 DEBUG 5104 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 18:30:59.652 DEBUG 5104 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 18:30:59.698 DEBUG 5104 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 18:30:59.704 DEBUG 5104 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 18:30:59.704 DEBUG 5104 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 18:30:59.707 DEBUG 5104 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 18:30:59.708 DEBUG 5104 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 18:30:59.708 DEBUG 5104 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 18:30:59.709 DEBUG 5104 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 18:30:59.709  INFO 5104 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : seq01:4362
+2025-02-13 18:30:59.710  INFO 5104 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌───────────────────────────────────────┐
+2025-02-13 18:30:59.710  INFO 5104 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ **doSave()**                          │
+2025-02-13 18:30:59.710  INFO 5104 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └───────────────────────────────────────┘
+2025-02-13 18:30:59.711 DEBUG 5104 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==>  Preparing: DELETE FROM board
+2025-02-13 18:30:59.712 DEBUG 5104 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==> Parameters: 
+2025-02-13 18:30:59.714 DEBUG 5104 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : <==    Updates: 1
+2025-02-13 18:30:59.755  INFO 5104 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 18:30:59.755  INFO 5104 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **doSave()**                          │
+2025-02-13 18:30:59.755  INFO 5104 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 18:30:59.761  INFO 5104 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : paran:BoardVO [seq=0, title=제목01, contents=내용01, div=10, readCnt=0, regId=ADMIN, regDt=null, modId=ADMIN, modDt=null, toString()=DTO [no=0, totalCnt=0, pageSize=0, pageNo=0, optionDiv=null]]
+2025-02-13 18:30:59.762  INFO 5104 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : ┌───────────────────────────────────────┐
+2025-02-13 18:30:59.762  INFO 5104 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : │ **doSave()**                          │
+2025-02-13 18:30:59.762  INFO 5104 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : └───────────────────────────────────────┘
+2025-02-13 18:30:59.762 DEBUG 5104 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 18:30:59.762 DEBUG 5104 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 18:30:59.763 DEBUG 5104 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 18:30:59.764  INFO 5104 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : inVO.etSeq4365
+2025-02-13 18:30:59.764 DEBUG 5104 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : ==>  Preparing: INSERT INTO board ( seq, title, contents, div, read_cnt, reg_id, reg_dt, mod_id, mod_dt ) VALUES ( ?, ?, ?, ?, ?, ?, SYSDATE, ?, SYSDATE )
+2025-02-13 18:30:59.767 DEBUG 5104 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : ==> Parameters: 4365(Integer), 제목01(String), 내용01(String), 10(String), 0(Integer), ADMIN(String), ADMIN(String)
+2025-02-13 18:30:59.774 DEBUG 5104 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : <==    Updates: 1
+2025-02-13 18:30:59.783  INFO 5104 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : jsonString:{"messageId":1,"message":"게시글이 등록 되었습니다.","no":0,"totalCnt":0,"pageSize":0,"pageNo":0}
+2025-02-13 18:30:59.799  INFO 5104 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : returnBody:{"messageId":1,"message":"게시글이 등록 되었습니다.","no":0,"totalCnt":0,"pageSize":0,"pageNo":0}
+2025-02-13 18:30:59.802  INFO 5104 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : resultMessage:MessageVO [messageId=1, message=게시글이 등록 되었습니다.]
+2025-02-13 18:30:59.805  INFO 5104 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 18:30:59.805  INFO 5104 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ tearDown()                                              │
+2025-02-13 18:30:59.805  INFO 5104 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 18:30:59.827  INFO 5104 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-13 18:30:59.837  INFO 5104 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-13 18:32:04.210  INFO 9780 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Starting BoardControllerJunit using Java 21.0.4 with PID 9780 (started by acorn in D:\JAP_20240909\04_SPRING\boot\workspace\board_fc)
+2025-02-13 18:32:04.211  INFO 9780 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : No active profile set, falling back to 1 default profile: "default"
+2025-02-13 18:32:04.756  INFO 9780 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-02-13 18:32:04.775  INFO 9780 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 JDBC repository interfaces.
+2025-02-13 18:32:04.989  INFO 9780 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 18:32:04.990  INFO 9780 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **BoardController()**                 │
+2025-02-13 18:32:04.990  INFO 9780 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 18:32:04.992  INFO 9780 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : ┌───────────────────────────────────────┐
+2025-02-13 18:32:04.992  INFO 9780 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : │ **BoardServiceImpl()**                │
+2025-02-13 18:32:04.992  INFO 9780 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : └───────────────────────────────────────┘
+2025-02-13 18:32:05.408  INFO 9780 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : ┌────────────────────────┐
+2025-02-13 18:32:05.409  INFO 9780 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : │ TimeController()       │
+2025-02-13 18:32:05.409  INFO 9780 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : └────────────────────────┘
+2025-02-13 18:32:05.411  INFO 9780 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : ┌────────────────────────┐
+2025-02-13 18:32:05.412  INFO 9780 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : │ TimeServiceImpl()      │
+2025-02-13 18:32:05.412  INFO 9780 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : └────────────────────────┘
+2025-02-13 18:32:05.603  INFO 9780 --- [board_fc] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-02-13 18:32:05.959  INFO 9780 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-13 18:32:06.292  INFO 9780 --- [board_fc] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@16a6dc21
+2025-02-13 18:32:06.293  INFO 9780 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-13 18:32:06.557  INFO 9780 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Started BoardControllerJunit in 2.653 seconds (process running for 3.369)
+2025-02-13 18:32:07.149  INFO 9780 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 18:32:07.149  INFO 9780 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ setUp()                                                 │
+2025-02-13 18:32:07.149  INFO 9780 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 18:32:07.152  INFO 9780 --- [board_fc] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-02-13 18:32:07.153  INFO 9780 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-02-13 18:32:07.153  INFO 9780 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-02-13 18:32:07.162 DEBUG 9780 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 18:32:07.232 DEBUG 9780 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 18:32:07.285 DEBUG 9780 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 18:32:07.289 DEBUG 9780 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 18:32:07.289 DEBUG 9780 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 18:32:07.290 DEBUG 9780 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 18:32:07.290 DEBUG 9780 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 18:32:07.290 DEBUG 9780 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 18:32:07.291 DEBUG 9780 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 18:32:07.291  INFO 9780 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : seq01:4369
+2025-02-13 18:32:07.293  INFO 9780 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌───────────────────────────────────────┐
+2025-02-13 18:32:07.293  INFO 9780 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ **doSave()**                          │
+2025-02-13 18:32:07.293  INFO 9780 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └───────────────────────────────────────┘
+2025-02-13 18:32:07.294 DEBUG 9780 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==>  Preparing: DELETE FROM board
+2025-02-13 18:32:07.294 DEBUG 9780 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==> Parameters: 
+2025-02-13 18:32:07.295 DEBUG 9780 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : <==    Updates: 0
+2025-02-13 18:32:07.329  INFO 9780 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 18:32:07.329  INFO 9780 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **doSave()**                          │
+2025-02-13 18:32:07.329  INFO 9780 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 18:32:07.341  INFO 9780 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : paran:BoardVO [seq=0, title=제목01, contents=내용01, div=10, readCnt=0, regId=ADMIN, regDt=null, modId=ADMIN, modDt=null, toString()=DTO [no=0, totalCnt=0, pageSize=0, pageNo=0, optionDiv=null]]
+2025-02-13 18:32:07.341  INFO 9780 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : ┌───────────────────────────────────────┐
+2025-02-13 18:32:07.341  INFO 9780 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : │ **doSave()**                          │
+2025-02-13 18:32:07.341  INFO 9780 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : └───────────────────────────────────────┘
+2025-02-13 18:32:07.341 DEBUG 9780 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 18:32:07.342 DEBUG 9780 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 18:32:07.345 DEBUG 9780 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 18:32:07.345  INFO 9780 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : inVO.etSeq4372
+2025-02-13 18:32:07.347 DEBUG 9780 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : ==>  Preparing: INSERT INTO board ( seq, title, contents, div, read_cnt, reg_id, reg_dt, mod_id, mod_dt ) VALUES ( ?, ?, ?, ?, ?, ?, SYSDATE, ?, SYSDATE )
+2025-02-13 18:32:07.350 DEBUG 9780 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : ==> Parameters: 4372(Integer), 제목01(String), 내용01(String), 10(String), 0(Integer), ADMIN(String), ADMIN(String)
+2025-02-13 18:32:07.357 DEBUG 9780 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : <==    Updates: 1
+2025-02-13 18:32:07.364  INFO 9780 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : jsonString:{"messageId":1,"message":"게시글이 등록 되었습니다.","no":0,"totalCnt":0,"pageSize":0,"pageNo":0}
+2025-02-13 18:32:07.381  INFO 9780 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : returnBody:{"messageId":1,"message":"게시글이 등록 되었습니다.","no":0,"totalCnt":0,"pageSize":0,"pageNo":0}
+2025-02-13 18:32:07.383  INFO 9780 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : resultMessage:MessageVO [messageId=1, message=게시글이 등록 되었습니다.]
+2025-02-13 18:32:07.392  INFO 9780 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 18:32:07.392  INFO 9780 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ tearDown()                                              │
+2025-02-13 18:32:07.392  INFO 9780 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 18:32:07.417  INFO 9780 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-13 18:32:07.427  INFO 9780 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-13 18:34:23.420  INFO 4808 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Starting BoardControllerJunit using Java 21.0.4 with PID 4808 (started by acorn in D:\JAP_20240909\04_SPRING\boot\workspace\board_fc)
+2025-02-13 18:34:23.421  INFO 4808 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : No active profile set, falling back to 1 default profile: "default"
+2025-02-13 18:34:23.989  INFO 4808 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-02-13 18:34:24.008  INFO 4808 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 JDBC repository interfaces.
+2025-02-13 18:34:24.219  INFO 4808 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 18:34:24.219  INFO 4808 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **BoardController()**                 │
+2025-02-13 18:34:24.219  INFO 4808 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 18:34:24.221  INFO 4808 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : ┌───────────────────────────────────────┐
+2025-02-13 18:34:24.222  INFO 4808 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : │ **BoardServiceImpl()**                │
+2025-02-13 18:34:24.222  INFO 4808 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : └───────────────────────────────────────┘
+2025-02-13 18:34:24.668  INFO 4808 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : ┌────────────────────────┐
+2025-02-13 18:34:24.668  INFO 4808 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : │ TimeController()       │
+2025-02-13 18:34:24.668  INFO 4808 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : └────────────────────────┘
+2025-02-13 18:34:24.669  INFO 4808 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : ┌────────────────────────┐
+2025-02-13 18:34:24.669  INFO 4808 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : │ TimeServiceImpl()      │
+2025-02-13 18:34:24.669  INFO 4808 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : └────────────────────────┘
+2025-02-13 18:34:24.859  INFO 4808 --- [board_fc] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-02-13 18:34:25.266  INFO 4808 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-13 18:34:25.586  INFO 4808 --- [board_fc] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@16a6dc21
+2025-02-13 18:34:25.588  INFO 4808 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-13 18:34:25.814  INFO 4808 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Started BoardControllerJunit in 2.703 seconds (process running for 3.534)
+2025-02-13 18:34:26.420  INFO 4808 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 18:34:26.420  INFO 4808 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ setUp()                                                 │
+2025-02-13 18:34:26.420  INFO 4808 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 18:34:26.423  INFO 4808 --- [board_fc] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-02-13 18:34:26.424  INFO 4808 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-02-13 18:34:26.425  INFO 4808 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-02-13 18:34:26.436 DEBUG 4808 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 18:34:26.507 DEBUG 4808 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 18:34:26.557 DEBUG 4808 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 18:34:26.561 DEBUG 4808 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 18:34:26.562 DEBUG 4808 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 18:34:26.563 DEBUG 4808 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 18:34:26.564 DEBUG 4808 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 18:34:26.564 DEBUG 4808 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 18:34:26.569 DEBUG 4808 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 18:34:26.570  INFO 4808 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : seq01:4388
+2025-02-13 18:34:26.572  INFO 4808 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌───────────────────────────────────────┐
+2025-02-13 18:34:26.572  INFO 4808 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ **doSave()**                          │
+2025-02-13 18:34:26.572  INFO 4808 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └───────────────────────────────────────┘
+2025-02-13 18:34:26.573 DEBUG 4808 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==>  Preparing: DELETE FROM board
+2025-02-13 18:34:26.574 DEBUG 4808 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==> Parameters: 
+2025-02-13 18:34:26.576 DEBUG 4808 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : <==    Updates: 1
+2025-02-13 18:34:26.612  INFO 4808 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 18:34:26.613  INFO 4808 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **doSave()**                          │
+2025-02-13 18:34:26.613  INFO 4808 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 18:34:26.620  INFO 4808 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : paran:BoardVO [seq=0, title=제목01, contents=내용01, div=10, readCnt=0, regId=ADMIN, regDt=null, modId=ADMIN, modDt=null, toString()=DTO [no=0, totalCnt=0, pageSize=0, pageNo=0, optionDiv=null]]
+2025-02-13 18:34:26.620  INFO 4808 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : ┌───────────────────────────────────────┐
+2025-02-13 18:34:26.620  INFO 4808 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : │ **doSave()**                          │
+2025-02-13 18:34:26.620  INFO 4808 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : └───────────────────────────────────────┘
+2025-02-13 18:34:26.620 DEBUG 4808 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 18:34:26.620 DEBUG 4808 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 18:34:26.621 DEBUG 4808 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 18:34:26.621  INFO 4808 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : inVO.etSeq4391
+2025-02-13 18:34:26.622 DEBUG 4808 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : ==>  Preparing: INSERT INTO board ( seq, title, contents, div, read_cnt, reg_id, reg_dt, mod_id, mod_dt ) VALUES ( ?, ?, ?, ?, ?, ?, SYSDATE, ?, SYSDATE )
+2025-02-13 18:34:26.627 DEBUG 4808 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : ==> Parameters: 4391(Integer), 제목01(String), 내용01(String), 10(String), 0(Integer), ADMIN(String), ADMIN(String)
+2025-02-13 18:34:26.641 DEBUG 4808 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : <==    Updates: 1
+2025-02-13 18:34:26.646  INFO 4808 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : jsonString:{"messageId":1,"message":"게시글이 등록 되었습니다.","no":0,"totalCnt":0,"pageSize":0,"pageNo":0}
+2025-02-13 18:34:26.662  INFO 4808 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 18:34:26.663  INFO 4808 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ tearDown()                                              │
+2025-02-13 18:34:26.664  INFO 4808 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 18:34:26.692  INFO 4808 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-13 18:34:26.712  INFO 4808 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-13 18:38:24.998  INFO 23868 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Starting BoardControllerJunit using Java 21.0.4 with PID 23868 (started by acorn in D:\JAP_20240909\04_SPRING\boot\workspace\board_fc)
+2025-02-13 18:38:24.999  INFO 23868 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : No active profile set, falling back to 1 default profile: "default"
+2025-02-13 18:38:25.675  INFO 23868 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-02-13 18:38:25.690  INFO 23868 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 JDBC repository interfaces.
+2025-02-13 18:38:25.930  INFO 23868 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 18:38:25.931  INFO 23868 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **BoardController()**                 │
+2025-02-13 18:38:25.931  INFO 23868 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 18:38:25.933  INFO 23868 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : ┌───────────────────────────────────────┐
+2025-02-13 18:38:25.933  INFO 23868 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : │ **BoardServiceImpl()**                │
+2025-02-13 18:38:25.933  INFO 23868 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : └───────────────────────────────────────┘
+2025-02-13 18:38:26.421  INFO 23868 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : ┌────────────────────────┐
+2025-02-13 18:38:26.421  INFO 23868 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : │ TimeController()       │
+2025-02-13 18:38:26.421  INFO 23868 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : └────────────────────────┘
+2025-02-13 18:38:26.423  INFO 23868 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : ┌────────────────────────┐
+2025-02-13 18:38:26.423  INFO 23868 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : │ TimeServiceImpl()      │
+2025-02-13 18:38:26.423  INFO 23868 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : └────────────────────────┘
+2025-02-13 18:38:26.659  INFO 23868 --- [board_fc] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-02-13 18:38:27.110  INFO 23868 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-13 18:38:27.503  INFO 23868 --- [board_fc] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@36525ab
+2025-02-13 18:38:27.507  INFO 23868 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-13 18:38:27.773  INFO 23868 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Started BoardControllerJunit in 3.146 seconds (process running for 4.603)
+2025-02-13 18:38:28.516  INFO 23868 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 18:38:28.517  INFO 23868 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ setUp()                                                 │
+2025-02-13 18:38:28.517  INFO 23868 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 18:38:28.522  INFO 23868 --- [board_fc] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-02-13 18:38:28.523  INFO 23868 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-02-13 18:38:28.524  INFO 23868 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-02-13 18:38:28.536 DEBUG 23868 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 18:38:28.632 DEBUG 23868 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 18:38:28.711 DEBUG 23868 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 18:38:28.714 DEBUG 23868 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 18:38:28.715 DEBUG 23868 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 18:38:28.719 DEBUG 23868 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 18:38:28.720 DEBUG 23868 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 18:38:28.720 DEBUG 23868 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 18:38:28.721 DEBUG 23868 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 18:38:28.722  INFO 23868 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : seq01:4392
+2025-02-13 18:38:28.725  INFO 23868 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌───────────────────────────────────────┐
+2025-02-13 18:38:28.725  INFO 23868 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ **doSave()**                          │
+2025-02-13 18:38:28.725  INFO 23868 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └───────────────────────────────────────┘
+2025-02-13 18:38:28.727 DEBUG 23868 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==>  Preparing: DELETE FROM board
+2025-02-13 18:38:28.727 DEBUG 23868 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==> Parameters: 
+2025-02-13 18:38:28.749 DEBUG 23868 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : <==    Updates: 1
+2025-02-13 18:38:28.821  INFO 23868 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 18:38:28.822  INFO 23868 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **doSave()**                          │
+2025-02-13 18:38:28.822  INFO 23868 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 18:38:28.830  INFO 23868 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : paran:BoardVO [seq=0, title=, contents=내용01, div=10, readCnt=0, regId=ADMIN, regDt=null, modId=ADMIN, modDt=null, toString()=DTO [no=0, totalCnt=0, pageSize=0, pageNo=0, optionDiv=null]]
+2025-02-13 18:39:00.763  INFO 23868 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : returnBody:{"messageId":20,"message":"제목을 입력 하세요.","no":0,"totalCnt":0,"pageSize":0,"pageNo":0}
+2025-02-13 18:39:00.767  INFO 23868 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : resultMessage:MessageVO [messageId=20, message=제목을 입력 하세요.]
+2025-02-13 18:39:00.777  INFO 23868 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 18:39:00.777  INFO 23868 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ tearDown()                                              │
+2025-02-13 18:39:00.777  INFO 23868 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 18:39:00.801  INFO 23868 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-13 18:39:00.812  INFO 23868 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-13 18:40:27.690  INFO 16904 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Starting BoardControllerJunit using Java 21.0.4 with PID 16904 (started by acorn in D:\JAP_20240909\04_SPRING\boot\workspace\board_fc)
+2025-02-13 18:40:27.691  INFO 16904 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : No active profile set, falling back to 1 default profile: "default"
+2025-02-13 18:40:28.232  INFO 16904 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-02-13 18:40:28.249  INFO 16904 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 JDBC repository interfaces.
+2025-02-13 18:40:28.474  INFO 16904 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 18:40:28.474  INFO 16904 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **BoardController()**                 │
+2025-02-13 18:40:28.474  INFO 16904 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 18:40:28.476  INFO 16904 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : ┌───────────────────────────────────────┐
+2025-02-13 18:40:28.476  INFO 16904 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : │ **BoardServiceImpl()**                │
+2025-02-13 18:40:28.476  INFO 16904 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : └───────────────────────────────────────┘
+2025-02-13 18:40:28.852  INFO 16904 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : ┌────────────────────────┐
+2025-02-13 18:40:28.852  INFO 16904 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : │ TimeController()       │
+2025-02-13 18:40:28.852  INFO 16904 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : └────────────────────────┘
+2025-02-13 18:40:28.853  INFO 16904 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : ┌────────────────────────┐
+2025-02-13 18:40:28.853  INFO 16904 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : │ TimeServiceImpl()      │
+2025-02-13 18:40:28.853  INFO 16904 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : └────────────────────────┘
+2025-02-13 18:40:29.051  INFO 16904 --- [board_fc] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-02-13 18:40:29.548  INFO 16904 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-13 18:40:29.899  INFO 16904 --- [board_fc] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@33f4c769
+2025-02-13 18:40:29.902  INFO 16904 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-13 18:40:30.208  INFO 16904 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Started BoardControllerJunit in 2.82 seconds (process running for 3.531)
+2025-02-13 18:40:30.803  INFO 16904 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 18:40:30.803  INFO 16904 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ setUp()                                                 │
+2025-02-13 18:40:30.803  INFO 16904 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 18:40:30.806  INFO 16904 --- [board_fc] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-02-13 18:40:30.807  INFO 16904 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-02-13 18:40:30.808  INFO 16904 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-02-13 18:40:30.818 DEBUG 16904 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 18:40:30.890 DEBUG 16904 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 18:40:30.940 DEBUG 16904 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 18:40:30.944 DEBUG 16904 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 18:40:30.945 DEBUG 16904 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 18:40:30.948 DEBUG 16904 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 18:40:30.949 DEBUG 16904 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 18:40:30.950 DEBUG 16904 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 18:40:30.951 DEBUG 16904 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 18:40:30.951  INFO 16904 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : seq01:4395
+2025-02-13 18:40:30.953  INFO 16904 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌───────────────────────────────────────┐
+2025-02-13 18:40:30.954  INFO 16904 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ **doSave()**                          │
+2025-02-13 18:40:30.954  INFO 16904 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └───────────────────────────────────────┘
+2025-02-13 18:40:30.955 DEBUG 16904 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==>  Preparing: DELETE FROM board
+2025-02-13 18:40:30.955 DEBUG 16904 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==> Parameters: 
+2025-02-13 18:40:30.956 DEBUG 16904 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : <==    Updates: 0
+2025-02-13 18:40:30.994  INFO 16904 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 18:40:30.995  INFO 16904 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **doSave()**                          │
+2025-02-13 18:40:30.995  INFO 16904 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 18:40:31.002  INFO 16904 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : paran:BoardVO [seq=0, title=제목01, contents=내용01, div=10, readCnt=0, regId=ADMIN, regDt=null, modId=ADMIN, modDt=null, toString()=DTO [no=0, totalCnt=0, pageSize=0, pageNo=0, optionDiv=null]]
+2025-02-13 18:40:31.002  INFO 16904 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : ┌───────────────────────────────────────┐
+2025-02-13 18:40:31.002  INFO 16904 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : │ **doSave()**                          │
+2025-02-13 18:40:31.002  INFO 16904 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : └───────────────────────────────────────┘
+2025-02-13 18:40:31.002 DEBUG 16904 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 18:40:31.002 DEBUG 16904 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 18:40:31.003 DEBUG 16904 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 18:40:31.003  INFO 16904 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : inVO.etSeq4398
+2025-02-13 18:40:31.004 DEBUG 16904 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : ==>  Preparing: INSERT INTO board ( seq, title, contents, div, read_cnt, reg_id, reg_dt, mod_id, mod_dt ) VALUES ( ?, ?, ?, ?, ?, ?, SYSDATE, ?, SYSDATE )
+2025-02-13 18:40:31.008 DEBUG 16904 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : ==> Parameters: 4398(Integer), 제목01(String), 내용01(String), 10(String), 0(Integer), ADMIN(String), ADMIN(String)
+2025-02-13 18:40:31.022 DEBUG 16904 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : <==    Updates: 1
+2025-02-13 18:40:31.029  INFO 16904 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : jsonString:{"messageId":1,"message":"게시글이 등록 되었습니다.","no":0,"totalCnt":0,"pageSize":0,"pageNo":0}
+2025-02-13 18:40:31.045  INFO 16904 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : returnBody:{"messageId":1,"message":"게시글이 등록 되었습니다.","no":0,"totalCnt":0,"pageSize":0,"pageNo":0}
+2025-02-13 18:40:31.048  INFO 16904 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : resultMessage:MessageVO [messageId=1, message=게시글이 등록 되었습니다.]
+2025-02-13 18:40:31.057  INFO 16904 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 18:40:31.057  INFO 16904 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ tearDown()                                              │
+2025-02-13 18:40:31.058  INFO 16904 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 18:40:31.076  INFO 16904 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-13 18:40:31.088  INFO 16904 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-13 19:09:19.758  INFO 6612 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Starting BoardControllerJunit using Java 21.0.4 with PID 6612 (started by acorn in D:\JAP_20240909\04_SPRING\boot\workspace\board_fc)
+2025-02-13 19:09:19.761  INFO 6612 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : No active profile set, falling back to 1 default profile: "default"
+2025-02-13 19:09:20.778  INFO 6612 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-02-13 19:09:20.805  INFO 6612 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 JDBC repository interfaces.
+2025-02-13 19:09:48.879  INFO 20620 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Starting BoardControllerJunit using Java 21.0.4 with PID 20620 (started by acorn in D:\JAP_20240909\04_SPRING\boot\workspace\board_fc)
+2025-02-13 19:09:48.882  INFO 20620 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : No active profile set, falling back to 1 default profile: "default"
+2025-02-13 19:09:49.711  INFO 20620 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-02-13 19:09:49.731  INFO 20620 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 JDBC repository interfaces.
+2025-02-13 19:09:49.990  INFO 20620 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 19:09:49.991  INFO 20620 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **BoardController()**                 │
+2025-02-13 19:09:49.991  INFO 20620 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 19:09:49.996  INFO 20620 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : ┌───────────────────────────────────────┐
+2025-02-13 19:09:49.997  INFO 20620 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : │ **BoardServiceImpl()**                │
+2025-02-13 19:09:49.998  INFO 20620 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : └───────────────────────────────────────┘
+2025-02-13 19:09:50.490  INFO 20620 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : ┌────────────────────────┐
+2025-02-13 19:09:50.490  INFO 20620 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : │ TimeController()       │
+2025-02-13 19:09:50.491  INFO 20620 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : └────────────────────────┘
+2025-02-13 19:09:50.492  INFO 20620 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : ┌────────────────────────┐
+2025-02-13 19:09:50.492  INFO 20620 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : │ TimeServiceImpl()      │
+2025-02-13 19:09:50.492  INFO 20620 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : └────────────────────────┘
+2025-02-13 19:09:50.741  INFO 20620 --- [board_fc] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-02-13 19:09:51.344  INFO 20620 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-13 19:09:51.808  INFO 20620 --- [board_fc] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@24405466
+2025-02-13 19:09:51.812  INFO 20620 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-13 19:09:52.093  INFO 20620 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Started BoardControllerJunit in 3.792 seconds (process running for 5.143)
+2025-02-13 19:09:52.814  INFO 20620 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 19:09:52.815  INFO 20620 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ setUp()                                                 │
+2025-02-13 19:09:52.815  INFO 20620 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 19:09:52.819  INFO 20620 --- [board_fc] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-02-13 19:09:52.819  INFO 20620 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-02-13 19:09:52.820  INFO 20620 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-02-13 19:09:52.832 DEBUG 20620 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 19:09:52.937 DEBUG 20620 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 19:09:53.017 DEBUG 20620 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 19:09:53.026 DEBUG 20620 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 19:09:53.028 DEBUG 20620 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 19:09:53.031 DEBUG 20620 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 19:09:53.031 DEBUG 20620 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 19:09:53.031 DEBUG 20620 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 19:09:53.039 DEBUG 20620 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 19:09:53.041  INFO 20620 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : seq01:4412
+2025-02-13 19:09:53.045 DEBUG 20620 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==>  Preparing: DELETE FROM board
+2025-02-13 19:09:53.046 DEBUG 20620 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==> Parameters: 
+2025-02-13 19:09:53.048 DEBUG 20620 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : <==    Updates: 1
+2025-02-13 19:09:53.049 DEBUG 20620 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : ==>  Preparing: INSERT INTO board ( seq, title, contents, div, read_cnt, reg_id, reg_dt, mod_id, mod_dt ) VALUES ( ?, ?, ?, ?, ?, ?, SYSDATE, ?, SYSDATE )
+2025-02-13 19:09:53.055 DEBUG 20620 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : ==> Parameters: 4412(Integer), 제목01(String), 내용01(String), 10(String), 0(Integer), ADMIN(String), ADMIN(String)
+2025-02-13 19:09:53.066 DEBUG 20620 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : <==    Updates: 1
+2025-02-13 19:09:53.125  INFO 20620 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 19:09:53.126  INFO 20620 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **doSelectOne()**                     │
+2025-02-13 19:09:53.126  INFO 20620 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 19:09:53.126  INFO 20620 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : paran seq:4412
+2025-02-13 19:10:10.067  INFO 20620 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : ┌───────────────────────────────────────┐
+2025-02-13 19:10:10.067  INFO 20620 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : │ **doSelectOne()**: 조회건수 증가, 단건조회  │
+2025-02-13 19:10:10.067  INFO 20620 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : └───────────────────────────────────────┘
+2025-02-13 19:10:10.068 DEBUG 20620 --- [board_fc] [main] c.p.e.m.BoardMapper.doReadCntUpdate      : ==>  Preparing: UPDATE board SET read_cnt=NVL(read_cnt,0)+1 WHERE seq = ?
+2025-02-13 19:10:10.068 DEBUG 20620 --- [board_fc] [main] c.p.e.m.BoardMapper.doReadCntUpdate      : ==> Parameters: 4412(Integer)
+2025-02-13 19:10:10.072 DEBUG 20620 --- [board_fc] [main] c.p.e.m.BoardMapper.doReadCntUpdate      : <==    Updates: 1
+2025-02-13 19:10:10.073  INFO 20620 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : flag:1
+2025-02-13 19:10:10.074 DEBUG 20620 --- [board_fc] [main] c.p.ehr.mapper.BoardMapper.doSelectOne   : ==>  Preparing: SELECT seq, title, contents, div, read_cnt as readCnt, reg_id as regId, reg_dt as regDt, TO_CHAR(reg_dt,'YYYY/MM/DD HH24:MI:SS') retDt, mod_id as modId , TO_CHAR(mod_dt,'YYYY/MM/DD HH24:MI:SS') modDt FROM board WHERE seq = ?
+2025-02-13 19:10:10.074 DEBUG 20620 --- [board_fc] [main] c.p.ehr.mapper.BoardMapper.doSelectOne   : ==> Parameters: 4412(Integer)
+2025-02-13 19:10:10.132 DEBUG 20620 --- [board_fc] [main] c.p.ehr.mapper.BoardMapper.doSelectOne   : <==      Total: 1
+2025-02-13 19:10:10.137  INFO 20620 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : outVO:BoardVO [seq=4412, title=제목01, contents=내용01, div=10, readCnt=1, regId=ADMIN, regDt=2025-02-13 19:09:53, modId=ADMIN, modDt=2025/02/13 19:09:53, toString()=DTO [no=0, totalCnt=0, pageSize=0, pageNo=0, optionDiv=null]]
+2025-02-13 19:10:23.594  INFO 20620 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 19:10:23.594  INFO 20620 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ tearDown()                                              │
+2025-02-13 19:10:23.594  INFO 20620 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 19:10:23.609  INFO 20620 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-13 19:10:23.626  INFO 20620 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-13 19:13:50.427  INFO 14480 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Starting BoardControllerJunit using Java 21.0.4 with PID 14480 (started by acorn in D:\JAP_20240909\04_SPRING\boot\workspace\board_fc)
+2025-02-13 19:13:50.429  INFO 14480 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : No active profile set, falling back to 1 default profile: "default"
+2025-02-13 19:13:51.147  INFO 14480 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-02-13 19:13:51.169  INFO 14480 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 JDBC repository interfaces.
+2025-02-13 19:13:51.463  INFO 14480 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 19:13:51.463  INFO 14480 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **BoardController()**                 │
+2025-02-13 19:13:51.463  INFO 14480 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 19:13:51.466  INFO 14480 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : ┌───────────────────────────────────────┐
+2025-02-13 19:13:51.466  INFO 14480 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : │ **BoardServiceImpl()**                │
+2025-02-13 19:13:51.467  INFO 14480 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : └───────────────────────────────────────┘
+2025-02-13 19:13:51.941  INFO 14480 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : ┌────────────────────────┐
+2025-02-13 19:13:51.941  INFO 14480 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : │ TimeController()       │
+2025-02-13 19:13:51.941  INFO 14480 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : └────────────────────────┘
+2025-02-13 19:13:51.943  INFO 14480 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : ┌────────────────────────┐
+2025-02-13 19:13:51.944  INFO 14480 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : │ TimeServiceImpl()      │
+2025-02-13 19:13:51.944  INFO 14480 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : └────────────────────────┘
+2025-02-13 19:13:52.198  INFO 14480 --- [board_fc] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-02-13 19:13:52.681  INFO 14480 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-13 19:13:53.077  INFO 14480 --- [board_fc] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@6aa6c17
+2025-02-13 19:13:53.080  INFO 14480 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-13 19:13:53.339  INFO 14480 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Started BoardControllerJunit in 3.399 seconds (process running for 4.493)
+2025-02-13 19:13:54.039  INFO 14480 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 19:13:54.039  INFO 14480 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ setUp()                                                 │
+2025-02-13 19:13:54.039  INFO 14480 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 19:13:54.044  INFO 14480 --- [board_fc] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-02-13 19:13:54.044  INFO 14480 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-02-13 19:13:54.045  INFO 14480 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-02-13 19:13:54.061 DEBUG 14480 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 19:13:54.200 DEBUG 14480 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 19:13:54.285 DEBUG 14480 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 19:13:54.290 DEBUG 14480 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 19:13:54.290 DEBUG 14480 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 19:13:54.291 DEBUG 14480 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 19:13:54.292 DEBUG 14480 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 19:13:54.292 DEBUG 14480 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 19:13:54.296 DEBUG 14480 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 19:13:54.296  INFO 14480 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : seq01:4421
+2025-02-13 19:13:54.299 DEBUG 14480 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==>  Preparing: DELETE FROM board
+2025-02-13 19:13:54.300 DEBUG 14480 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==> Parameters: 
+2025-02-13 19:13:54.302 DEBUG 14480 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : <==    Updates: 1
+2025-02-13 19:13:54.303 DEBUG 14480 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : ==>  Preparing: INSERT INTO board ( seq, title, contents, div, read_cnt, reg_id, reg_dt, mod_id, mod_dt ) VALUES ( ?, ?, ?, ?, ?, ?, SYSDATE, ?, SYSDATE )
+2025-02-13 19:13:54.308 DEBUG 14480 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : ==> Parameters: 4421(Integer), 제목01(String), 내용01(String), 10(String), 0(Integer), ADMIN(String), ADMIN(String)
+2025-02-13 19:13:54.316 DEBUG 14480 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : <==    Updates: 1
+2025-02-13 19:13:54.382  INFO 14480 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 19:13:54.382  INFO 14480 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **doSelectOne()**                     │
+2025-02-13 19:13:54.382  INFO 14480 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 19:13:54.382  INFO 14480 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : paran seq:4421
+2025-02-13 19:13:58.001  INFO 14480 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : ┌───────────────────────────────────────┐
+2025-02-13 19:13:58.001  INFO 14480 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : │ **doSelectOne()**: 조회건수 증가, 단건조회  │
+2025-02-13 19:13:58.001  INFO 14480 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : └───────────────────────────────────────┘
+2025-02-13 19:13:58.003 DEBUG 14480 --- [board_fc] [main] c.p.e.m.BoardMapper.doReadCntUpdate      : ==>  Preparing: UPDATE board SET read_cnt=NVL(read_cnt,0)+1 WHERE seq = ?
+2025-02-13 19:13:58.003 DEBUG 14480 --- [board_fc] [main] c.p.e.m.BoardMapper.doReadCntUpdate      : ==> Parameters: 4421(Integer)
+2025-02-13 19:13:58.006 DEBUG 14480 --- [board_fc] [main] c.p.e.m.BoardMapper.doReadCntUpdate      : <==    Updates: 1
+2025-02-13 19:13:58.006  INFO 14480 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : flag:1
+2025-02-13 19:13:58.007 DEBUG 14480 --- [board_fc] [main] c.p.ehr.mapper.BoardMapper.doSelectOne   : ==>  Preparing: SELECT seq, title, contents, div, read_cnt as readCnt, reg_id as regId, reg_dt as regDt, TO_CHAR(reg_dt,'YYYY/MM/DD HH24:MI:SS') retDt, mod_id as modId , TO_CHAR(mod_dt,'YYYY/MM/DD HH24:MI:SS') modDt FROM board WHERE seq = ?
+2025-02-13 19:13:58.007 DEBUG 14480 --- [board_fc] [main] c.p.ehr.mapper.BoardMapper.doSelectOne   : ==> Parameters: 4421(Integer)
+2025-02-13 19:13:58.066 DEBUG 14480 --- [board_fc] [main] c.p.ehr.mapper.BoardMapper.doSelectOne   : <==      Total: 1
+2025-02-13 19:13:58.072  INFO 14480 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : outVO:BoardVO [seq=4421, title=제목01, contents=내용01, div=10, readCnt=1, regId=ADMIN, regDt=2025-02-13 19:13:54, modId=ADMIN, modDt=2025/02/13 19:13:54, toString()=DTO [no=0, totalCnt=0, pageSize=0, pageNo=0, optionDiv=null]]
+2025-02-13 19:14:12.300  INFO 14480 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : outVO:BoardVO [seq=4421, title=제목01, contents=내용01, div=10, readCnt=1, regId=ADMIN, regDt=2025-02-13 19:13:54, modId=ADMIN, modDt=2025/02/13 19:13:54, toString()=DTO [no=0, totalCnt=0, pageSize=0, pageNo=0, optionDiv=null]]
+2025-02-13 19:14:12.302  INFO 14480 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 19:14:12.303  INFO 14480 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ tearDown()                                              │
+2025-02-13 19:14:12.303  INFO 14480 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 19:14:12.317  INFO 14480 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-13 19:14:12.328  INFO 14480 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-13 19:15:55.105  INFO 6616 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Starting BoardControllerJunit using Java 21.0.4 with PID 6616 (started by acorn in D:\JAP_20240909\04_SPRING\boot\workspace\board_fc)
+2025-02-13 19:15:55.106  INFO 6616 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : No active profile set, falling back to 1 default profile: "default"
+2025-02-13 19:15:55.679  INFO 6616 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-02-13 19:15:55.697  INFO 6616 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 JDBC repository interfaces.
+2025-02-13 19:15:55.910  INFO 6616 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 19:15:55.911  INFO 6616 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **BoardController()**                 │
+2025-02-13 19:15:55.911  INFO 6616 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 19:15:55.914  INFO 6616 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : ┌───────────────────────────────────────┐
+2025-02-13 19:15:55.914  INFO 6616 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : │ **BoardServiceImpl()**                │
+2025-02-13 19:15:55.914  INFO 6616 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : └───────────────────────────────────────┘
+2025-02-13 19:15:56.363  INFO 6616 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : ┌────────────────────────┐
+2025-02-13 19:15:56.363  INFO 6616 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : │ TimeController()       │
+2025-02-13 19:15:56.363  INFO 6616 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : └────────────────────────┘
+2025-02-13 19:15:56.366  INFO 6616 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : ┌────────────────────────┐
+2025-02-13 19:15:56.366  INFO 6616 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : │ TimeServiceImpl()      │
+2025-02-13 19:15:56.366  INFO 6616 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : └────────────────────────┘
+2025-02-13 19:15:56.603  INFO 6616 --- [board_fc] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-02-13 19:15:56.963  INFO 6616 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-13 19:15:57.294  INFO 6616 --- [board_fc] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@33f4c769
+2025-02-13 19:15:57.297  INFO 6616 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-13 19:15:57.541  INFO 6616 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Started BoardControllerJunit in 2.839 seconds (process running for 3.648)
+2025-02-13 19:15:58.108  INFO 6616 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 19:15:58.109  INFO 6616 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ setUp()                                                 │
+2025-02-13 19:15:58.109  INFO 6616 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 19:15:58.112  INFO 6616 --- [board_fc] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-02-13 19:15:58.112  INFO 6616 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-02-13 19:15:58.113  INFO 6616 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-02-13 19:15:58.123 DEBUG 6616 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 19:15:58.192 DEBUG 6616 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 19:15:58.240 DEBUG 6616 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 19:15:58.249 DEBUG 6616 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 19:15:58.250 DEBUG 6616 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 19:15:58.252 DEBUG 6616 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 19:15:58.253 DEBUG 6616 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 19:15:58.253 DEBUG 6616 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 19:15:58.256 DEBUG 6616 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 19:15:58.256  INFO 6616 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : seq01:4433
+2025-02-13 19:15:58.258 DEBUG 6616 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==>  Preparing: DELETE FROM board
+2025-02-13 19:15:58.259 DEBUG 6616 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==> Parameters: 
+2025-02-13 19:15:58.260 DEBUG 6616 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : <==    Updates: 1
+2025-02-13 19:15:58.261 DEBUG 6616 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : ==>  Preparing: INSERT INTO board ( seq, title, contents, div, read_cnt, reg_id, reg_dt, mod_id, mod_dt ) VALUES ( ?, ?, ?, ?, ?, ?, SYSDATE, ?, SYSDATE )
+2025-02-13 19:15:58.263 DEBUG 6616 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : ==> Parameters: 4433(Integer), 제목01(String), 내용01(String), 10(String), 0(Integer), ADMIN(String), ADMIN(String)
+2025-02-13 19:15:58.271 DEBUG 6616 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : <==    Updates: 1
+2025-02-13 19:15:58.307  INFO 6616 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 19:15:58.307  INFO 6616 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **doSelectOne()**                     │
+2025-02-13 19:15:58.307  INFO 6616 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 19:15:58.308  INFO 6616 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : paran seq:4433
+2025-02-13 19:15:58.308  INFO 6616 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : ┌───────────────────────────────────────┐
+2025-02-13 19:15:58.308  INFO 6616 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : │ **doSelectOne()**: 조회건수 증가, 단건조회  │
+2025-02-13 19:15:58.308  INFO 6616 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : └───────────────────────────────────────┘
+2025-02-13 19:15:58.308 DEBUG 6616 --- [board_fc] [main] c.p.e.m.BoardMapper.doReadCntUpdate      : ==>  Preparing: UPDATE board SET read_cnt=NVL(read_cnt,0)+1 WHERE seq = ?
+2025-02-13 19:15:58.309 DEBUG 6616 --- [board_fc] [main] c.p.e.m.BoardMapper.doReadCntUpdate      : ==> Parameters: 4433(Integer)
+2025-02-13 19:15:58.311 DEBUG 6616 --- [board_fc] [main] c.p.e.m.BoardMapper.doReadCntUpdate      : <==    Updates: 1
+2025-02-13 19:15:58.311  INFO 6616 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : flag:1
+2025-02-13 19:15:58.312 DEBUG 6616 --- [board_fc] [main] c.p.ehr.mapper.BoardMapper.doSelectOne   : ==>  Preparing: SELECT seq, title, contents, div, read_cnt as readCnt, reg_id as regId, reg_dt as regDt, TO_CHAR(reg_dt,'YYYY/MM/DD HH24:MI:SS') retDt, mod_id as modId , TO_CHAR(mod_dt,'YYYY/MM/DD HH24:MI:SS') modDt FROM board WHERE seq = ?
+2025-02-13 19:15:58.313 DEBUG 6616 --- [board_fc] [main] c.p.ehr.mapper.BoardMapper.doSelectOne   : ==> Parameters: 4433(Integer)
+2025-02-13 19:15:58.381 DEBUG 6616 --- [board_fc] [main] c.p.ehr.mapper.BoardMapper.doSelectOne   : <==      Total: 1
+2025-02-13 19:15:58.390  INFO 6616 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : outVO:BoardVO [seq=4433, title=제목01, contents=내용01, div=10, readCnt=1, regId=ADMIN, regDt=2025-02-13 19:15:58, modId=ADMIN, modDt=2025/02/13 19:15:58, toString()=DTO [no=0, totalCnt=0, pageSize=0, pageNo=0, optionDiv=null]]
+2025-02-13 19:15:58.411  INFO 6616 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : outVO:BoardVO [seq=4433, title=제목01, contents=내용01, div=10, readCnt=1, regId=ADMIN, regDt=2025-02-13 19:15:58, modId=ADMIN, modDt=2025/02/13 19:15:58, toString()=DTO [no=0, totalCnt=0, pageSize=0, pageNo=0, optionDiv=null]]
+2025-02-13 19:15:58.420  INFO 6616 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 19:15:58.420  INFO 6616 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ tearDown()                                              │
+2025-02-13 19:15:58.420  INFO 6616 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 19:15:58.436  INFO 6616 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-13 19:15:58.452  INFO 6616 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-13 19:17:13.489  INFO 9024 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Starting BoardControllerJunit using Java 21.0.4 with PID 9024 (started by acorn in D:\JAP_20240909\04_SPRING\boot\workspace\board_fc)
+2025-02-13 19:17:13.491  INFO 9024 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : No active profile set, falling back to 1 default profile: "default"
+2025-02-13 19:17:13.995  INFO 9024 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-02-13 19:17:14.013  INFO 9024 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 JDBC repository interfaces.
+2025-02-13 19:17:14.220  INFO 9024 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 19:17:14.221  INFO 9024 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **BoardController()**                 │
+2025-02-13 19:17:14.221  INFO 9024 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 19:17:14.223  INFO 9024 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : ┌───────────────────────────────────────┐
+2025-02-13 19:17:14.223  INFO 9024 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : │ **BoardServiceImpl()**                │
+2025-02-13 19:17:14.223  INFO 9024 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : └───────────────────────────────────────┘
+2025-02-13 19:17:14.596  INFO 9024 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : ┌────────────────────────┐
+2025-02-13 19:17:14.596  INFO 9024 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : │ TimeController()       │
+2025-02-13 19:17:14.596  INFO 9024 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : └────────────────────────┘
+2025-02-13 19:17:14.597  INFO 9024 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : ┌────────────────────────┐
+2025-02-13 19:17:14.597  INFO 9024 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : │ TimeServiceImpl()      │
+2025-02-13 19:17:14.597  INFO 9024 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : └────────────────────────┘
+2025-02-13 19:17:14.825  INFO 9024 --- [board_fc] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-02-13 19:17:15.314  INFO 9024 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-13 19:17:15.652  INFO 9024 --- [board_fc] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@11399548
+2025-02-13 19:17:15.654  INFO 9024 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-13 19:17:15.858  INFO 9024 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Started BoardControllerJunit in 2.779 seconds (process running for 3.507)
+2025-02-13 19:17:16.443  INFO 9024 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 19:17:16.445  INFO 9024 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ setUp()                                                 │
+2025-02-13 19:17:16.445  INFO 9024 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 19:17:16.448  INFO 9024 --- [board_fc] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-02-13 19:17:16.448  INFO 9024 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-02-13 19:17:16.449  INFO 9024 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-02-13 19:17:16.461 DEBUG 9024 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 19:17:16.533 DEBUG 9024 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 19:17:16.590 DEBUG 9024 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 19:17:16.593 DEBUG 9024 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 19:17:16.594 DEBUG 9024 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 19:17:16.596 DEBUG 9024 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 19:17:16.596 DEBUG 9024 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 19:17:16.597 DEBUG 9024 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 19:17:16.598 DEBUG 9024 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 19:17:16.598  INFO 9024 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : seq01:4436
+2025-02-13 19:17:16.601 DEBUG 9024 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==>  Preparing: DELETE FROM board
+2025-02-13 19:17:16.601 DEBUG 9024 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==> Parameters: 
+2025-02-13 19:17:16.604 DEBUG 9024 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : <==    Updates: 1
+2025-02-13 19:17:16.605 DEBUG 9024 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : ==>  Preparing: INSERT INTO board ( seq, title, contents, div, read_cnt, reg_id, reg_dt, mod_id, mod_dt ) VALUES ( ?, ?, ?, ?, ?, ?, SYSDATE, ?, SYSDATE )
+2025-02-13 19:17:16.608 DEBUG 9024 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : ==> Parameters: 4436(Integer), 제목01(String), 내용01(String), 10(String), 0(Integer), ADMIN(String), ADMIN(String)
+2025-02-13 19:17:16.614 DEBUG 9024 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : <==    Updates: 1
+2025-02-13 19:17:16.652  INFO 9024 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 19:17:16.652  INFO 9024 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **doSelectOne()**                     │
+2025-02-13 19:17:16.652  INFO 9024 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 19:17:16.653  INFO 9024 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : paran seq:4436
+2025-02-13 19:17:16.653  INFO 9024 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : ┌───────────────────────────────────────┐
+2025-02-13 19:17:16.653  INFO 9024 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : │ **doSelectOne()**: 조회건수 증가, 단건조회  │
+2025-02-13 19:17:16.653  INFO 9024 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : └───────────────────────────────────────┘
+2025-02-13 19:17:16.653 DEBUG 9024 --- [board_fc] [main] c.p.e.m.BoardMapper.doReadCntUpdate      : ==>  Preparing: UPDATE board SET read_cnt=NVL(read_cnt,0)+1 WHERE seq = ?
+2025-02-13 19:17:16.653 DEBUG 9024 --- [board_fc] [main] c.p.e.m.BoardMapper.doReadCntUpdate      : ==> Parameters: 4436(Integer)
+2025-02-13 19:17:16.654 DEBUG 9024 --- [board_fc] [main] c.p.e.m.BoardMapper.doReadCntUpdate      : <==    Updates: 1
+2025-02-13 19:17:16.654  INFO 9024 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : flag:1
+2025-02-13 19:17:16.656 DEBUG 9024 --- [board_fc] [main] c.p.ehr.mapper.BoardMapper.doSelectOne   : ==>  Preparing: SELECT seq, title, contents, div, read_cnt as readCnt, reg_id as regId, reg_dt as regDt, TO_CHAR(reg_dt,'YYYY/MM/DD HH24:MI:SS') retDt, mod_id as modId , TO_CHAR(mod_dt,'YYYY/MM/DD HH24:MI:SS') modDt FROM board WHERE seq = ?
+2025-02-13 19:17:16.656 DEBUG 9024 --- [board_fc] [main] c.p.ehr.mapper.BoardMapper.doSelectOne   : ==> Parameters: 4436(Integer)
+2025-02-13 19:17:16.716 DEBUG 9024 --- [board_fc] [main] c.p.ehr.mapper.BoardMapper.doSelectOne   : <==      Total: 1
+2025-02-13 19:17:16.724  INFO 9024 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : outVO:BoardVO [seq=4436, title=제목01, contents=내용01, div=10, readCnt=1, regId=ADMIN, regDt=2025-02-13 19:17:16, modId=ADMIN, modDt=2025/02/13 19:17:16, toString()=DTO [no=0, totalCnt=0, pageSize=0, pageNo=0, optionDiv=null]]
+2025-02-13 19:17:16.749  INFO 9024 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : outVO:BoardVO [seq=4436, title=제목01, contents=내용01, div=10, readCnt=1, regId=ADMIN, regDt=2025-02-13 19:17:16, modId=ADMIN, modDt=2025/02/13 19:17:16, toString()=DTO [no=0, totalCnt=0, pageSize=0, pageNo=0, optionDiv=null]]
+2025-02-13 19:17:16.754  INFO 9024 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 19:17:16.755  INFO 9024 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ tearDown()                                              │
+2025-02-13 19:17:16.755  INFO 9024 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 19:17:16.766  INFO 9024 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-13 19:17:16.775  INFO 9024 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-13 19:17:55.349  INFO 11972 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Starting BoardControllerJunit using Java 21.0.4 with PID 11972 (started by acorn in D:\JAP_20240909\04_SPRING\boot\workspace\board_fc)
+2025-02-13 19:17:55.351  INFO 11972 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : No active profile set, falling back to 1 default profile: "default"
+2025-02-13 19:17:55.872  INFO 11972 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-02-13 19:17:55.888  INFO 11972 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 JDBC repository interfaces.
+2025-02-13 19:17:56.097  INFO 11972 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 19:17:56.097  INFO 11972 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **BoardController()**                 │
+2025-02-13 19:17:56.097  INFO 11972 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 19:17:56.100  INFO 11972 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : ┌───────────────────────────────────────┐
+2025-02-13 19:17:56.100  INFO 11972 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : │ **BoardServiceImpl()**                │
+2025-02-13 19:17:56.100  INFO 11972 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : └───────────────────────────────────────┘
+2025-02-13 19:17:56.478  INFO 11972 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : ┌────────────────────────┐
+2025-02-13 19:17:56.478  INFO 11972 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : │ TimeController()       │
+2025-02-13 19:17:56.478  INFO 11972 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : └────────────────────────┘
+2025-02-13 19:17:56.479  INFO 11972 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : ┌────────────────────────┐
+2025-02-13 19:17:56.479  INFO 11972 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : │ TimeServiceImpl()      │
+2025-02-13 19:17:56.479  INFO 11972 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : └────────────────────────┘
+2025-02-13 19:17:56.726  INFO 11972 --- [board_fc] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-02-13 19:17:57.139  INFO 11972 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-13 19:17:57.478  INFO 11972 --- [board_fc] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@33f4c769
+2025-02-13 19:17:57.481  INFO 11972 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-13 19:17:57.711  INFO 11972 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Started BoardControllerJunit in 2.666 seconds (process running for 3.469)
+2025-02-13 19:17:58.304  INFO 11972 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 19:17:58.305  INFO 11972 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ setUp()                                                 │
+2025-02-13 19:17:58.305  INFO 11972 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 19:17:58.310  INFO 11972 --- [board_fc] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-02-13 19:17:58.311  INFO 11972 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-02-13 19:17:58.312  INFO 11972 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-02-13 19:17:58.329 DEBUG 11972 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 19:17:58.401 DEBUG 11972 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 19:17:58.461 DEBUG 11972 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 19:17:58.464 DEBUG 11972 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 19:17:58.464 DEBUG 11972 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 19:17:58.465 DEBUG 11972 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 19:17:58.465 DEBUG 11972 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 19:17:58.466 DEBUG 11972 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 19:17:58.468 DEBUG 11972 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 19:17:58.468  INFO 11972 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : seq01:4448
+2025-02-13 19:17:58.470 DEBUG 11972 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==>  Preparing: DELETE FROM board
+2025-02-13 19:17:58.471 DEBUG 11972 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==> Parameters: 
+2025-02-13 19:17:58.472 DEBUG 11972 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : <==    Updates: 1
+2025-02-13 19:17:58.473 DEBUG 11972 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : ==>  Preparing: INSERT INTO board ( seq, title, contents, div, read_cnt, reg_id, reg_dt, mod_id, mod_dt ) VALUES ( ?, ?, ?, ?, ?, ?, SYSDATE, ?, SYSDATE )
+2025-02-13 19:17:58.477 DEBUG 11972 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : ==> Parameters: 4448(Integer), 제목01(String), 내용01(String), 10(String), 0(Integer), ADMIN(String), ADMIN(String)
+2025-02-13 19:17:58.485 DEBUG 11972 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : <==    Updates: 1
+2025-02-13 19:17:58.521  INFO 11972 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 19:17:58.521  INFO 11972 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **doSelectOne()**                     │
+2025-02-13 19:17:58.521  INFO 11972 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 19:17:58.521  INFO 11972 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : paran seq:0
+2025-02-13 19:17:58.530  INFO 11972 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 19:17:58.530  INFO 11972 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ tearDown()                                              │
+2025-02-13 19:17:58.530  INFO 11972 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 19:17:58.548  INFO 11972 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-13 19:17:58.558  INFO 11972 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-13 19:34:24.384  INFO 10020 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Starting BoardControllerJunit using Java 21.0.4 with PID 10020 (started by acorn in D:\JAP_20240909\04_SPRING\boot\workspace\board_fc)
+2025-02-13 19:34:24.388  INFO 10020 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : No active profile set, falling back to 1 default profile: "default"
+2025-02-13 19:34:25.078  INFO 10020 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-02-13 19:34:25.099  INFO 10020 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 JDBC repository interfaces.
+2025-02-13 19:34:25.368  INFO 10020 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 19:34:25.368  INFO 10020 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **BoardController()**                 │
+2025-02-13 19:34:25.368  INFO 10020 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 19:34:25.371  INFO 10020 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : ┌───────────────────────────────────────┐
+2025-02-13 19:34:25.371  INFO 10020 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : │ **BoardServiceImpl()**                │
+2025-02-13 19:34:25.371  INFO 10020 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : └───────────────────────────────────────┘
+2025-02-13 19:34:25.867  INFO 10020 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : ┌────────────────────────┐
+2025-02-13 19:34:25.867  INFO 10020 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : │ TimeController()       │
+2025-02-13 19:34:25.867  INFO 10020 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : └────────────────────────┘
+2025-02-13 19:34:25.868  INFO 10020 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : ┌────────────────────────┐
+2025-02-13 19:34:25.869  INFO 10020 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : │ TimeServiceImpl()      │
+2025-02-13 19:34:25.869  INFO 10020 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : └────────────────────────┘
+2025-02-13 19:34:26.118  INFO 10020 --- [board_fc] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-02-13 19:34:26.585  INFO 10020 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-13 19:34:26.998  INFO 10020 --- [board_fc] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@3dbb3fb7
+2025-02-13 19:34:27.002  INFO 10020 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-13 19:34:27.269  INFO 10020 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Started BoardControllerJunit in 3.39 seconds (process running for 4.497)
+2025-02-13 19:34:28.007  INFO 10020 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 19:34:28.007  INFO 10020 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ setUp()                                                 │
+2025-02-13 19:34:28.008  INFO 10020 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 19:34:28.013  INFO 10020 --- [board_fc] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-02-13 19:34:28.014  INFO 10020 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-02-13 19:34:28.023  INFO 10020 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 8 ms
+2025-02-13 19:34:28.039 DEBUG 10020 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 19:34:28.180 DEBUG 10020 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 19:34:28.262 DEBUG 10020 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 19:34:28.265 DEBUG 10020 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 19:34:28.265 DEBUG 10020 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 19:34:28.267 DEBUG 10020 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 19:34:28.267 DEBUG 10020 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 19:34:28.267 DEBUG 10020 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 19:34:28.293 DEBUG 10020 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 19:34:28.293  INFO 10020 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : seq01:4460
+2025-02-13 19:34:28.301 DEBUG 10020 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==>  Preparing: DELETE FROM board
+2025-02-13 19:34:28.301 DEBUG 10020 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==> Parameters: 
+2025-02-13 19:34:28.306 DEBUG 10020 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : <==    Updates: 1
+2025-02-13 19:34:28.307 DEBUG 10020 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : ==>  Preparing: INSERT INTO board ( seq, title, contents, div, read_cnt, reg_id, reg_dt, mod_id, mod_dt ) VALUES ( ?, ?, ?, ?, ?, ?, SYSDATE, ?, SYSDATE )
+2025-02-13 19:34:28.311 DEBUG 10020 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : ==> Parameters: 4460(Integer), 제목01(String), 내용01(String), 10(String), 0(Integer), ADMIN(String), ADMIN(String)
+2025-02-13 19:34:28.320 DEBUG 10020 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : <==    Updates: 1
+2025-02-13 19:34:28.387  INFO 10020 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 19:34:28.387  INFO 10020 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **doDelete()**                        │
+2025-02-13 19:34:28.387  INFO 10020 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 19:34:28.387  INFO 10020 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : seq:4460
+2025-02-13 19:34:40.522  INFO 10020 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : ┌───────────────────────────────────────┐
+2025-02-13 19:34:40.523  INFO 10020 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : │ **doDelete()**                        │
+2025-02-13 19:34:40.523  INFO 10020 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : └───────────────────────────────────────┘
+2025-02-13 19:34:40.524 DEBUG 10020 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.doDelete   : ==>  Preparing: DELETE FROM board WHERE seq = ?
+2025-02-13 19:34:40.525 DEBUG 10020 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.doDelete   : ==> Parameters: 4460(Integer)
+2025-02-13 19:34:40.526 DEBUG 10020 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.doDelete   : <==    Updates: 0
+2025-02-13 19:34:58.375  INFO 10020 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : jsonString:{"messageId":0,"message":"게시글이 삭제 실패 입니다.","no":0,"totalCnt":0,"pageSize":0,"pageNo":0}
+2025-02-13 19:35:27.769  INFO 10020 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : returnBody:{"messageId":0,"message":"게시글이 삭제 실패 입니다.","no":0,"totalCnt":0,"pageSize":0,"pageNo":0}
+2025-02-13 19:35:27.772  INFO 10020 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 19:35:27.772  INFO 10020 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ tearDown()                                              │
+2025-02-13 19:35:27.772  INFO 10020 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 19:35:27.792  INFO 10020 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-13 19:35:27.802  INFO 10020 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-13 19:36:02.940  INFO 17796 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Starting BoardControllerJunit using Java 21.0.4 with PID 17796 (started by acorn in D:\JAP_20240909\04_SPRING\boot\workspace\board_fc)
+2025-02-13 19:36:02.942  INFO 17796 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : No active profile set, falling back to 1 default profile: "default"
+2025-02-13 19:36:03.436  INFO 17796 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-02-13 19:36:03.452  INFO 17796 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 JDBC repository interfaces.
+2025-02-13 19:36:03.682  INFO 17796 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 19:36:03.682  INFO 17796 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **BoardController()**                 │
+2025-02-13 19:36:03.682  INFO 17796 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 19:36:03.686  INFO 17796 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : ┌───────────────────────────────────────┐
+2025-02-13 19:36:03.687  INFO 17796 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : │ **BoardServiceImpl()**                │
+2025-02-13 19:36:03.687  INFO 17796 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : └───────────────────────────────────────┘
+2025-02-13 19:36:04.130  INFO 17796 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : ┌────────────────────────┐
+2025-02-13 19:36:04.131  INFO 17796 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : │ TimeController()       │
+2025-02-13 19:36:04.131  INFO 17796 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : └────────────────────────┘
+2025-02-13 19:36:04.133  INFO 17796 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : ┌────────────────────────┐
+2025-02-13 19:36:04.133  INFO 17796 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : │ TimeServiceImpl()      │
+2025-02-13 19:36:04.133  INFO 17796 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : └────────────────────────┘
+2025-02-13 19:36:04.336  INFO 17796 --- [board_fc] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-02-13 19:36:04.717  INFO 17796 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-13 19:36:05.043  INFO 17796 --- [board_fc] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@6a7a1a0d
+2025-02-13 19:36:05.046  INFO 17796 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-13 19:36:05.274  INFO 17796 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Started BoardControllerJunit in 2.625 seconds (process running for 3.359)
+2025-02-13 19:36:05.890  INFO 17796 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 19:36:05.890  INFO 17796 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ setUp()                                                 │
+2025-02-13 19:36:05.890  INFO 17796 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 19:36:05.894  INFO 17796 --- [board_fc] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-02-13 19:36:05.894  INFO 17796 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-02-13 19:36:05.895  INFO 17796 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-02-13 19:36:05.905 DEBUG 17796 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 19:36:05.975 DEBUG 17796 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 19:36:06.023 DEBUG 17796 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 19:36:06.026 DEBUG 17796 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 19:36:06.026 DEBUG 17796 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 19:36:06.027 DEBUG 17796 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 19:36:06.028 DEBUG 17796 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 19:36:06.028 DEBUG 17796 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 19:36:06.031 DEBUG 17796 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 19:36:06.031  INFO 17796 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : seq01:4478
+2025-02-13 19:36:06.035 DEBUG 17796 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==>  Preparing: DELETE FROM board
+2025-02-13 19:36:06.035 DEBUG 17796 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==> Parameters: 
+2025-02-13 19:36:06.037 DEBUG 17796 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : <==    Updates: 1
+2025-02-13 19:36:06.038 DEBUG 17796 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : ==>  Preparing: INSERT INTO board ( seq, title, contents, div, read_cnt, reg_id, reg_dt, mod_id, mod_dt ) VALUES ( ?, ?, ?, ?, ?, ?, SYSDATE, ?, SYSDATE )
+2025-02-13 19:36:06.042 DEBUG 17796 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : ==> Parameters: 4478(Integer), 제목01(String), 내용01(String), 10(String), 0(Integer), ADMIN(String), ADMIN(String)
+2025-02-13 19:36:06.053 DEBUG 17796 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : <==    Updates: 1
+2025-02-13 19:36:06.091  INFO 17796 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 19:36:06.091  INFO 17796 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **doDelete()**                        │
+2025-02-13 19:36:06.091  INFO 17796 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 19:36:06.091  INFO 17796 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : seq:4478
+2025-02-13 19:36:06.091  INFO 17796 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : ┌───────────────────────────────────────┐
+2025-02-13 19:36:06.091  INFO 17796 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : │ **doDelete()**                        │
+2025-02-13 19:36:06.091  INFO 17796 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : └───────────────────────────────────────┘
+2025-02-13 19:36:06.092 DEBUG 17796 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.doDelete   : ==>  Preparing: DELETE FROM board WHERE seq = ?
+2025-02-13 19:36:06.092 DEBUG 17796 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.doDelete   : ==> Parameters: 4478(Integer)
+2025-02-13 19:36:06.093 DEBUG 17796 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.doDelete   : <==    Updates: 1
+2025-02-13 19:36:06.097  INFO 17796 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : jsonString:{"messageId":1,"message":"게시글이 삭제 되었습니다.","no":0,"totalCnt":0,"pageSize":0,"pageNo":0}
+2025-02-13 19:36:06.113  INFO 17796 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : returnBody:{"messageId":1,"message":"게시글이 삭제 되었습니다.","no":0,"totalCnt":0,"pageSize":0,"pageNo":0}
+2025-02-13 19:36:06.119  INFO 17796 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 19:36:06.119  INFO 17796 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ tearDown()                                              │
+2025-02-13 19:36:06.119  INFO 17796 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 19:36:06.133  INFO 17796 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-13 19:36:06.141  INFO 17796 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-13 19:37:01.965  INFO 9584 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Starting BoardControllerJunit using Java 21.0.4 with PID 9584 (started by acorn in D:\JAP_20240909\04_SPRING\boot\workspace\board_fc)
+2025-02-13 19:37:01.968  INFO 9584 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : No active profile set, falling back to 1 default profile: "default"
+2025-02-13 19:37:02.478  INFO 9584 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-02-13 19:37:02.497  INFO 9584 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 JDBC repository interfaces.
+2025-02-13 19:37:02.710  INFO 9584 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 19:37:02.711  INFO 9584 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **BoardController()**                 │
+2025-02-13 19:37:02.711  INFO 9584 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 19:37:02.713  INFO 9584 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : ┌───────────────────────────────────────┐
+2025-02-13 19:37:02.713  INFO 9584 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : │ **BoardServiceImpl()**                │
+2025-02-13 19:37:02.713  INFO 9584 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : └───────────────────────────────────────┘
+2025-02-13 19:37:03.081  INFO 9584 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : ┌────────────────────────┐
+2025-02-13 19:37:03.082  INFO 9584 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : │ TimeController()       │
+2025-02-13 19:37:03.082  INFO 9584 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : └────────────────────────┘
+2025-02-13 19:37:03.086  INFO 9584 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : ┌────────────────────────┐
+2025-02-13 19:37:03.086  INFO 9584 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : │ TimeServiceImpl()      │
+2025-02-13 19:37:03.086  INFO 9584 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : └────────────────────────┘
+2025-02-13 19:37:03.320  INFO 9584 --- [board_fc] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-02-13 19:37:03.809  INFO 9584 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-13 19:37:04.116  INFO 9584 --- [board_fc] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@4438938e
+2025-02-13 19:37:04.119  INFO 9584 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-13 19:37:04.388  INFO 9584 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Started BoardControllerJunit in 2.712 seconds (process running for 3.435)
+2025-02-13 19:37:04.988  INFO 9584 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 19:37:04.988  INFO 9584 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ setUp()                                                 │
+2025-02-13 19:37:04.988  INFO 9584 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 19:37:04.991  INFO 9584 --- [board_fc] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-02-13 19:37:04.991  INFO 9584 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-02-13 19:37:04.992  INFO 9584 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-02-13 19:37:05.002 DEBUG 9584 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 19:37:05.082 DEBUG 9584 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 19:37:05.138 DEBUG 9584 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 19:37:05.141 DEBUG 9584 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 19:37:05.141 DEBUG 9584 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 19:37:05.142 DEBUG 9584 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 19:37:05.143 DEBUG 9584 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 19:37:05.143 DEBUG 9584 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 19:37:05.146 DEBUG 9584 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 19:37:05.146  INFO 9584 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : seq01:4487
+2025-02-13 19:37:05.149 DEBUG 9584 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==>  Preparing: DELETE FROM board
+2025-02-13 19:37:05.150 DEBUG 9584 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==> Parameters: 
+2025-02-13 19:37:05.152 DEBUG 9584 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : <==    Updates: 0
+2025-02-13 19:37:05.153 DEBUG 9584 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : ==>  Preparing: INSERT INTO board ( seq, title, contents, div, read_cnt, reg_id, reg_dt, mod_id, mod_dt ) VALUES ( ?, ?, ?, ?, ?, ?, SYSDATE, ?, SYSDATE )
+2025-02-13 19:37:05.157 DEBUG 9584 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : ==> Parameters: 4487(Integer), 제목01(String), 내용01(String), 10(String), 0(Integer), ADMIN(String), ADMIN(String)
+2025-02-13 19:37:05.163 DEBUG 9584 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : <==    Updates: 1
+2025-02-13 19:37:05.200  INFO 9584 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 19:37:05.200  INFO 9584 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **doDelete()**                        │
+2025-02-13 19:37:05.200  INFO 9584 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 19:37:05.200  INFO 9584 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : seq:4487
+2025-02-13 19:37:05.200  INFO 9584 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : ┌───────────────────────────────────────┐
+2025-02-13 19:37:05.200  INFO 9584 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : │ **doDelete()**                        │
+2025-02-13 19:37:05.200  INFO 9584 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : └───────────────────────────────────────┘
+2025-02-13 19:37:05.201 DEBUG 9584 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.doDelete   : ==>  Preparing: DELETE FROM board WHERE seq = ?
+2025-02-13 19:37:05.201 DEBUG 9584 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.doDelete   : ==> Parameters: 4487(Integer)
+2025-02-13 19:37:05.203 DEBUG 9584 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.doDelete   : <==    Updates: 1
+2025-02-13 19:37:05.209  INFO 9584 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : jsonString:{"messageId":1,"message":"게시글이 삭제 되었습니다.","no":0,"totalCnt":0,"pageSize":0,"pageNo":0}
+2025-02-13 19:37:05.231  INFO 9584 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : returnBody:{"messageId":1,"message":"게시글이 삭제 되었습니다.","no":0,"totalCnt":0,"pageSize":0,"pageNo":0}
+2025-02-13 19:37:05.233  INFO 9584 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : resultMessage:MessageVO [messageId=1, message=게시글이 삭제 되었습니다.]
+2025-02-13 19:37:05.239  INFO 9584 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 19:37:05.239  INFO 9584 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ tearDown()                                              │
+2025-02-13 19:37:05.240  INFO 9584 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 19:37:05.268  INFO 9584 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-13 19:37:05.299  INFO 9584 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-13 19:37:15.194  INFO 24268 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Starting BoardControllerJunit using Java 21.0.4 with PID 24268 (started by acorn in D:\JAP_20240909\04_SPRING\boot\workspace\board_fc)
+2025-02-13 19:37:15.197  INFO 24268 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : No active profile set, falling back to 1 default profile: "default"
+2025-02-13 19:37:15.718  INFO 24268 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-02-13 19:37:15.737  INFO 24268 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 JDBC repository interfaces.
+2025-02-13 19:37:15.946  INFO 24268 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 19:37:15.946  INFO 24268 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **BoardController()**                 │
+2025-02-13 19:37:15.946  INFO 24268 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 19:37:15.948  INFO 24268 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : ┌───────────────────────────────────────┐
+2025-02-13 19:37:15.949  INFO 24268 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : │ **BoardServiceImpl()**                │
+2025-02-13 19:37:15.949  INFO 24268 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : └───────────────────────────────────────┘
+2025-02-13 19:37:16.375  INFO 24268 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : ┌────────────────────────┐
+2025-02-13 19:37:16.375  INFO 24268 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : │ TimeController()       │
+2025-02-13 19:37:16.375  INFO 24268 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : └────────────────────────┘
+2025-02-13 19:37:16.376  INFO 24268 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : ┌────────────────────────┐
+2025-02-13 19:37:16.376  INFO 24268 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : │ TimeServiceImpl()      │
+2025-02-13 19:37:16.376  INFO 24268 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : └────────────────────────┘
+2025-02-13 19:37:16.578  INFO 24268 --- [board_fc] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-02-13 19:37:16.957  INFO 24268 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-13 19:37:17.260  INFO 24268 --- [board_fc] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@4e50ae56
+2025-02-13 19:37:17.261  INFO 24268 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-13 19:37:17.509  INFO 24268 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Started BoardControllerJunit in 2.611 seconds (process running for 3.351)
+2025-02-13 19:37:18.072  INFO 24268 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 19:37:18.073  INFO 24268 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ setUp()                                                 │
+2025-02-13 19:37:18.073  INFO 24268 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 19:37:18.076  INFO 24268 --- [board_fc] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-02-13 19:37:18.076  INFO 24268 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-02-13 19:37:18.077  INFO 24268 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-02-13 19:37:18.089 DEBUG 24268 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 19:37:18.166 DEBUG 24268 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 19:37:18.213 DEBUG 24268 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 19:37:18.215 DEBUG 24268 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 19:37:18.215 DEBUG 24268 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 19:37:18.216 DEBUG 24268 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 19:37:18.216 DEBUG 24268 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 19:37:18.217 DEBUG 24268 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 19:37:18.220 DEBUG 24268 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 19:37:18.220  INFO 24268 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : seq01:4490
+2025-02-13 19:37:18.222 DEBUG 24268 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==>  Preparing: DELETE FROM board
+2025-02-13 19:37:18.222 DEBUG 24268 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==> Parameters: 
+2025-02-13 19:37:18.223 DEBUG 24268 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : <==    Updates: 0
+2025-02-13 19:37:18.223 DEBUG 24268 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : ==>  Preparing: INSERT INTO board ( seq, title, contents, div, read_cnt, reg_id, reg_dt, mod_id, mod_dt ) VALUES ( ?, ?, ?, ?, ?, ?, SYSDATE, ?, SYSDATE )
+2025-02-13 19:37:18.229 DEBUG 24268 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : ==> Parameters: 4490(Integer), 제목01(String), 내용01(String), 10(String), 0(Integer), ADMIN(String), ADMIN(String)
+2025-02-13 19:37:18.236 DEBUG 24268 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : <==    Updates: 1
+2025-02-13 19:37:18.276  INFO 24268 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 19:37:18.276  INFO 24268 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **doDelete()**                        │
+2025-02-13 19:37:18.276  INFO 24268 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 19:37:18.276  INFO 24268 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : seq:4490
+2025-02-13 19:37:18.276  INFO 24268 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : ┌───────────────────────────────────────┐
+2025-02-13 19:37:18.276  INFO 24268 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : │ **doDelete()**                        │
+2025-02-13 19:37:18.277  INFO 24268 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : └───────────────────────────────────────┘
+2025-02-13 19:37:18.277 DEBUG 24268 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.doDelete   : ==>  Preparing: DELETE FROM board WHERE seq = ?
+2025-02-13 19:37:18.277 DEBUG 24268 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.doDelete   : ==> Parameters: 4490(Integer)
+2025-02-13 19:37:18.278 DEBUG 24268 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.doDelete   : <==    Updates: 1
+2025-02-13 19:37:18.282  INFO 24268 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : jsonString:{"messageId":1,"message":"게시글이 삭제 되었습니다.","no":0,"totalCnt":0,"pageSize":0,"pageNo":0}
+2025-02-13 19:37:18.300  INFO 24268 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : returnBody:{"messageId":1,"message":"게시글이 삭제 되었습니다.","no":0,"totalCnt":0,"pageSize":0,"pageNo":0}
+2025-02-13 19:37:18.302  INFO 24268 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : resultMessage:MessageVO [messageId=1, message=게시글이 삭제 되었습니다.]
+2025-02-13 19:37:18.308  INFO 24268 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 19:37:18.309  INFO 24268 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ tearDown()                                              │
+2025-02-13 19:37:18.309  INFO 24268 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 19:37:18.329  INFO 24268 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-13 19:37:18.343  INFO 24268 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-13 19:53:15.146  INFO 15756 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Starting BoardControllerJunit using Java 21.0.4 with PID 15756 (started by acorn in D:\JAP_20240909\04_SPRING\boot\workspace\board_fc)
+2025-02-13 19:53:15.147  INFO 15756 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : No active profile set, falling back to 1 default profile: "default"
+2025-02-13 19:53:15.693  INFO 15756 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-02-13 19:53:15.711  INFO 15756 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 JDBC repository interfaces.
+2025-02-13 19:53:15.923  INFO 15756 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 19:53:15.923  INFO 15756 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **BoardController()**                 │
+2025-02-13 19:53:15.923  INFO 15756 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 19:53:15.925  INFO 15756 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : ┌───────────────────────────────────────┐
+2025-02-13 19:53:15.926  INFO 15756 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : │ **BoardServiceImpl()**                │
+2025-02-13 19:53:15.926  INFO 15756 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : └───────────────────────────────────────┘
+2025-02-13 19:53:16.297  INFO 15756 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : ┌────────────────────────┐
+2025-02-13 19:53:16.297  INFO 15756 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : │ TimeController()       │
+2025-02-13 19:53:16.298  INFO 15756 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : └────────────────────────┘
+2025-02-13 19:53:16.299  INFO 15756 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : ┌────────────────────────┐
+2025-02-13 19:53:16.299  INFO 15756 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : │ TimeServiceImpl()      │
+2025-02-13 19:53:16.299  INFO 15756 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : └────────────────────────┘
+2025-02-13 19:53:16.524  INFO 15756 --- [board_fc] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-02-13 19:53:17.038  INFO 15756 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-13 19:53:17.384  INFO 15756 --- [board_fc] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@22da200e
+2025-02-13 19:53:17.387  INFO 15756 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-13 19:53:17.616  INFO 15756 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Started BoardControllerJunit in 2.768 seconds (process running for 3.476)
+2025-02-13 19:53:18.240  INFO 15756 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 19:53:18.240  INFO 15756 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ setUp()                                                 │
+2025-02-13 19:53:18.240  INFO 15756 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 19:53:18.246  INFO 15756 --- [board_fc] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-02-13 19:53:18.246  INFO 15756 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-02-13 19:53:18.247  INFO 15756 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-02-13 19:53:18.262 DEBUG 15756 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 19:53:18.333 DEBUG 15756 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 19:53:18.386 DEBUG 15756 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 19:53:18.389 DEBUG 15756 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 19:53:18.389 DEBUG 15756 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 19:53:18.390 DEBUG 15756 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 19:53:18.391 DEBUG 15756 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 19:53:18.391 DEBUG 15756 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 19:53:18.395 DEBUG 15756 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 19:53:18.396  INFO 15756 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : seq01:4544
+2025-02-13 19:53:18.401  INFO 15756 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌───────────────────────────────────────┐
+2025-02-13 19:53:18.402  INFO 15756 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ **doUpdate()**                        │
+2025-02-13 19:53:18.402  INFO 15756 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └───────────────────────────────────────┘
+2025-02-13 19:53:18.404 DEBUG 15756 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==>  Preparing: DELETE FROM board
+2025-02-13 19:53:18.404 DEBUG 15756 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==> Parameters: 
+2025-02-13 19:53:18.406 DEBUG 15756 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : <==    Updates: 1
+2025-02-13 19:53:18.407 DEBUG 15756 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : ==>  Preparing: INSERT INTO board ( seq, title, contents, div, read_cnt, reg_id, reg_dt, mod_id, mod_dt ) VALUES ( ?, ?, ?, ?, ?, ?, SYSDATE, ?, SYSDATE )
+2025-02-13 19:53:18.410 DEBUG 15756 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : ==> Parameters: 4544(Integer), 제목01(String), 내용01(String), 10(String), 0(Integer), ADMIN(String), ADMIN(String)
+2025-02-13 19:53:18.417 DEBUG 15756 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : <==    Updates: 1
+2025-02-13 19:53:18.457  INFO 15756 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 19:53:18.457  INFO 15756 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **doUpdate()**                          │
+2025-02-13 19:53:18.457  INFO 15756 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 19:53:18.469  INFO 15756 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : paran:BoardVO [seq=4544, title=제목01_U, contents=내용01_U, div=10, readCnt=0, regId=null, regDt=null, modId=ADMIN, modDt=null, toString()=DTO [no=0, totalCnt=0, pageSize=0, pageNo=0, optionDiv=null]]
+2025-02-13 19:53:18.469  INFO 15756 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : ┌───────────────────────────────────────┐
+2025-02-13 19:53:18.469  INFO 15756 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : │ **doUpdate()**                        │
+2025-02-13 19:53:18.469  INFO 15756 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : └───────────────────────────────────────┘
+2025-02-13 19:53:18.471 DEBUG 15756 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.doUpdate   : ==>  Preparing: UPDATE board SET title = ?, contents = ?, div = ?, mod_id = ?, mod_dt = sysdate WHERE seq = ?
+2025-02-13 19:53:18.471 DEBUG 15756 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.doUpdate   : ==> Parameters: 제목01_U(String), 내용01_U(String), 10(String), ADMIN(String), 4544(Integer)
+2025-02-13 19:53:18.476 DEBUG 15756 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.doUpdate   : <==    Updates: 1
+2025-02-13 19:53:18.481  INFO 15756 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : jsonString:{"messageId":1,"message":"게시글이 수정 되었습니다.","no":0,"totalCnt":0,"pageSize":0,"pageNo":0}
+2025-02-13 19:53:18.498  INFO 15756 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : returnBody:{"messageId":1,"message":"게시글이 수정 되었습니다.","no":0,"totalCnt":0,"pageSize":0,"pageNo":0}
+2025-02-13 19:53:18.502  INFO 15756 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : resultMessage:MessageVO [messageId=1, message=게시글이 수정 되었습니다.]
+2025-02-13 19:53:18.509  INFO 15756 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 19:53:18.509  INFO 15756 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ tearDown()                                              │
+2025-02-13 19:53:18.509  INFO 15756 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 19:53:18.541  INFO 15756 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-13 19:53:18.550  INFO 15756 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-13 19:53:40.166  INFO 18784 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Starting BoardControllerJunit using Java 21.0.4 with PID 18784 (started by acorn in D:\JAP_20240909\04_SPRING\boot\workspace\board_fc)
+2025-02-13 19:53:40.167  INFO 18784 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : No active profile set, falling back to 1 default profile: "default"
+2025-02-13 19:53:40.739  INFO 18784 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-02-13 19:53:40.755  INFO 18784 --- [board_fc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 JDBC repository interfaces.
+2025-02-13 19:53:40.963  INFO 18784 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 19:53:40.963  INFO 18784 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **BoardController()**                 │
+2025-02-13 19:53:40.964  INFO 18784 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 19:53:40.966  INFO 18784 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : ┌───────────────────────────────────────┐
+2025-02-13 19:53:40.966  INFO 18784 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : │ **BoardServiceImpl()**                │
+2025-02-13 19:53:40.966  INFO 18784 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : └───────────────────────────────────────┘
+2025-02-13 19:53:41.377  INFO 18784 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : ┌────────────────────────┐
+2025-02-13 19:53:41.377  INFO 18784 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : │ TimeController()       │
+2025-02-13 19:53:41.378  INFO 18784 --- [board_fc] [main] com.pcwk.ehr.controller.TimeController   : └────────────────────────┘
+2025-02-13 19:53:41.379  INFO 18784 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : ┌────────────────────────┐
+2025-02-13 19:53:41.379  INFO 18784 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : │ TimeServiceImpl()      │
+2025-02-13 19:53:41.379  INFO 18784 --- [board_fc] [main] com.pcwk.ehr.service.TimeServiceImpl     : └────────────────────────┘
+2025-02-13 19:53:41.570  INFO 18784 --- [board_fc] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-02-13 19:53:42.005  INFO 18784 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-13 19:53:42.392  INFO 18784 --- [board_fc] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@6a7a1a0d
+2025-02-13 19:53:42.395  INFO 18784 --- [board_fc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-13 19:53:42.676  INFO 18784 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : Started BoardControllerJunit in 2.812 seconds (process running for 3.558)
+2025-02-13 19:53:43.267  INFO 18784 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 19:53:43.268  INFO 18784 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ setUp()                                                 │
+2025-02-13 19:53:43.268  INFO 18784 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 19:53:43.271  INFO 18784 --- [board_fc] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-02-13 19:53:43.271  INFO 18784 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-02-13 19:53:43.272  INFO 18784 --- [board_fc] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-02-13 19:53:43.283 DEBUG 18784 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 19:53:43.354 DEBUG 18784 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 19:53:43.412 DEBUG 18784 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 19:53:43.415 DEBUG 18784 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 19:53:43.415 DEBUG 18784 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 19:53:43.416 DEBUG 18784 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 19:53:43.417 DEBUG 18784 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==>  Preparing: SELECT board_seq.nextval FROM dual
+2025-02-13 19:53:43.417 DEBUG 18784 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : ==> Parameters: 
+2025-02-13 19:53:43.420 DEBUG 18784 --- [board_fc] [main] c.p.e.m.BoardMapper.getBoardSequence     : <==      Total: 1
+2025-02-13 19:53:43.420  INFO 18784 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : seq01:4550
+2025-02-13 19:53:43.422  INFO 18784 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌───────────────────────────────────────┐
+2025-02-13 19:53:43.422  INFO 18784 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ **doUpdate()**                        │
+2025-02-13 19:53:43.422  INFO 18784 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └───────────────────────────────────────┘
+2025-02-13 19:53:43.423 DEBUG 18784 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==>  Preparing: DELETE FROM board
+2025-02-13 19:53:43.423 DEBUG 18784 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : ==> Parameters: 
+2025-02-13 19:53:43.426 DEBUG 18784 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.deleteAll  : <==    Updates: 1
+2025-02-13 19:53:43.428 DEBUG 18784 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : ==>  Preparing: INSERT INTO board ( seq, title, contents, div, read_cnt, reg_id, reg_dt, mod_id, mod_dt ) VALUES ( ?, ?, ?, ?, ?, ?, SYSDATE, ?, SYSDATE )
+2025-02-13 19:53:43.436 DEBUG 18784 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : ==> Parameters: 4550(Integer), 제목01(String), 내용01(String), 10(String), 0(Integer), ADMIN(String), ADMIN(String)
+2025-02-13 19:53:43.444 DEBUG 18784 --- [board_fc] [main] com.pcwk.ehr.mapper.BoardMapper.doSave   : <==    Updates: 1
+2025-02-13 19:53:43.484  INFO 18784 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : ┌───────────────────────────────────────┐
+2025-02-13 19:53:43.484  INFO 18784 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : │ **doUpdate()**                          │
+2025-02-13 19:53:43.484  INFO 18784 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : └───────────────────────────────────────┘
+2025-02-13 19:53:43.494  INFO 18784 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : paran:BoardVO [seq=4550, title=제목01_U, contents=내용01_U, div=10, readCnt=0, regId=null, regDt=null, modId=ADMIN, modDt=null, toString()=DTO [no=0, totalCnt=0, pageSize=0, pageNo=0, optionDiv=null]]
+2025-02-13 19:53:43.495  INFO 18784 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : ┌───────────────────────────────────────┐
+2025-02-13 19:53:43.495  INFO 18784 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : │ **doUpdate()**                        │
+2025-02-13 19:53:43.495  INFO 18784 --- [board_fc] [main] com.pcwk.ehr.service.BoardServiceImpl    : └───────────────────────────────────────┘
+2025-02-13 19:53:43.495 DEBUG 18784 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.doUpdate   : ==>  Preparing: UPDATE board SET title = ?, contents = ?, div = ?, mod_id = ?, mod_dt = sysdate WHERE seq = ?
+2025-02-13 19:53:43.497 DEBUG 18784 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.doUpdate   : ==> Parameters: 제목01_U(String), 내용01_U(String), 10(String), ADMIN(String), 4550(Integer)
+2025-02-13 19:53:43.499 DEBUG 18784 --- [board_fc] [main] c.pcwk.ehr.mapper.BoardMapper.doUpdate   : <==    Updates: 1
+2025-02-13 19:53:43.507  INFO 18784 --- [board_fc] [main] c.pcwk.ehr.controller.BoardController    : jsonString:{"messageId":1,"message":"게시글이 수정 되었습니다.","no":0,"totalCnt":0,"pageSize":0,"pageNo":0}
+2025-02-13 19:53:43.522  INFO 18784 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : returnBody:{"messageId":1,"message":"게시글이 수정 되었습니다.","no":0,"totalCnt":0,"pageSize":0,"pageNo":0}
+2025-02-13 19:53:43.524  INFO 18784 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : resultMessage:MessageVO [messageId=1, message=게시글이 수정 되었습니다.]
+2025-02-13 19:53:43.530  INFO 18784 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : ┌─────────────────────────────────────────────────────────┐
+2025-02-13 19:53:43.530  INFO 18784 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : │ tearDown()                                              │
+2025-02-13 19:53:43.530  INFO 18784 --- [board_fc] [main] com.pcwk.ehr.BoardControllerJunit        : └─────────────────────────────────────────────────────────┘
+2025-02-13 19:53:43.545  INFO 18784 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-13 19:53:43.557  INFO 18784 --- [board_fc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

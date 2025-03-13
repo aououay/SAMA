@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pcwk.ehr.mapper.Er_Medi_InstMapper">
+
+	<select id="get_Current_Er_Bed" parameterType="String"
+		resultType="Er_BedVO">
+		SELECT ERB.*
+		FROM
+		(SELECT EBI3.*,
+		EMI.DUTY_NM, EMI.ER_TEL, EMI.GU_CD
+		FROM
+		(SELECT EBI2.*
+		FROM
+		(SELECT EBI1.*
+		,
+		ROW_NUMBER() OVER (PARTITION BY
+		EBI1.HPID ORDER BY EBI1.HVI_DT DESC)
+		AS RNUM
+		FROM ER_BED_INFO EBI1) EBI2
+		WHERE EBI2.RNUM = 1) EBI3
+		INNER JOIN
+		EMERGENCY_MEDICAL_INST_INFO EMI
+		ON
+		EBI3.HPID = EMI.HPID) ERB
+		WHERE 1=1
+		<if test='!gu_Code.equals("")'>
+			AND ERB.GU_CD = #{gu_Code}
+		</if>
+		<if test='!duty_Nm.equals("")'>
+			AND ERB.DUTY_NM LIKE #{duty_Nm}
+		</if>
+	</select>
+
+	<select id="get_Er_Medi_Inst_Info" parameterType="String"
+		resultType="Er_Medi_InstVO">
+		SELECT
+		HPID,
+		GU_CD,
+		DUTY_NM,
+		DUTY_ADDR,
+		DUTY_TEL,
+		ER_TEL,
+		CRT_BY,
+		CRT_DT,
+		MOD_BY,
+		MOD_DT
+		FROM
+		EMERGENCY_MEDICAL_INST_INFO
+		WHERE 1=1
+		<if test='!gu_Code.equals("")'>
+			AND GU_CD = #{gu_Code}
+		</if>
+		<if test='!duty_Nm.equals("")'>
+			AND DUTY_NM LIKE #{duty_Nm}
+		</if>
+		ORDER BY DUTY_NM ASC
+	</select>
+
+	<select id="get_Er_Medi_Inst_And_Er_Bed_Info" parameterType="String" resultType="Er_Medi_Inst_Er_BedVO">
+		SELECT EMI.*
+		, EBI3.EBI_ID
+		, EBI3.hvi_dt
+		, EBI3.hvec
+		, EBI3.hvoc
+		, EBI3.hvcc
+		, EBI3.hvncc
+		, EBI3.hvccc
+		, EBI3.hvicc
+		, EBI3.hvgc
+		, EBI3.hv2
+		, EBI3.hv3
+		, EBI3.hv4
+		, EBI3.hv5
+		, EBI3.hv6
+		, EBI3.hv7
+		, EBI3.hv8
+		, EBI3.hv9
+		, EBI3.hv10
+		, EBI3.hv11
+		, EBI3.hvct_yn
+		, EBI3.hvmri_yn
+		, EBI3.crt_by AS "EBI_CRT_BY"
+		, EBI3.crt_dt AS "EBI_CRT_DT"
+		, EBI3.mod_by AS "EBI_MOD_BY"
+		, EBI3.mod_dt AS "EBI_MOD_DT"
+		FROM (SELECT EBI2.*
+		FROM (
+		SELECT EBI1.*
+		, ROW_NUMBER() OVER (PARTITION BY EBI1.HPID ORDER BY EBI1.HVI_DT DESC)
+		AS RNUM
+		FROM ER_BED_INFO EBI1) EBI2
+		WHERE EBI2.RNUM = 1) EBI3
+		INNER JOIN EMERGENCY_MEDICAL_INST_INFO EMI
+		ON EBI3.HPID = EMI.HPID
+		WHERE EMI.HPID = #{hpid}
+	</select>
+
+</mapper>

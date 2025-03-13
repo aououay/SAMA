@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.pcwk.ehr.accident.AccidentStatsMapper">
+
+    <!-- 최근 8주간 주간 통계 -->
+    <select id="getRecent8WeeksAccidentStats" resultType="com.pcwk.ehr.accident.AccidentStats">
+        SELECT acdnt_cnt, dcsd_cnt, stats_crtr_sta_dt, stats_crtr_end_dt
+        FROM accident_stats
+        ORDER BY stats_crtr_sta_dt DESC
+        FETCH FIRST 8 ROWS ONLY
+    </select>
+
+    <!-- 최근 8개월간 월별 통계 -->
+    <select id="getRecent8MonthsAccidentStats" resultMap="AccidentStatsMap">
+        SELECT 
+            TO_CHAR(TO_DATE(TRIM(stats_crtr_sta_dt), 'YYYYMMDD'), 'YYYY-MM') AS month, 
+            SUM(acdnt_cnt) AS total_acdnt_cnt, 
+            SUM(dcsd_cnt) AS total_dcsd_cnt
+        FROM accident_stats
+        WHERE stats_crtr_sta_dt IS NOT NULL
+        GROUP BY TO_CHAR(TO_DATE(TRIM(stats_crtr_sta_dt), 'YYYYMMDD'), 'YYYY-MM')
+        ORDER BY month DESC
+        FETCH FIRST 8 ROWS ONLY
+    </select>
+    
+   	<!-- 전년동월대비 -->
+	<select id="getYearlyComparisonStats" resultType="com.pcwk.ehr.accident.YearlyComparisonDTO">
+<!-- 	    SELECT 
+		    SUM(CASE WHEN EXTRACT(YEAR FROM TO_DATE(stats_crtr_sta_dt, 'YYYYMMDD')) = EXTRACT(YEAR FROM SYSDATE) 
+		        AND EXTRACT(MONTH FROM TO_DATE(stats_crtr_sta_dt, 'YYYYMMDD')) = EXTRACT(MONTH FROM SYSDATE)
+		        THEN acdnt_cnt ELSE 0 END) AS totalAcdntCnt,
+		    SUM(CASE WHEN EXTRACT(YEAR FROM TO_DATE(stats_crtr_sta_dt, 'YYYYMMDD')) = EXTRACT(YEAR FROM SYSDATE) 
+		        AND EXTRACT(MONTH FROM TO_DATE(stats_crtr_sta_dt, 'YYYYMMDD')) = EXTRACT(MONTH FROM SYSDATE)
+		        THEN dcsd_cnt ELSE 0 END) AS totalDcsdCnt,
+		    SUM(CASE WHEN EXTRACT(YEAR FROM TO_DATE(stats_crtr_sta_dt, 'YYYYMMDD')) = EXTRACT(YEAR FROM SYSDATE)-1 
+		        AND EXTRACT(MONTH FROM TO_DATE(stats_crtr_sta_dt, 'YYYYMMDD')) = EXTRACT(MONTH FROM SYSDATE)
+		        THEN acdnt_cnt ELSE 0 END) AS prevTotalAcdntCnt,
+		    SUM(CASE WHEN EXTRACT(YEAR FROM TO_DATE(stats_crtr_sta_dt, 'YYYYMMDD')) = EXTRACT(YEAR FROM SYSDATE)-1 
+		        AND EXTRACT(MONTH FROM TO_DATE(stats_crtr_sta_dt, 'YYYYMMDD')) = EXTRACT(MONTH FROM SYSDATE)
+		        THEN dcsd_cnt ELSE 0 END) AS prevTotalDcsdCnt
+		FROM accident_stats -->
+		WITH LastFullMonth AS (
+	    SELECT TO_CHAR(ADD_MONTHS(TRUNC(SYSDATE, 'MONTH'), -1), 'YYYYMM') AS full_month
+	    FROM dual
+		)
+		SELECT 
+		    SUM(CASE WHEN TO_CHAR(TO_DATE(stats_crtr_sta_dt, 'YYYYMMDD'), 'YYYYMM') = (SELECT full_month FROM LastFullMonth)
+		        THEN acdnt_cnt ELSE 0 END) AS totalAcdntCnt,
+		    SUM(CASE WHEN TO_CHAR(TO_DATE(stats_crtr_sta_dt, 'YYYYMMDD'), 'YYYYMM') = (SELECT full_month FROM LastFullMonth)
+		        THEN dcsd_cnt ELSE 0 END) AS totalDcsdCnt,
+		    SUM(CASE WHEN TO_CHAR(TO_DATE(stats_crtr_sta_dt, 'YYYYMMDD'), 'YYYYMM') = 
+		                TO_CHAR(ADD_MONTHS(TO_DATE((SELECT full_month FROM LastFullMonth), 'YYYYMM'), -12), 'YYYYMM')
+		        THEN acdnt_cnt ELSE 0 END) AS prevTotalAcdntCnt,
+		    SUM(CASE WHEN TO_CHAR(TO_DATE(stats_crtr_sta_dt, 'YYYYMMDD'), 'YYYYMM') = 
+		                TO_CHAR(ADD_MONTHS(TO_DATE((SELECT full_month FROM LastFullMonth), 'YYYYMM'), -12), 'YYYYMM')
+		        THEN dcsd_cnt ELSE 0 END) AS prevTotalDcsdCnt
+		FROM accident_stats			
+
+	</select>
+
+
+
+
+
+    <!-- resultMap: 필드명 매핑 -->
+    <resultMap id="AccidentStatsMap" type="com.pcwk.ehr.accident.AccidentStats">
+        <result column="month" property="month"/>
+        <result column="total_acdnt_cnt" property="totalAcdntCnt"/>
+        <result column="total_dcsd_cnt" property="totalDcsdCnt"/>
+    </resultMap>
+
+</mapper>

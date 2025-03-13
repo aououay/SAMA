@@ -1,0 +1,284 @@
+/* 기본적으로 모든 여백을 없애기 */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* body 스타일 */
+body {
+	font-family: 'Arial', sans-serif;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	/* 가상 요소의 기준 */
+	color: #333;
+	background-color: #fff;
+	/* 기본 배경 */
+}
+
+/* 상단 800px 네이비 배경 */
+body::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 675px;
+	background-color: rgb(0, 54, 108);
+	z-index: -1;
+	/* 배경으로 보내기 */
+}
+
+
+/* html과 body의 기본 여백 제거 */
+html,
+body {
+	height: 100%;
+}
+
+/* header 스타일 */
+.header {
+	padding: 20px 53px;
+	background-color: #fff;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	z-index: 10;
+	margin-top: 0;
+}
+
+/* 드롭다운 메뉴가 다른 요소 위로 확실히 올라오도록 설정 */
+.dropdown,
+.dropdown-menu {
+	position: relative;
+	z-index: 1055 !important;
+	/* Bootstrap 기본 modal(1050)보다 큰 수치로 설정 */
+}
+
+/* 드롭다운 메뉴가 숨겨지지 않도록 부모 컨테이너 overflow 조정 */
+.header,
+.weather-dashboard,
+.container {
+	overflow: visible !important;
+}
+
+.btn-weather-mbti {
+	background-color: #00366c;
+	border: none;
+	color: #fff;
+	font-weight: bold;
+	padding: 12px 20px;
+	border-radius: 8px;
+	transition: all 0.3s ease;
+}
+
+.btn-weather-mbti:hover {
+	background-color: #00509e;
+	transform: translateY(-3px);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+
+.header::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	/* 헤더의 맨 아래에 고정 */
+	left: 50%;
+	/* 가운데 기준 */
+	transform: translateX(-50%);
+	/* 중앙 정렬 */
+	width: 92%;
+	/* 원하는 border 길이 조정 (예: 80%) */
+	height: 1px;
+	/* border의 두께 조정 */
+	background-color: #ddd;
+	/* border의 색상 */
+}
+
+/* 헤더의 기본 여백을 없앰 */
+.header h2 {
+	font-size: 24px;
+	color: #333;
+	font-weight: bold;
+	margin: 0;
+	/* 헤더 제목의 여백 없앰 */
+}
+
+/* 전체 화면을 덮는 배경 (블러 효과) */
+.modal-overlay {
+	display: none;
+	/* 기본적으로 숨김 */
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(5px);
+	/* 블러 효과 */
+	z-index: 1000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+/* 모달 내부 컨텐츠 (세로 길이 유지하고 가로만 확장) */
+.modal-content {
+	background: white;
+	padding: 10px 20px;
+	/* 세로(위아래) padding 최소화, 가로(좌우)만 조정 */
+	border-radius: 10px;
+	width: 650px;
+	/* 기존보다 가로를 넓게 설정 */
+	text-align: center;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 지역 선택 버튼 컨테이너 */
+.grid-container {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	/* 5개씩 정렬 */
+	gap: 10px;
+	justify-content: center;
+	/* 버튼 가운데 정렬 */
+	margin: 15px 0;
+}
+
+/* 버튼 스타일 */
+.grid-item {
+	padding: 10px;
+	border: none;
+	background-color: #f5f5f5;
+	cursor: pointer;
+	border-radius: 5px;
+	transition: 0.3s;
+	width: 100px;
+	/* 가로 길이 균일하게 설정 */
+}
+
+
+.grid-item:hover {
+	background-color: #ddd;
+}
+
+/* 버튼을 가로로 정렬 */
+.modal-footer {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+}
+
+
+
+/* 날씨 대시보드 */
+.weather-dashboard {
+	border-radius: 15px;
+	background-color: #ffffff;
+	padding: 20px;
+	overflow: hidden;
+	margin-top: 20px;
+}
+
+/* 날씨 카드 스타일 */
+.card {
+	border-radius: 15px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	background-color: #fff;
+	margin-bottom: 20px;
+}
+
+.card .border {
+	width: 180px;
+	margin: 0 auto;
+	/* 가운데 정렬 */
+	text-align: center;
+	/* 텍스트 가운데 정렬 */
+}
+
+.card img {
+	border-radius: 50%;
+}
+
+.card p {
+	color: #333;
+}
+
+.display-4 {
+	font-size: 48px;
+	font-weight: bold;
+	color: #333;
+}
+
+/* 대기질 관련 스타일 */
+.text-danger {
+	color: #f44336;
+}
+
+.text-primary {
+	color: #2196f3;
+}
+
+/* 예보 제목 스타일 */
+.forecast-title {
+	font-size: 22px;
+	font-weight: bold;
+	color: #333;
+	margin-top: 40px;
+	/* 예보 제목의 상단 여백 설정 */
+	margin-bottom: 20px;
+}
+
+/* 예보 카드 스타일 */
+/*.forecast-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}*/
+.forecast-card img {
+	max-width: 70px;
+	margin-bottom: 10px;
+}
+
+.forecast-card p {
+	font-size: 14px;
+	color: #333;
+}
+
+.forecast-card .fs-5 {
+	font-size: 16px;
+}
+
+/* border-5 스타일 */
+.border-5 {
+	border-width: 5px;
+}
+
+/* 모바일 화면에 맞게 조정 */
+@media (max-width : 768px) {
+	.container {
+		margin-top: 20px;
+		/* container의 상단 여백 설정 */
+	}
+
+	.header h2 {
+		font-size: 20px;
+	}
+
+	.forecast-card {
+		width: 45%;
+		margin-bottom: 15px;
+	}
+
+	.card p {
+		font-size: 14px;
+	}
+}

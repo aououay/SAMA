@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pcwk.ehr.board.mapper.BoardMapper">
+
+<sql id="doRetrieveWhere">
+        <if test="'' != searchDiv">
+            <choose>  
+                <when test="'10' == searchDiv">
+                    AND board_title    LIKE '%'|| #{searchWord} ||'%'
+                </when>
+                <when test="'20' == searchDiv">
+                    AND board_contents LIKE '%'|| #{searchWord} ||'%'
+                </when>        
+                <when test="'30' == searchDiv">
+                    AND reg_id         LIKE '%'|| #{searchWord} ||'%'               
+                </when>   
+            </choose>
+        </if>
+    </sql>
+
+	<select id="doRetrieve" parameterType="SearchVO"
+		resultType="BoardVO">
+		SELECT A.*,B.*
+		FROM (
+		SELECT
+		tt1.rnum,
+		tt1.board_id as boardId,
+		tt1.board_title as title,
+		tt1.read_cnt as readCnt,
+		tt1.reg_id as regId,
+		TO_CHAR(tt1.reg_dt, 'YYYY-MM-DD') as regDt,
+		tt1.div
+		FROM (
+		SELECT ROWNUM
+		rnum, t1.*
+		FROM (
+		SELECT *
+		FROM board
+		WHERE div = #{optionDiv}
+		<include refid="doRetrieveWhere"></include>
+		ORDER BY reg_dt DESC
+		) t1                                        
+                 <![CDATA[ WHERE ROWNUM <= ( #{pageSize} * (#{pageNo} - 1  ) + #{pageSize} ) ]]>
+		) tt1                                           
+                 <![CDATA[ WHERE rnum >= ( #{pageSize} * (#{pageNo} - 1  ) + 1 ) ]]>
+		) A
+		CROSS JOIN (
+		-- 페이지 번호 : 전체글수
+		SELECT COUNT(*) totalCnt
+		FROM board
+		WHERE div = #{optionDiv}
+		<include refid="doRetrieveWhere" />
+		) B
+	</select>
+
+	<select id="getBoardSequence" resultType="java.lang.Integer">
+		SELECT
+		BOARD_SEQ.CURRVAL FROM dual
+	</select>
+
+
+	<insert id="doSave" parameterType="BoardVO">
+		INSERT INTO board (
+		board_id,
+		board_title,
+		board_contents,
+		reg_id,
+		div
+		) VALUES ( BOARD_SEQ.NEXTVAL,
+		#{title},
+		#{content},
+		#{regId},
+		#{div} )
+	</insert>
+
+	<insert id="doSave1"
+		parameterType="com.pcwk.ehr.reply.domain.ReplyVO">
+		INSERT INTO reply (
+		reply_id,
+		board_id,
+		reg_id,
+		reply_content
+		) VALUES (
+		REPLY_SEQ.NEXTVAL,
+		#{boardId, jdbcType=NUMERIC},
+		NVL(#{nickname, jdbcType=VARCHAR}, ''),
+		#{replyContent, jdbcType=CLOB}
+		)
+	</insert>
+
+	<select id="doSelectOne" parameterType="BoardVO"
+		resultType="BoardVO">
+		SELECT
+		board_id as boardId,
+		board_title as title,
+		board_contents as content,
+		read_cnt as readCnt,
+		reg_id as regId,
+		reg_dt
+		as regDt,
+		mod_dt,
+		div
+		FROM
+		board
+		WHERE
+		board_id = #{boardId}
+	</select>
+
+	<update id="doReadCntUpdate" parameterType="BoardVO">
+		UPDATE board
+		SET
+		read_cnt = read_cnt + 1
+		WHERE
+		board_id = #{boardId}
+	</update>
+
+	<delete id="doDelete" parameterType="BoardVO">
+		DELETE FROM board
+		WHERE
+		board_id = #{boardId}
+	</delete>
+
+	<update id="doUpdate" parameterType="BoardVO">
+		UPDATE board
+		SET
+		board_title =
+		#{title},
+		board_contents = #{content},
+		mod_dt = SYSDATE
+		WHERE
+		board_id =
+		#{boardId}
+	</update>
+
+	<select id="getLatestFiveBoard" parameterType="String"
+		resultType="BoardVO">
+		SELECT b1.board_id as boardId,
+		b1.board_title as title,
+		b1.reg_dt,
+		b1.div
+		FROM (
+		SELECT
+		board_id,
+		board_title,
+		board_contents,
+		read_cnt,
+		reg_id,
+		reg_dt,
+		mod_dt,
+		div
+		FROM
+		board
+		WHERE 1 = 1
+		<choose>
+			<when test="'10' == div">
+				AND div = #{div}
+			</when>
+			<when test="'20' == div">
+				AND div = #{div}
+			</when>
+			<when test="'30' == div">
+				AND div = #{div}
+			</when>
+		</choose>
+		ORDER BY reg_dt DESC
+		) b1
+		WHERE ROWNUM <![CDATA[<]]>
+		6
+	</select>
+
+</mapper>

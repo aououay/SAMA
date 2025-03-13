@@ -1,0 +1,36 @@
+@charset "UTF-8";
+/* style.css */
+
+/* 전체 배경 및 폰트 */
+body {
+    background-color: #ffffff;
+    font-family: 'Apple SD Gothic Neo', sans-serif;
+}
+/* 카드 스타일: 흰색 배경 유지 */
+.card {
+    border: none;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+/* 버튼 스타일: 기본 버튼은 흰색 테마, 보조 버튼는 다크 계열 */
+.btn-primary {
+    background-color: #ffffff;
+    border-color: #333333;
+    color: #333333;
+    font-weight: bold;
+}
+.btn-primary:hover {
+    background-color: #8080ff;
+    border-color: #222222;
+}
+.btn-secondary {
+    background-color: #333333;
+    border-color: #333333;
+    color: #ffffff;
+    font-weight: bold;
+}
+.btn-secondary:hover {
+    background-color: #222222;
+    border-color: #222222;
+}

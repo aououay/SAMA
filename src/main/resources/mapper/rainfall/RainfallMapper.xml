@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.pcwk.ehr.rainfall.RainfallMapper">
+
+    <!-- 특정 관측소 최근 강우량 12개 조회 -->
+	 <select id="getRecentRainfall" resultType="com.pcwk.ehr.rainfall.Rainfall">
+	 <![CDATA[
+		SELECT
+		    i.rf_obs_cd,  
+		    i.obs_nm, 
+		    i.addr, 
+		    i.etc_addr,  
+		    i.lon, 
+		    i.lat,  
+		    TO_CHAR(TO_DATE(RPAD(c.mea_dt, 12, '0'), 'YYYYMMDDHH24MI'), 'MM-DD HH24:MI') AS mea_dt,
+		    c.rf, 
+		    
+		    CASE
+			    WHEN c.rf < 1 THEN 'normal'       -- 1mm 미만
+			    WHEN c.rf >= 1 AND c.rf < 5 THEN 'five'   -- 1mm 이상 5mm 미만
+			    WHEN c.rf >= 5 AND c.rf < 10 THEN 'ten'   -- 5mm 이상 10mm 미만
+			    WHEN c.rf >= 10 AND c.rf < 30 THEN 'warning' -- 10mm 이상 30mm 미만
+			    ELSE 'alert'                      -- 30mm 이상
+			END AS hourState  
+		
+		FROM rainfall_info i
+		JOIN rainfall_current c ON i.rf_obs_cd = c.rf_obs_cd
+		WHERE c.rf_obs_cd = #{rfObsCd}
+		ORDER BY TO_DATE(RPAD(c.mea_dt, 12, '0'), 'YYYYMMDDHH24MI') DESC
+		FETCH FIRST 12 ROWS ONLY
+		]]>	
+	</select>
+
+
+    <!-- 모든 관측소 정보 조회 -->
+    <select id="getAllRainfallStations" resultType="com.pcwk.ehr.rainfall.Rainfall">
+     <![CDATA[
+	    SELECT 
+	        i.rf_obs_cd AS rfObsCd,
+	        i.obs_nm AS obsNm,
+	        i.lat,
+	        i.lon,
+	        CASE
+	            WHEN c.rf < 1 THEN 'normal'       -- 1mm 미만
+	            WHEN c.rf >= 1 AND c.rf < 5 THEN 'five'   -- 1mm 이상 5mm 미만
+	            WHEN c.rf >= 5 AND c.rf < 10 THEN 'ten'   -- 5mm 이상 10mm 미만
+	            WHEN c.rf >= 10 AND c.rf < 30 THEN 'warning' -- 10mm 이상 30mm 미만
+	            ELSE 'alert'                      -- 30mm 이상
+	        END AS hourState
+	    FROM rainfall_info i
+	    LEFT JOIN rainfall_current c ON i.rf_obs_cd = c.rf_obs_cd
+	    WHERE c.mea_dt = (SELECT MAX(mea_dt) FROM rainfall_current WHERE rf_obs_cd = i.rf_obs_cd)
+   	   ]]>	
+    </select>
+
+    <!-- 자치구별 강우량 데이터 조회 -->
+    <select id="getLatestRainfallData" resultType="com.pcwk.ehr.rainfall.Rainfall">
+        SELECT 
+            g.gu_cd,  -- 자치구 코드
+            g.gu_nm,  -- 자치구 이름
+            i.rf_obs_cd, 
+            i.obs_nm, 
+            i.addr, 
+            i.etc_addr, 
+            i.lon, 
+            i.lat, 
+            c.rf, 
+            TO_CHAR(TO_DATE(RPAD(c.mea_dt, 12, '0'), 'YYYYMMDDHH24MI'), 'MM-DD HH24:MI') AS mea_dt,
+            TO_CHAR(c.reg_dt, 'YYYY/MM/DD HH24:MI') AS reg_dt,
+            g.ms_lat,
+            g.ms_lon
+        FROM gu_info g
+        JOIN rf_obs_gu_info r ON g.gu_cd = r.gu_cd
+        JOIN rainfall_info i ON r.rf_obs_cd = i.rf_obs_cd
+        JOIN rainfall_current c ON i.rf_obs_cd = c.rf_obs_cd
+        WHERE c.mea_dt = (
+            SELECT MAX(mea_dt) 
+            FROM rainfall_current 
+            WHERE rainfall_current.rf_obs_cd = i.rf_obs_cd
+        )
+        ORDER BY TO_DATE(RPAD(c.mea_dt, 12, '0'), 'YYYYMMDDHH24MI') DESC
+    </select>
+	
+<!-- 	<select id="getGuRainfall" resultType="com.pcwk.ehr.rainfall.Rainfall">
+    SELECT 
+        g.gu_cd, g.gu_nm, i.rf_obs_cd, i.obs_nm, i.addr, i.etc_addr, 
+        i.lon, i.lat, c.rf, 
+        TO_CHAR(TO_DATE(RPAD(c.mea_dt, 12, '0'), 'YYYYMMDDHH24MI'), 'MM-DD HH24:MI') AS mea_dt,
+        TO_CHAR(c.reg_dt, 'YYYY/MM/DD HH24:MI') AS reg_dt
+    FROM gu_info g
+    JOIN rf_obs_gu_info r ON g.gu_cd = r.gu_cd
+    JOIN rainfall_info i ON r.rf_obs_cd = i.rf_obs_cd
+    JOIN rainfall_current c ON i.rf_obs_cd = c.rf_obs_cd
+    WHERE g.gu_cd = #{guCd}
+    ORDER BY TO_DATE(RPAD(c.mea_dt, 12, '0'), 'YYYYMMDDHH24MI') DESC
+</select> -->
+<!-- <select id="getGuRainfall" resultType="com.pcwk.ehr.rainfall.Rainfall">
+    SELECT 
+        g.gu_cd, g.gu_nm, i.rf_obs_cd, i.obs_nm, i.addr, i.etc_addr, 
+        i.lon, i.lat, c.rf AS rf_1h, 
+        (SELECT SUM(c1.rf) 
+         FROM rainfall_current c1 
+         WHERE c1.rf_obs_cd = i.rf_obs_cd 
+         AND TO_DATE(RPAD(c1.mea_dt, 12, '0'), 'YYYYMMDDHH24MI') 
+             BETWEEN SYSDATE - INTERVAL '1' DAY AND SYSDATE) AS rf_24h,
+        (SELECT SUM(c2.rf) 
+         FROM rainfall_current c2 
+         WHERE c2.rf_obs_cd = i.rf_obs_cd 
+         AND TO_DATE(RPAD(c2.mea_dt, 12, '0'), 'YYYYMMDDHH24MI') 
+             BETWEEN SYSDATE - INTERVAL '2' DAY AND SYSDATE) AS rf_48h,
+        TO_CHAR(TO_DATE(RPAD(c.mea_dt, 12, '0'), 'YYYYMMDDHH24MI'), 'MM-DD HH24:MI') AS mea_dt,
+        TO_CHAR(c.reg_dt, 'YYYY/MM/DD HH24:MI') AS reg_dt
+    FROM gu_info g
+    JOIN rf_obs_gu_info r ON g.gu_cd = r.gu_cd
+    JOIN rainfall_info i ON r.rf_obs_cd = i.rf_obs_cd
+    JOIN rainfall_current c ON i.rf_obs_cd = c.rf_obs_cd
+    WHERE g.gu_cd = #{guCd}
+    ORDER BY TO_DATE(RPAD(c.mea_dt, 12, '0'), 'YYYYMMDDHH24MI') DESC
+</select> -->
+
+<select id="getGuRainfall" resultMap="RainfallResultMap">
+ <![CDATA[
+     SELECT 
+        g.gu_cd, 
+        g.gu_nm, 
+        i.rf_obs_cd, 
+        i.obs_nm, 
+        i.addr, 
+        i.etc_addr, 
+        i.lon, 
+        i.lat, 
+        TO_CHAR(C.REG_DT, 'MM"월 "DD"일 ("DY") "HH24"시"') AS REG_DT,
+        c.rf AS rf_1h,
+        -- 최근 24시간 강우량 합계
+        (SELECT SUM(rf) FROM rainfall_current WHERE rf_obs_cd = i.rf_obs_cd 
+         AND mea_dt >= TO_CHAR(SYSDATE - INTERVAL '24' HOUR, 'YYYYMMDDHH24')) AS rf_24h,
+        -- 최근 48시간 강우량 합계
+        (SELECT SUM(rf) FROM rainfall_current WHERE rf_obs_cd = i.rf_obs_cd 
+         AND mea_dt >= TO_CHAR(SYSDATE - INTERVAL '48' HOUR, 'YYYYMMDDHH24')) AS rf_48h,
+        -- 최신 측정 시간
+        TO_CHAR(TO_DATE(RPAD(c.mea_dt, 12, '0'), 'YYYYMMDDHH24MI'), 'MM-DD HH24:MI') AS mea_dt,
+        -- 마커 색상을 위한 상태 추가
+	    CASE
+		    WHEN c.rf < 1 THEN 'normal'       -- 1mm 미만
+		    WHEN c.rf >= 1 AND c.rf < 5 THEN 'five'   -- 1mm 이상 5mm 미만
+		    WHEN c.rf >= 5 AND c.rf < 10 THEN 'ten'   -- 5mm 이상 10mm 미만
+		    WHEN c.rf >= 10 AND c.rf < 30 THEN 'warning' -- 10mm 이상 30mm 미만
+		    ELSE 'alert'                      -- 30mm 이상
+		END AS hourState  
+    FROM gu_info g
+    JOIN rf_obs_gu_info r ON g.gu_cd = r.gu_cd
+    JOIN rainfall_info i ON r.rf_obs_cd = i.rf_obs_cd
+    JOIN rainfall_current c ON i.rf_obs_cd = c.rf_obs_cd
+    WHERE c.mea_dt = (
+        SELECT MAX(mea_dt) 
+        FROM rainfall_current 
+        WHERE rainfall_current.rf_obs_cd = i.rf_obs_cd
+    )
+    ORDER BY g.gu_nm ASC
+ ]]>	
+</select>
+
+<select id="getRainfallWarnings" resultType="com.pcwk.ehr.rainfall.Rainfall">
+ <![CDATA[
+WITH RainfallEvents AS (
+    SELECT
+        c.rf_obs_cd,
+        i.obs_nm,
+        i.addr,
+        i.etc_addr,
+        i.lat,
+        i.lon,
+        TO_CHAR(TO_DATE(RPAD(c.mea_dt, 12, '0'), 'YYYYMMDDHH24MI'), 'YYYY-MM-DD HH24:MI') AS mea_dt,
+        c.rf,
+
+        -- 시간별 강우 상태 분류
+        CASE
+            WHEN c.rf < 1 THEN 'normal'
+            WHEN c.rf >= 1 AND c.rf < 5 THEN 'five'
+            WHEN c.rf >= 5 AND c.rf < 10 THEN 'ten'
+            WHEN c.rf >= 10 AND c.rf < 30 THEN 'warning'
+            ELSE 'alert'
+        END AS hourState,
+
+        -- 특보 상태 정의
+        CASE
+            WHEN (
+                (SELECT COALESCE(SUM(rf), 0) FROM rainfall_current 
+                 WHERE rf_obs_cd = c.rf_obs_cd 
+                 AND mea_dt >= TO_CHAR(SYSDATE - INTERVAL '3' HOUR, 'YYYYMMDDHH24')) >= 90
+                OR 
+                (SELECT COALESCE(SUM(rf), 0) FROM rainfall_current 
+                 WHERE rf_obs_cd = c.rf_obs_cd 
+                 AND mea_dt >= TO_CHAR(SYSDATE - INTERVAL '12' HOUR, 'YYYYMMDDHH24')) >= 180
+            ) THEN '경보'
+
+            WHEN (
+                (SELECT COALESCE(SUM(rf), 0) FROM rainfall_current 
+                 WHERE rf_obs_cd = c.rf_obs_cd 
+                 AND mea_dt >= TO_CHAR(SYSDATE - INTERVAL '3' HOUR, 'YYYYMMDDHH24')) >= 60
+                OR 
+                (SELECT COALESCE(SUM(rf), 0) FROM rainfall_current 
+                 WHERE rf_obs_cd = c.rf_obs_cd 
+                 AND mea_dt >= TO_CHAR(SYSDATE - INTERVAL '12' HOUR, 'YYYYMMDDHH24')) >= 110
+            ) THEN '주의보'
+            ELSE '정상'
+        END AS state,
+
+        -- 특보 발령 상태 정의
+        CASE
+            WHEN (
+                (SELECT COALESCE(SUM(rf), 0) FROM rainfall_current 
+                 WHERE rf_obs_cd = c.rf_obs_cd 
+                 AND mea_dt >= TO_CHAR(SYSDATE - INTERVAL '3' HOUR, 'YYYYMMDDHH24')) >= 90
+                OR 
+                (SELECT COALESCE(SUM(rf), 0) FROM rainfall_current 
+                 WHERE rf_obs_cd = c.rf_obs_cd 
+                 AND mea_dt >= TO_CHAR(SYSDATE - INTERVAL '12' HOUR, 'YYYYMMDDHH24')) >= 180
+            ) THEN '변경'
+
+            WHEN (
+                (SELECT COALESCE(SUM(rf), 0) FROM rainfall_current 
+                 WHERE rf_obs_cd = c.rf_obs_cd 
+                 AND mea_dt >= TO_CHAR(SYSDATE - INTERVAL '3' HOUR, 'YYYYMMDDHH24')) >= 60
+                OR 
+                (SELECT COALESCE(SUM(rf), 0) FROM rainfall_current 
+                 WHERE rf_obs_cd = c.rf_obs_cd 
+                 AND mea_dt >= TO_CHAR(SYSDATE - INTERVAL '12' HOUR, 'YYYYMMDDHH24')) >= 110
+            ) THEN '발령'
+            ELSE '해제'
+        END AS forecastState,
+
+        -- 이전 특보 상태 가져오기 (prev_state)
+        LAG(
+            CASE
+                WHEN (
+                    (SELECT COALESCE(SUM(rf), 0) FROM rainfall_current 
+                     WHERE rf_obs_cd = c.rf_obs_cd 
+                     AND mea_dt >= TO_CHAR(SYSDATE - INTERVAL '3' HOUR, 'YYYYMMDDHH24')) >= 90
+                    OR 
+                    (SELECT COALESCE(SUM(rf), 0) FROM rainfall_current 
+                     WHERE rf_obs_cd = c.rf_obs_cd 
+                     AND mea_dt >= TO_CHAR(SYSDATE - INTERVAL '12' HOUR, 'YYYYMMDDHH24')) >= 180
+                ) THEN '변경'
+                
+                WHEN (
+                    (SELECT COALESCE(SUM(rf), 0) FROM rainfall_current 
+                     WHERE rf_obs_cd = c.rf_obs_cd 
+                     AND mea_dt >= TO_CHAR(SYSDATE - INTERVAL '3' HOUR, 'YYYYMMDDHH24')) >= 60
+                    OR 
+                    (SELECT COALESCE(SUM(rf), 0) FROM rainfall_current 
+                     WHERE rf_obs_cd = c.rf_obs_cd 
+                     AND mea_dt >= TO_CHAR(SYSDATE - INTERVAL '12' HOUR, 'YYYYMMDDHH24')) >= 110
+                ) THEN '발령'
+                
+                ELSE '해제'
+            END
+        ) OVER (PARTITION BY c.rf_obs_cd ORDER BY TO_DATE(c.mea_dt, 'YYYYMMDDHH24MI') DESC) AS prev_state,
+
+        -- 최신 데이터만 유지
+        ROW_NUMBER() OVER (PARTITION BY c.rf_obs_cd ORDER BY TO_DATE(c.mea_dt, 'YYYYMMDDHH24MI') DESC) AS rn
+
+    FROM rainfall_current c
+    JOIN rainfall_info i ON i.rf_obs_cd = c.rf_obs_cd
+)
+
+SELECT * FROM RainfallEvents
+WHERE 
+    -- "발령" 상태는 처음 한 번만 포함
+    forecastState = '발령'
+    -- "변경" 상태는 이전 상태가 "발령"일 때만 포함
+    OR (forecastState = '변경' AND prev_state = '발령')
+    -- "해제" 상태는 반드시 이전 "발령"이 있었을 때 포함
+    OR (forecastState = '해제' AND prev_state IN ('경보', '주의보'))
+ORDER BY mea_dt DESC
+ ]]>	
+</select>
+
+<select id="getGuList" resultType="com.pcwk.ehr.rainfall.Rainfall">
+    SELECT gu_cd, gu_nm FROM gu_info ORDER BY gu_nm
+</select>
+
+<resultMap id="RainfallResultMap" type="com.pcwk.ehr.rainfall.Rainfall">
+    <result property="guCd" column="gu_cd"/>
+    <result property="guNm" column="gu_nm"/>
+    <result property="rfObsCd" column="rf_obs_cd"/>
+    <result property="obsNm" column="obs_nm"/>
+    <result property="addr" column="addr"/>
+    <result property="etcAddr" column="etc_addr"/>
+    <result property="lon" column="lon"/>
+    <result property="lat" column="lat"/>
+    <result property="rf_1h" column="rf_1h"/>
+    <result property="rf_24h" column="rf_24h"/>
+    <result property="rf_48h" column="rf_48h"/>
+    <result property="meaDt" column="mea_dt"/>
+</resultMap>
+	
+</mapper>

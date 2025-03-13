@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pcwk.ehr.mapper.Air_QualityMapper">
+
+	<select id="get_Current_Air_QualityBy_Gu_Cd"
+		parameterType="string" resultType="Air_QualityVO">
+		SELECT AQC2.*, GI.GU_NM
+		FROM ( SELECT
+		AQ_ID
+		, GU_CD
+		, CAI_GRADE
+		, CAI
+		, PM25_CONC
+		, PM10_CONC
+		, O3_CONC
+		, MS_DT
+		,
+		CRT_BY
+		, CRT_DT
+		, MOD_BY
+		, MOD_DT
+		FROM (SELECT AQC1.*
+		, ROW_NUMBER() OVER
+		(PARTITION BY AQC1.GU_CD ORDER BY AQC1.MS_DT DESC)
+		AS RNUM
+		FROM
+		AIR_QUALITY_CURRENT AQC1)
+		WHERE GU_CD = #{gu_Cd} AND RNUM = 1) AQC2
+		INNER JOIN GU_INFO GI
+		ON AQC2.GU_CD = GI.GU_CD
+	</select>
+
+	<select id="get_Pm_Warning_H" resultType="Pm_WarningVO">
+		SELECT
+		WARN_ID,
+		DIST_NM,
+		MOVE_NM,
+		ISSUE_ITEM,
+		ISSUE_GBN,
+		ISSUE_CONC,
+		ISSUE_DT,
+		CLEAR_DT,
+		SN,
+		CRT_BY,
+		CRT_DT,
+		MOD_BY,
+		MOD_DT
+		FROM
+		PM_WARNING_H
+		ORDER BY ISSUE_DT DESC
+	</select>
+
+	<select id="get_Current_Air_Quality" resultType="Air_QualityVO">
+		SELECT AQC2.*,
+		GI.GU_NM
+		, GI.MS_ADDR
+		, GI.MS_LAT
+		, GI.MS_LON
+		, GI.SORT_ORD
+		FROM ( SELECT
+		AQ_ID
+		, GU_CD
+		, CAI_GRADE
+		, CAI
+		, PM25_CONC
+		,
+		PM10_CONC
+		, O3_CONC
+		, MS_DT
+		,
+		CRT_BY
+		, CRT_DT
+		, MOD_BY
+		, MOD_DT
+		FROM (SELECT
+		AQC1.*
+		, ROW_NUMBER() OVER
+		(PARTITION BY AQC1.GU_CD ORDER BY AQC1.MS_DT
+		DESC)
+		AS RNUM
+		FROM
+		AIR_QUALITY_CURRENT AQC1)
+		WHERE RNUM = 1) AQC2
+		INNER
+		JOIN GU_INFO GI
+		ON
+		AQC2.GU_CD = GI.GU_CD
+		ORDER BY GI.SORT_ORD ASC
+	</select>
+
+</mapper>

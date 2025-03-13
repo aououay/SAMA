@@ -1,0 +1,274 @@
+/* 기본 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body 기본 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* .historyTab 스타일 */
+.historyTab {
+    background-color: #2d3e50;
+    padding: 10px 0;
+}
+
+.historyTab ul {
+    display: flex;
+    justify-content: center;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+}
+
+.historyTab li {
+    list-style: none;
+    margin-right: 20px;
+}
+
+.historyTab a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.historyTab .on a {
+    font-weight: bold;
+    color: #f4c542;
+}
+
+/* .earthquakeList 스타일 */
+.earthquakeList {
+    display: flex;
+    width: 100%;
+}
+
+/* 왼쪽 영역 스타일 */
+.leftArea {
+    width: 50%;
+    padding-right: 20px;
+}/*
+.leftArea {
+    width: 100%;
+    padding-right: 0;
+    border-right: none;
+}*/
+.titArea {
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.selectArea {
+    margin-top: -6px;
+}
+
+.selectTypeA {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+
+.topArea {
+    margin-bottom: 20px;
+}
+
+#sortList {
+    display: flex;
+    justify-content: right;
+}
+
+#sortList li {
+    list-style: none;
+    margin-right: 20px;
+    font-size: 16px;
+}
+
+#sortList li a {
+    color: #333;
+    text-decoration: none;
+}
+
+#sortList .on a {
+    font-weight: bold;
+    color: #2d3e50;
+}
+
+/* 지진 목록 테이블 영역 */
+.tableArea {
+    background-color: white;
+    border-radius: 6px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-right: 3px;
+    height: 770px;
+}
+
+#map{
+    width: 100%;
+}
+
+.titArea .tableSet {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.titArea .tableSet span {
+    width: 24%;
+    text-align: center;
+}
+
+/* 지진 리스트 */
+.tableList {
+    list-style: none;
+    padding: 0;
+}
+
+.tableList li {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.tableList li:hover {
+    background-color: #f9f9f9;
+}
+
+.tableList li span {
+    width: 24%;
+    text-align: center;
+}
+
+/* 스크롤 영역 */
+.scr1 {
+    max-height: 700px;
+    overflow-y: auto;
+}
+
+/* .mapArea 스타일 */
+.mapArea {
+    height: 700px;
+    background-color: #f0f0f0;
+    margin-top: 20px;
+    margin-right: 5px;
+    border-radius: 8px;
+}
+
+
+
+    .rightArea {
+        width: 50%;
+        padding-left: 0;
+    }
+/* eqkStats 박스를 지도 오른쪽 하단에 고정 위치로 표시 */
+.eqkStats {
+    position: absolute; /* 지도 위에 위치 고정 */
+    bottom: 20px; /* 지도 하단에서 20px 만큼 떨어진 위치 */
+    right: 20px; /* 지도 우측에서 20px 만큼 떨어진 위치 */
+    background: rgba(255, 255, 255, 0.8); /* 배경을 반투명 흰색으로 설정 */
+    padding: 15px;
+    border-radius: 8px; /* 모서리를 둥글게 */
+    font-size: 14px; /* 텍스트 크기 설정 */
+    z-index: 10; /* 다른 요소들 위에 표시되도록 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* 그림자 추가 */
+    width: 300px; /* 박스 너비 설정 */
+}
+
+/* 테이블 스타일 */
+.eqkStats table {
+    width: 100%; /* 테이블을 부모 div의 너비에 맞게 설정 */
+    border-collapse: collapse; /* 테이블의 경계선 겹침 방지 */
+}
+
+/* 테이블 헤더 스타일 */
+.eqkStats th {
+    background-color: #f4f4f4; /* 배경색을 밝은 회색으로 */
+    padding: 10px; /* 패딩 추가 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    font-weight: bold; /* 글씨 굵게 */
+    color: #333; /* 텍스트 색상 */
+    border: 1px solid #ddd; /* 테두리 추가 */
+}
+
+/* 테이블 데이터 셀 스타일 */
+.eqkStats td {
+    padding: 8px; /* 패딩 추가 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    border: 1px solid #ddd; /* 테두리 추가 */
+    font-size: 13px; /* 텍스트 크기 조금 작게 */
+    color: #555; /* 텍스트 색상 */
+}
+
+/* 마우스를 올렸을 때 셀에 배경색 변경 */
+.eqkStats td:hover {
+    background-color: #f0f0f0; /* 마우스 오버 시 배경색 변경 */
+    cursor: pointer; /* 커서가 손 모양으로 변경 */
+}
+
+/* 제목 스타일 */
+.eqkStats h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ddd; /* 제목 밑에 밑줄 추가 */
+}
+
+/* 테이블 내 빈 셀에 0 표시 */
+.eqkStats td {
+    text-align: center;
+}
+
+
+/* Styling for the unordered list */
+.topArea ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Use flexbox to align the items in a row */
+}
+
+/* Styling for list items */
+.topArea ul li {
+    margin: 0 20px; /* Add horizontal space between the items */
+    display: inline-block; /* Ensure items are horizontally aligned */
+}
+
+/* Styling for the links inside list items */
+.topArea ul li a {
+    font-size: 16px;
+    color: #333; /* Default text color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold;
+    padding: 10px 20px; /* Add some padding for the clickable area */
+    display: inline-block; /* Make the anchor tag a block-level element */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
+}
+
+/* Default link styling on hover */
+.topArea ul li a:hover {
+    background-color: #007bff; /* Blue background on hover */
+    color: white; /* Change text color to white */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Active state for the selected link (optional) */
+.topArea ul li a.active {
+    background-color: #0056b3; /* Darker blue for the active link */
+    color: white;
+    border-radius: 5px;
+}

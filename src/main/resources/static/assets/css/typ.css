@@ -1,0 +1,223 @@
+.noneData {
+    font-size: 16px;
+    color: #ff0000;
+    text-align: center;
+    padding: 20px;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+/* 기본 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body 기본 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* .historyTab 스타일 */
+.historyTab {
+    background-color: #2d3e50;
+    padding: 10px 0;
+}
+
+.historyTab ul {
+    display: flex;
+    justify-content: center;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+}
+
+.historyTab li {
+    list-style: none;
+    margin-right: 20px;
+}
+
+.historyTab a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.historyTab .on a {
+    font-weight: bold;
+    color: #f4c542;
+}
+
+/* .earthquakeList 스타일 */
+.earthquakeList {
+    display: flex;
+    margin: 20px;
+}
+
+/* 왼쪽 영역 스타일 */
+.leftArea {
+    width: 50%;
+    padding-right: 20px;
+}/*
+.leftArea {
+    width: 100%;
+    padding-right: 0;
+    border-right: none;
+}*/
+.titArea {
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.selectArea {
+    margin-top: -6px;
+}
+
+.selectTypeA {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: -30px;
+}
+
+
+
+
+#sortList {
+    display: flex;
+    justify-content: flex-start;
+}
+
+#sortList li {
+    list-style: none;
+    margin-right: 20px;
+    font-size: 16px;
+}
+
+#sortList li a {
+    color: #333;
+    text-decoration: none;
+}
+
+#sortList .on a {
+    font-weight: bold;
+    color: #2d3e50;
+}
+
+/* 지진 목록 테이블 영역 */
+.tableArea {
+    background-color: white;
+    border-radius: 6px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-right: 3px;
+    height: 770px;
+}
+
+#map{
+    width: 100%;
+}
+
+.titArea .tableSet {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.titArea .tableSet span {
+    width: 24%;
+    text-align: center;
+}
+
+/* 지진 리스트 */
+.tableList {
+    list-style: none;
+    padding: 0;
+}
+
+.tableList li {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.tableList li:hover {
+    background-color: #f9f9f9;
+}
+
+.tableList li span {
+    width: 24%;
+    text-align: center;
+}
+
+/* 스크롤 영역 */
+.scr1 {
+    max-height: 700px;
+    overflow-y: auto;
+}
+
+/* .mapArea 스타일 */
+.mapArea {
+    height: 700px;
+    background-color: #f0f0f0;
+    margin-top: 20px;
+    margin-right: 5px;
+    border-radius: 8px;
+}
+
+
+
+.rightArea {
+    width: 50%;
+    padding-left: 0;
+}
+
+.topArea {
+    padding: 20px 0;
+    text-align: center;
+}
+
+
+.topArea ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: -10px;
+    display: flex;
+    justify-content: right;
+}
+
+.topArea ul li {
+    margin: 0 20px;
+    display: inline-block;
+}
+
+.topArea ul li a {
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    display: inline-block;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.topArea ul li a:hover {
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+}
+
+.topArea ul li a.active {
+    background-color: #0056b3;
+    color: white;
+    border-radius: 5px;
+}

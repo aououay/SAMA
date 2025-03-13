@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.pcwk.ehr.email.mapper.EmailMapper">
+
+	<!-- 이메일 저장 -->
+     <update id="doSave" parameterType="string">
+	    MERGE INTO email_auth a
+	    USING dual
+	    ON (a.email = #{email})
+	    WHEN MATCHED THEN
+	        UPDATE SET reg_stat = 0
+	    WHEN NOT MATCHED THEN
+	        INSERT (email, reg_stat)
+	        VALUES (#{email}, 0)
+	</update>
+	
+	<!-- 이메일 중복 확인 -->
+    <select id="isExistsEmail" parameterType="com.pcwk.ehr.email.domain.EmailVO" resultType="int">
+        SELECT COUNT(*)
+        FROM email_auth
+        WHERE email = #{email}
+    </select>
+
+	<!-- 인증코드 업데이트 -->
+    <update id="doUpdate_Auth_Code" parameterType="com.pcwk.ehr.email.domain.EmailVO">
+        UPDATE email_auth
+        SET auth_code = #{auth_code}
+        WHERE email = #{email}
+    </update>
+
+	<!-- 이메일 조회 -->
+    <select id="doSelectOne" parameterType="com.pcwk.ehr.email.domain.EmailVO" resultMap="EmailVOResultMap">
+        SELECT email, auth_code, reg_stat
+        FROM email_auth
+        WHERE email = #{email}
+    </select>
+
+	<!-- 회원가입 상태 1로 업데이트 -->
+    <update id="doUpdate_reg_stat_1" parameterType="string">
+        UPDATE email_auth
+        SET reg_stat = 1
+        WHERE email = #{email}
+    </update>
+
+	<!-- 회원가입 상태 0으로 업데이트 -->
+    <update id="doUpdate_reg_stat_0" parameterType="string">
+        UPDATE email_auth
+        SET reg_stat = 0
+        WHERE email = #{email}
+    </update>
+
+	<!-- 인증코드 검증 -->
+    <select id="verifyAuthCode" parameterType="com.pcwk.ehr.email.domain.EmailVO" resultType="int">
+        SELECT count(*)
+        FROM email_auth
+        WHERE email = #{email}
+          AND auth_code = #{auth_code}
+    </select>
+
+	<!-- 비밀번호 변경 -->
+	<update id="changePassword" parameterType="map">
+	    UPDATE main_users
+	    SET password = #{newPassword}
+	    WHERE email = #{email}
+	</update>
+
+	
+    <resultMap id="EmailVOResultMap" type="com.pcwk.ehr.email.domain.EmailVO">
+        <result property="email" column="email"/>
+        <result property="auth_code" column="auth_code"/>
+        <result property="reg_stat" column="reg_stat"/>
+    </resultMap>
+
+</mapper>

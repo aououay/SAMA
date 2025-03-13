@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+	</settings>
+	<typeAliases>
+		<typeAlias alias="Weather_CurrentVO"
+			type="com.pcwk.ehr.weather_current.domain.Weather_CurrentVO" />
+		<typeAlias alias="Air_QualityVO"
+			type="com.pcwk.ehr.air_quality.domain.Air_QualityVO" />
+		<typeAlias alias="Pm_WarningVO"
+			type="com.pcwk.ehr.air_quality.domain.Pm_WarningVO" />
+		<typeAlias alias="Weather_ForecastVO"
+			type="com.pcwk.ehr.weather_forecast.domain.Weather_ForecastVO" />
+		<typeAlias alias="Er_BedVO"
+			type="com.pcwk.ehr.er_medi_inst.domain.Er_BedVO" />
+		<typeAlias alias="Er_Medi_InstVO"
+			type="com.pcwk.ehr.er_medi_inst.domain.Er_Medi_InstVO" />
+		<typeAlias alias="Er_Medi_Inst_Er_BedVO"
+			type="com.pcwk.ehr.er_medi_inst.domain.Er_Medi_Inst_Er_BedVO" />
+		<typeAlias alias="SearchVO"
+			type="com.pcwk.ehr.cmn.SearchBoardVO" />
+		<typeAlias alias="UserVO"
+			type="com.pcwk.ehr.user.domain.UserVO" />
+		<typeAlias alias="EmailVO"
+			type="com.pcwk.ehr.email.domain.EmailVO" />
+		<typeAlias alias="BoardVO"
+			type="com.pcwk.ehr.board.domain.BoardVO" />
+		<typeAlias alias="ReplyVO"
+			type="com.pcwk.ehr.reply.domain.ReplyVO" />
+		<typeAlias alias="FileVO"
+			type="com.pcwk.ehr.file.domain.FileVO" />
+		<typeAlias alias="InsVO"
+			type="com.pcwk.ehr.insurance.domain.InsVO" />
+	</typeAliases>
+</configuration>

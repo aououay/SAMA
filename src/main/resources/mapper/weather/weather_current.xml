@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pcwk.ehr.mapper.Weather_CurrentMapper">
+
+	<select id="get_Current_WeatherBy_Gu_Cd" parameterType="string" resultType="Weather_CurrentVO">
+SELECT WC2.*, GI.GU_NM
+  FROM ( SELECT WEATHER_ID
+	   		  , GU_CD
+	          , TEMP
+	          , MIN_TEMP
+		      , MAX_TEMP
+		      , FEELS_LIKE_TEMP
+		      , WEATHER_DESC 
+		      , WEATHER_ICON_ID
+		      , HUMIDITY
+		      , WIND_SPEED
+		      , MS_DT
+		      , CRT_BY
+		      , CRT_DT
+		      , MOD_BY
+		      , MOD_DT
+          FROM (SELECT WC1.*
+                     , ROW_NUMBER() OVER (PARTITION BY WC1.GU_CD ORDER BY WC1.MS_DT DESC) AS RNUM
+                  FROM WEATHER_CURRENT WC1)
+          WHERE GU_CD = #{gu_Cd} AND RNUM = 1) WC2 
+  INNER JOIN GU_INFO GI
+          ON WC2.GU_CD = GI.GU_CD
+	</select>
+
+</mapper>

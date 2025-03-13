@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pcwk.ehr.file.mapper.FileMapper">
+
+	<insert id="saveFile" parameterType="FileVO">
+		INSERT INTO files (
+		    file_id,
+		    board_id,
+		    file_name
+		) VALUES ( #{saveFileName},
+		           #{boardId},
+		           #{orgFileName} )	
+	</insert>
+	
+	<select id="getFile" parameterType="BoardVO" resultType="FileVO">
+		SELECT
+		    file_id as saveFileName,
+		    file_name as orgFileName
+		FROM
+		    files
+		WHERE
+		    board_id = #{boardId}
+	</select>
+	
+	<delete id="deleteFile" parameterType="BoardVO">
+		DELETE FROM files
+		WHERE
+		    board_id = #{boardId}
+	</delete>
+	
+	<select id="getFileBySaveFileName" parameterType="String" resultType="FileVO">
+	    SELECT
+	        file_id as saveFileName,
+	        file_name as orgFileName
+	    FROM
+	        files
+	    WHERE
+	        file_id = #{saveFileName}
+	</select>
+	
+</mapper>

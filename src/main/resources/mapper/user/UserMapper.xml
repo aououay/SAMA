@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pcwk.ehr.user.mapper.UserMapper">
+
+    <sql id="divWhere">
+       <if test=" null != optionDiv  and '' != optionDiv">
+          AND div = #{optionDiv}
+       </if>	
+    </sql>
+    
+    <sql id="searchWhere">
+    <if test="null != searchWord and '' != searchWord">
+        <choose>
+            <when test="'10' == searchDiv">
+                AND user_id LIKE #{searchWord} || '%'
+            </when>
+            <when test="'20' == searchDiv">
+                AND name LIKE #{searchWord} || '%'
+            </when>
+            <when test="'30' == searchDiv">
+                AND (user_id LIKE #{searchWord} || '%' OR name LIKE #{searchWord} || '%')
+            </when>
+            <!-- 새로운 조건: "40"은 이메일 검색 전용 -->
+            <when test="'40' == searchDiv">
+                AND email LIKE #{searchWord} || '%'
+            </when>
+            <otherwise>
+                AND (
+                    user_id LIKE #{searchWord} || '%'
+                    OR name LIKE #{searchWord} || '%'
+                    OR email LIKE #{searchWord} || '%'
+                    OR nickname LIKE #{searchWord} || '%'
+                    OR address LIKE #{searchWord} || '%'
+                    OR phone LIKE #{searchWord} || '%'
+                )
+            </otherwise>
+        </choose>
+    </if>
+</sql>
+
+    
+
+    <insert id="doSave" parameterType="UserVO">
+        INSERT INTO main_users (              
+            user_code, 
+            email,    
+            user_id,   
+            password, 
+            reg_date, 
+            name,  
+            nickname, 
+            address, 
+            phone,
+            is_admin                       
+        ) VALUES ( 
+            user_Code_seq.nextval,              
+            #{email},                
+            #{userId},                
+            #{password},                                                       
+            SYSDATE, 
+            #{name},
+            #{nickname},
+            #{address},
+            #{phone},
+            'N'  <!-- 기본값으로 일반 사용자 등록 -->
+        )
+    </insert>
+    
+    <delete id="doDelete" parameterType="UserVO">
+        DELETE FROM main_users 
+        WHERE user_id = #{userId}     
+    </delete>
+    
+    <update id="doUpdate" parameterType="UserVO">
+        UPDATE main_users
+            SET name = #{name},
+                password = #{password},
+                email = #{email},
+                nickname = #{nickname},
+                address = #{address},
+                phone = #{phone}
+            WHERE USER_ID = #{userId}
+    </update>
+    
+    <select id="doRetrieve" parameterType="SearchVO" resultType="UserVO" >
+        SELECT A.*, B.*
+        FROM (
+            SELECT TT1.rnum as no,
+                   TT1.user_code,
+                   TT1.email,
+                   TT1.user_id,
+                   TT1.name,
+                   TT1.nickname,
+                   TT1.address,
+                   TT1.phone,
+                   TO_CHAR(TT1.reg_Date, 'YYYY/MM/DD') as regDate, 
+                   TT1.IS_ADMIN as isAdmin 
+            FROM (
+                SELECT ROWNUM rnum, T1.*
+                FROM (
+                    SELECT *
+                    FROM main_users
+                    WHERE 1=1
+                    --검색조건
+                    <include refid="searchWhere"></include>
+                    <include refid="divWhere"></include>
+                    ORDER BY reg_date DESC
+                ) T1  
+                <![CDATA[ WHERE ROWNUM <=( #{pageSize} * ( #{pageNo} -1) + #{pageSize}  ) ]]>
+            ) TT1
+            <![CDATA[ WHERE rnum >= ( #{pageSize} * ( #{pageNo} -1) + 1  )  ]]>
+    
+        ) A
+        CROSS JOIN (
+            SELECT COUNT(*) as totalCnt
+            FROM main_users
+            WHERE 1=1
+            --검색조건
+            <include refid="searchWhere"></include>
+            <include refid="divWhere"></include>
+        ) B    
+    </select>
+    
+    <select id="doSelectOne" parameterType="UserVO" resultType="UserVO">
+        SELECT
+            user_code as userCode,                        
+            email,
+            user_id as userId,                       
+            password,                      
+            TO_CHAR(reg_date, 'YYYY/MM/DD') as regDate, 
+            name,
+            nickname,
+            address,
+            phone,
+            IS_ADMIN as isAdmin 
+        FROM main_users
+        WHERE user_id = #{userId}                        
+    </select>
+    
+    <select id="doCheckEmail" resultType="int" parameterType="String">
+        SELECT COUNT(*) 
+        FROM main_users 
+        WHERE email = #{email}
+    </select>
+    
+    <select id="doSearch" resultType="UserVO">
+        SELECT 
+            user_code,
+            email, 
+            user_id, 
+            password,  
+            reg_date,
+            name, 
+            nickname, 
+            address, 
+            phone
+        FROM main_users
+        WHERE (name LIKE #{name} OR email LIKE #{email} OR address LIKE #{address})
+        ORDER BY reg_date DESC
+    </select>
+    
+    <select id="checkUserId" parameterType="String" resultType="int">
+        SELECT COUNT(*)
+        FROM MAIN_USERS 
+        WHERE USER_ID = #{userId} 
+    </select>
+    
+    <select id="checkNickname" parameterType="String" resultType="int">
+        SELECT COUNT(*)
+        FROM MAIN_USERS 
+        WHERE nickname = #{nickname} 
+    </select>
+    
+    <select id="doSelectOneByEmail" parameterType="string" resultType="com.pcwk.ehr.user.domain.UserVO">
+	    SELECT
+	        user_code as userCode,
+	        email,
+	        user_id as userId,
+	        password,
+	        TO_CHAR(reg_date, 'YYYY/MM/DD') as regDate,
+	        name,
+	        nickname,
+	        address,
+	        phone
+	    FROM main_users
+	    WHERE email = #{email}
+	</select>
+	
+	<!-- 현재 관리자 해제: IS_ADMIN이 'Y'인 모든 행을 'N'으로 업데이트 -->
+    <update id="removeCurrentAdmin">
+        UPDATE MAIN_USERS
+        SET IS_ADMIN = 'N'
+        WHERE IS_ADMIN = 'Y'
+    </update>
+
+    <!-- 특정 사용자 관리자로 지정: userId에 해당하는 행의 IS_ADMIN을 'Y'로 업데이트 -->
+    <update id="setAdmin" parameterType="string">
+        UPDATE MAIN_USERS
+        SET IS_ADMIN = 'Y'
+        WHERE USER_ID = #{userId}
+    </update>
+
+</mapper>

@@ -1,0 +1,85 @@
+/* 기본 컨테이너 스타일 */
+#container {
+    width: 600px;
+    margin: 30px auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 테이블 스타일 */
+.upload-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.upload-table th, .upload-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.upload-table th {
+    text-align: left;
+    width: 150px;
+    font-weight: bold;
+    background: #f7f7f7;
+}
+
+.upload-table td {
+    background: #fff;
+}
+
+/* 입력 필드 스타일 */
+.upload-table input[type="text"], 
+.upload-table textarea, 
+.upload-table input[type="file"] {
+    width: 90%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* 설명 텍스트 */
+.desc {
+    font-size: 12px;
+    color: #666;
+    margin: 5px 0;
+}
+
+/* 버튼 스타일 */
+.btn-wrap {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-submit {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+.btn-list {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.btn-list:hover {
+    background-color: #5a6268;
+}

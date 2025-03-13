@@ -1,0 +1,199 @@
+/* 기본 스타일 */
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fb; /* 연한 회색빛 배경 적용 */
+    color: #333;
+}
+
+/* 소개 문구 - 왼쪽 정렬 적용 */
+.intro-section {
+    text-align: left;
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #444;
+    padding-left: 20px;
+}
+
+
+/* 컨테이너 */
+#container {
+    width: 95%;
+    max-width: 1300px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 제목 영역 */
+.stateWrap {
+    text-align: left;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.stateWrap strong {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #222;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* 목록 스타일 */
+.stateWrap ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin: 0;
+    padding-left: 20px;
+}
+
+.stateWrap ul li {
+    display: inline;
+}
+
+.stateWrap ul li a {
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: 500;
+    color: #222;
+    transition: none;
+}
+
+.stateWrap ul li a:hover {
+    color: #0056b3;
+}
+
+/* 검색창 스타일 */
+.search-group {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+    background: #ffffff;
+    border-radius: 10px;
+}
+
+/* 입력 필드 스타일 */
+#searchDiv, #searchWord, #pageSize {
+    padding: 10px;
+    font-size: 1em;
+    width: 240px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border 0.3s ease;
+}
+
+#searchWord:focus, #searchDiv:focus, #pageSize:focus {
+    border-color: #0056b3;
+}
+
+/* 버튼 스타일 */
+#search, #reset, #doRetrieveBtn {
+    font-size: 1em;
+    color: #fff;
+    background-color: #0056b3;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+#search:hover, #doRetrieveBtn:hover {
+    background-color: #003f7f;
+}
+
+#reset {
+    background-color: #c82333;
+}
+
+#reset:hover {
+    background-color: #a71d2a;
+}
+
+/* 테이블 스타일 */
+.tableTypeE {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.tableTypeE th, .tableTypeE td {
+    padding: 14px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+/* 테이블 헤더 색상 */
+.tableTypeE th {
+    background-color: #0056b3;
+    color: white;
+    font-weight: bold;
+}
+
+/* 짝수 행 배경색 */
+.tableTypeE tr:nth-child(even) td {
+    background-color: #f7f8fa;
+}
+
+/* 페이지네이션 스타일 */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    gap: 8px;
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #0056b3;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.pagination a:hover {
+    background-color: #0056b3;
+    color: white;
+    border-color: #0056b3;
+}
+
+.pagination a.disabled {
+    background-color: #e9ecef;
+    color: #888;
+    pointer-events: none;
+    border-color: #ddd;
+    cursor: not-allowed;
+}
+
+/* 반응형 스타일 */
+@media screen and (max-width: 768px) {
+    .stateWrap ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .tableTypeE th, .tableTypeE td {
+        padding: 10px;
+    }
+
+    .search-group {
+        padding: 15px;
+    }
+
+    #searchDiv, #searchWord, #pageSize {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

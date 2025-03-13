@@ -1,0 +1,119 @@
+/*****************************************************
+ * (1) 상단 검은색 바 스타일
+ *****************************************************/
+body {
+  font-family: 'NanumSquare', sans-serif;
+}
+
+.top-bar-black {
+  background-color: #000;
+  color: #fff;
+  font-size: 0.9rem;
+  position: relative; /* z-index가 제대로 적용되도록 position 설정 */
+  z-index: 1000; /* 상단 바를 가장 위로 올리기 */
+  border-bottom: 1px solid #e0e0e0; /* 연한 회색 라인 추가 */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 추가 */
+}
+
+.top-bar-content {
+  text-align: right;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+
+.top-bar-content .right-info a {
+  color: #fff;
+  margin-left: 1rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.top-bar-content .right-info a:hover {
+  text-decoration: underline;
+}
+
+/*****************************************************
+ * (2) 메인 네이비 바 스타일
+ *****************************************************/
+.nav-bar-navy {
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  position: relative; /* z-index 적용을 위해 position 설정 */
+  z-index: 999; /* 네이비 바가 상단 바 아래로 나오도록 설정 */
+  border-bottom: 1px solid #e0e0e0; /* 연한 회색 라인 추가 */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 추가 */
+}
+
+.custom-logo-img {
+  height: 50px;
+  /* 필요에 따라 크기 조절 */
+}
+
+/* 네비게이션 메뉴 */
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.main-nav .nav-link {
+  color: rgb(64, 0, 64);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  position: relative;
+  font-weight: 500;
+  font-size: 18px;
+}
+/* 마우스 오버 시 텍스트 컬러만 변경 */
+.main-nav .nav-link:hover {
+  color: #1F2F56;
+  font-weight: 900;
+}
+
+/*****************************************************
+ * 드롭다운 메뉴
+ *****************************************************/
+.custom-dropdown {
+  position: relative;
+}
+.custom-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  border-radius: 4px;
+  min-width: 180px;
+
+  /* 처음에는 숨김 */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.custom-dropdown-item {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #333;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+.custom-dropdown-item:hover {
+  background-color: #f8f9fa;
+}
+
+/*****************************************************
+ * 반응형 (예시)
+ *****************************************************/
+@media (max-width: 992px) {
+  /* 모바일에서 메뉴가 세로로 나열되도록 */
+  .main-nav ul {
+    flex-direction: column;
+  }
+  .main-nav .nav-link {
+    padding: 0.5rem;
+  }
+}

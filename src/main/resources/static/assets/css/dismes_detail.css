@@ -1,0 +1,89 @@
+/* 기본 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-top: 30px;
+}
+
+/* 컨테이너 스타일 */
+.container99 {
+    width: 80%;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+/* 탭 부분 스타일 */
+.tab {
+    display: flex;
+    grid-template-columns: auto auto;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.tab div {
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+    padding: 5px 10px;
+    border-bottom: 2px solid #ddd;
+    border-top: 2px solid #ddd;
+    border-left: 2px solid #ddd;
+}
+.leftbox{
+    width: 25%;
+}
+.rightbox{
+    width: 75%;
+}
+
+.tab .area {
+    background-color: #f1f1f1;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+.tab .type {
+    background-color: #f9f9f9;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+/* 내용 부분 스타일 */
+.content {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* 버튼 컨테이너 스타일 */
+.button-container {
+    text-align: center;
+}
+
+/* 목록 버튼 스타일 */
+.button-container button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-container button:hover {
+    background-color: #0056b3;
+}

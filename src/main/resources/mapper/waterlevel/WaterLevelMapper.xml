@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.pcwk.ehr.waterlevel.WaterLevelMapper">
+
+	<select id="getLatestWaterLevels" resultType="com.pcwk.ehr.waterlevel.WaterLevel">
+	
+		SELECT WL_OBS_CD, OBS_NM, MEA_DT, WL, REG_DT, WRN_WL, ALM_WL
+		FROM (
+		    SELECT
+		        C.WL_OBS_CD,
+		        I.OBS_NM,
+		        C.MEA_DT,
+		        C.WL,
+		        TO_CHAR(C.REG_DT, 'MM"월 "DD"일 ("DY") "HH24:MI"분"') AS REG_DT,
+		        I.WRN_WL,
+		        I.ALM_WL,
+		        ROW_NUMBER() OVER (PARTITION BY C.WL_OBS_CD ORDER BY C.MEA_DT DESC) AS RN
+		    FROM
+		        WATERLEVEL_CURRENT C
+		    JOIN WATERLEVEL_INFO I ON C.WL_OBS_CD = I.WL_OBS_CD
+		    WHERE C.WL_OBS_CD IN (1018655, 1018675, 1018683, 1018697, 1018698)
+		)
+		WHERE RN = 1
+	</select>
+
+	<select id="getTotalRecords" resultType="int">
+	    SELECT COUNT(*) 
+	    FROM waterlevel_current c
+	    JOIN waterlevel_info i 
+	      ON c.WL_OBS_CD = i.WL_OBS_CD
+	</select>
+	
+ 	<select id="getPagedWaterLevels" resultType="com.pcwk.ehr.waterlevel.WaterLevel">
+	<![CDATA[
+	    WITH FloodEvents AS (
+	        SELECT
+	            c.WL_OBS_CD,
+	            i.OBS_NM,
+	            i.ADDR,
+	            i.ETC_ADDR,
+	            i.LAT,
+	            i.LON,
+	            i.ATT_WL,
+	            i.WRN_WL,
+	            i.ALM_WL,
+	            c.WL,
+	            TO_CHAR(TO_DATE(c.MEA_DT, 'YYYYMMDDHH24MISS'),'YYYY-MM-DD HH24:MI') AS MEA_DT,
+	            CASE
+	                WHEN i.WRN_WL = 0 THEN '정상'
+	                WHEN c.WL >= i.ALM_WL THEN '주의보'
+	                WHEN c.WL >= i.WRN_WL THEN '경보'
+	                ELSE '정상'
+	            END AS state,
+	            CASE
+	                WHEN i.WRN_WL = 0 THEN '해제'
+	                WHEN c.WL >= i.ALM_WL THEN '변경'
+	                WHEN c.WL >= i.WRN_WL THEN '발령'
+	                ELSE '해제'
+	            END AS forecastState,
+	            LAG(CASE
+	                WHEN c.WL >= i.ALM_WL THEN '변경'
+	                WHEN c.WL >= i.WRN_WL THEN '발령'
+	                ELSE '해제'
+	            END) OVER (PARTITION BY c.WL_OBS_CD ORDER BY TO_DATE(c.MEA_DT, 'YYYYMMDDHH24MISS') DESC) AS prev_state,
+	    
+	            ROW_NUMBER() OVER (ORDER BY TO_DATE(c.MEA_DT, 'YYYYMMDDHH24MISS') DESC) AS rn
+	        FROM waterlevel_current c
+	        JOIN waterlevel_info i ON c.WL_OBS_CD = i.WL_OBS_CD
+	        WHERE i.WRN_WL > 0
+	    )
+	    
+	        	SELECT * FROM FloodEvents
+				WHERE
+				    -- "발령" 상태는 처음 한 번만 포함
+				    (forecastState = '발령' AND prev_state IS NULL)
+				    -- "변경" 상태는 이전 상태가 "발령"이었을 때만 포함
+				    OR (forecastState = '변경' AND prev_state != '변경')
+				    -- "해제" 상태는 이전 상태가 "발령" 또는 "변경"이었을 때만 포함
+				    OR (forecastState = '해제' AND prev_state IN ('발령', '변경'))
+				ORDER BY MEA_DT DESC
+				OFFSET #{offset} ROWS FETCH NEXT #{limit} ROWS ONLY
+	]]>
+	</select>
+
+	<select id="getWaterLevelsState" resultType="com.pcwk.ehr.waterlevel.WaterLevel">
+	<![CDATA[          
+		SELECT   
+		    c.WL_OBS_CD,
+		    i.OBS_NM,
+		    i.ADDR,
+	    	i.ETC_ADDR,
+	    	i.LAT,  
+	    	i.LON, 
+		    i.ATT_WL,
+		    i.WRN_WL, 
+		    i.ALM_WL,
+		    c.WL,
+		    TO_CHAR(TO_DATE(c.MEA_DT, 'yyyymmddhh24miss'),'YYYY-MM-DD HH24:MI') AS MEA_DT,
+		    CASE 
+		        WHEN i.WRN_WL = 0 THEN '정상'
+		        WHEN c.WL = i.WRN_WL THEN '주의보' 
+		        WHEN c.WL >= i.ALM_WL THEN '경보'      
+		        ELSE '정상'
+		    END AS state,
+		    CASE 
+		        WHEN i.WRN_WL = 0 THEN '해제'
+		        WHEN c.WL >= i.WRN_WL THEN '발령'
+		        WHEN c.WL >= i.WRN_WL AND c.WL >= i.ALM_WL THEN '변경'
+		        WHEN c.WL < i.ATT_WL THEN '해제'
+		        ELSE '해제'
+		    END AS forecastState
+		FROM waterlevel_current c
+		JOIN waterlevel_info i 
+		  ON c.WL_OBS_CD = i.WL_OBS_CD
+		ORDER BY TO_DATE(c.MEA_DT, 'YYYYMMDDHH24MISS') DESC
+		]]>	
+	</select>
+
+	<select id="getRecentWaterLevels" resultType="com.pcwk.ehr.waterlevel.WaterLevel">
+	<![CDATA[
+		SELECT 
+		    c.WL_OBS_CD, 
+		    i.OBS_NM, 
+		    i.ADDR, 
+		    i.ETC_ADDR,
+		    i.LAT,
+		    i.LON,
+		    i.WRN_WL, 
+		    i.ALM_WL, 
+		    c.WL, 
+		    TO_CHAR(TO_DATE(c.MEA_DT, 'yyyymmddhh24miss'),'MM-DD HH24:MI') AS MEA_DT
+		FROM waterlevel_current c
+		JOIN waterlevel_info i ON c.WL_OBS_CD = i.WL_OBS_CD
+		WHERE c.WL_OBS_CD = #{wlObsCd}
+		  AND i.WRN_WL > 0
+		  AND NOT i.WL_OBS_CD IN ('1018695')
+		ORDER BY TO_DATE(c.MEA_DT, 'YYYYMMDDHH24MISS') DESC
+		 ]]>		
+	</select>
+	
+	<select id="getAllWaterLevels" resultType="com.pcwk.ehr.waterlevel.WaterLevel">
+	<![CDATA[
+	    SELECT 
+	        i.WL_OBS_CD, i.OBS_NM, i.ADDR, i.ETC_ADDR, i.LAT, i.LON, i.WRN_WL, i.ALM_WL, c.WL,
+	        CASE 
+		        WHEN i.WRN_WL = 0 THEN '정상'
+		        WHEN COALESCE(c.WL, 0) >= i.WRN_WL THEN '주의보' 
+		        WHEN COALESCE(c.WL, 0) >= i.ALM_WL THEN '경보'      
+		        ELSE '정상'
+		    END AS state
+	    FROM waterlevel_current c
+		JOIN waterlevel_info i ON c.WL_OBS_CD = i.WL_OBS_CD
+	    WHERE WRN_WL > 0
+	    ]]>
+	</select>
+	
+
+</mapper>

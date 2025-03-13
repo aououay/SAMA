@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.pcwk.ehr.hanpa.mapper.HanpaMapper">
+
+    <!-- ✅ resultMap 정의 -->
+    <resultMap id="hanpaResultMap" type="com.pcwk.ehr.hanpa.domain.HanpaVO">
+        <result property="seqNo" column="SEQ_NO" />
+        <result property="sgg" column="SGG" />
+        <result property="fcltyType" column="FCLTY_TYPE" />
+        <result property="fcltNm" column="FCLT_NM" />
+        <result property="opHour" column="OP_HOUR" />
+        <result property="address" column="ADDRESS" />
+        <result property="contactNm" column="CONTACT_NM" />
+        <result property="opType" column="OP_TYPE" />
+    </resultMap>
+
+    <!-- ✅ 총 개수 조회 -->
+    <select id="getTotalCount" parameterType="com.pcwk.ehr.cmn.SearchVO" resultType="int">
+        SELECT COUNT(*)
+        FROM HANPA_EMERGENCY
+        WHERE 1 = 1
+        <if test="searchDiv == '10'">
+            AND SGG LIKE '%' || #{searchWord} || '%'
+        </if>
+        <if test="searchDiv == '20'">
+            AND FCLT_NM LIKE '%' || #{searchWord} || '%'
+        </if>
+        <if test="searchDiv == '30'">
+            AND ADDRESS LIKE '%' || #{searchWord} || '%'
+        </if>
+    </select>
+
+    <!-- ✅ 검색 조건 SQL -->
+    <sql id="doRetrieveWhere">
+        <if test="searchDiv != null and searchDiv != ''">
+            <choose>
+                <when test="searchDiv == '10'">
+                    AND SGG LIKE '%' || #{searchWord} || '%'
+                </when>
+                <when test="searchDiv == '20'">
+                    AND SGG LIKE '%' || #{searchWord} || '%'
+                </when>
+                <when test="searchDiv == '30'">
+                    AND FCLT_NM LIKE '%' || #{searchWord} || '%'
+                </when>
+            </choose>
+        </if>
+    </sql>
+
+    <!-- ✅ 한파 응급시설 리스트 조회 (페이징 포함) -->
+    <select id="getHanpaEmergencies" resultMap="hanpaResultMap" parameterType="com.pcwk.ehr.cmn.SearchVO">
+        SELECT A.*, B.totalCnt
+        FROM (
+            SELECT
+                SEQ_NO,
+                SGG,
+                FCLTY_TYPE,
+                FCLT_NM,
+                OP_HOUR,
+                ADDRESS,
+                CONTACT_NM,
+                OP_TYPE
+            FROM HANPA_EMERGENCY
+            WHERE 1 = 1
+            <include refid="doRetrieveWhere" />
+            ORDER BY SEQ_NO ASC
+            OFFSET (#{pageNo} - 1) * #{pageSize} ROWS FETCH NEXT #{pageSize} ROWS ONLY
+        ) A
+        CROSS JOIN (
+            SELECT COUNT(*) totalCnt
+            FROM HANPA_EMERGENCY
+            WHERE 1 = 1
+            <include refid="doRetrieveWhere" />
+        ) B
+    </select>
+
+</mapper>

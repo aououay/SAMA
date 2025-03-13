@@ -1,0 +1,161 @@
+@charset "UTF-8";
+    /* 전체 배경 및 기본 스타일 */
+    body {
+      background-color: #f5f6f7;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    /* 데스크탑 사이드바 */
+    .sidebar-desktop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 240px;
+      height: 100vh;
+      background-color: #fff;
+      border-right: 1px solid #e0e0e0;
+      padding: 20px;
+      overflow-y: auto;
+    }
+    .sidebar-desktop .logo {
+      font-weight: 600;
+      font-size: 1.25rem;
+      margin-bottom: 30px;
+    }
+    .sidebar-desktop .nav-link {
+      color: #555;
+      margin: 10px 0;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px;
+      text-decoration: none;
+    }
+    .sidebar-desktop .nav-link:hover {
+      background-color: #f1f3f5;
+      color: #333;
+    }
+    .sidebar-desktop .nav-link.active {
+      background-color: #e9ecef;
+      font-weight: 500;
+      color: #333;
+    }
+    .sidebar-desktop .nav-link i {
+      font-size: 1.1rem;
+    }
+    /* 상단 헤더 */
+    .topbar {
+      background-color: #fff;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-left: 240px; /* 사이드바 폭 만큼 */
+    }
+    .profile-area {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .btn-add-member {
+      background-color: #365281;
+      color: #fff;
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-weight: 500;
+      border: none;
+    }
+    .btn-add-member:hover {
+      background-color: #1b2c49;
+    }
+    /* 메인 콘텐츠 영역 */
+    .main-content {
+      margin-left: 240px;
+      padding: 20px;
+      min-height: calc(100vh - 60px); /* 상단 해더 높이 고려 */
+      transition: margin-left 0.3s;
+    }
+    /* 테이블 Responsive 처리 */
+    .table-responsive {
+      overflow-x: auto;
+    }
+    .table-responsive table {
+      min-width: 900px; /* 테이블 형태 유지 위한 최소 너비 */
+      white-space: nowrap;
+    }
+    /* 회원ID, 이름, 이메일, 닉네임, 주소 컬럼 왼쪽 정렬 */
+    .table thead th:nth-child(2),
+    .table thead th:nth-child(3),
+    .table thead th:nth-child(4),
+    .table thead th:nth-child(5),
+    .table thead th:nth-child(6),
+    .table tbody td:nth-child(2),
+    .table tbody td:nth-child(3),
+    .table tbody td:nth-child(4),
+    .table tbody td:nth-child(5),
+    .table tbody td:nth-child(6) {
+      text-align: left;
+    }
+    .table-hover tbody tr:hover {
+      background-color: #f8f9fa;
+    }
+    /* 카드 스타일 */
+    .card {
+      background-color: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+    .card-header {
+      border-bottom: none;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+    .card-header h4 {
+      margin: 0;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    /* 페이지네이션 */
+    .pagination-container {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .pagination-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      margin: 0 3px;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      text-decoration: none;
+      color: #333;
+      font-size: 0.9rem;
+      transition: background-color 0.2s, color 0.2s;
+    }
+    .pagination-btn:hover {
+      background-color: #365281;
+      color: #fff;
+    }
+    .pagination-btn.disabled {
+      background-color: #e0e0e0;
+      color: #aaa;
+      pointer-events: none;
+      border-color: #ddd;
+    }
+    /* 반응형 조정 */
+    @media (max-width: 767.98px) {
+      .sidebar-desktop {
+        display: none;
+      }
+      .topbar {
+        margin-left: 0;
+      }
+      .main-content {
+        margin-left: 0;
+      }
+    }

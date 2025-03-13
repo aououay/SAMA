@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pcwk.ehr.insurance.mapper.InsMapper">
+
+	<select id="getTime">
+		SELECT TO_CHAR(SYSDATE,'YYYY/MM/DD HH24:MI:SS') FROM dual
+	</select>
+	
+	<select id="getIns" resultType="InsVO">
+		SELECT
+			ins_sgg_cd 	 as insSggCd,
+		    ins_sgg_nm 	 as insSggNm,
+		    ins_client 	 as insClient,
+		    ins_start_dt as insStartDt,
+		    ins_end_dt   as insEndDt,
+		    ins_company  as insCompany,
+		    ins_method   as insMethod,
+		    ins_url 	 as insUrl
+		FROM
+		    ins
+		WHERE 
+    		ins_sgg_nm = #{insSggNm}
+    	AND	TO_CHAR(TO_DATE(ins_start_dt, 'YYYY-MM-DD'), 'YYYY') = TO_CHAR(TO_DATE(#{insStartDt}, 'YYYY-MM-DD'), 'YYYY')
+	</select>
+	
+	<select id="getGrnt" resultType="InsVO">
+		SELECT
+		    grnt.grnt_sgg_year_cd,
+		    grnt_nm,
+		    grnt_content,
+		    grnt_amount
+		FROM
+		    grnt INNER JOIN ins
+		ON
+		    grnt.grnt_sgg_year_cd = ins.grnt_sgg_year_cd
+		WHERE
+		    ins_sgg_nm = #{insSggNm}
+		AND	TO_CHAR(TO_DATE(ins_start_dt, 'YYYY-MM-DD'), 'YYYY') = TO_CHAR(TO_DATE(#{insStartDt}, 'YYYY-MM-DD'), 'YYYY')
+	</select>
+	
+	<select id="sggNames" resultType="InsVO">
+		SELECT DISTINCT
+			ins_sgg_nm 	 as insSggNm
+		FROM
+		    ins
+		ORDER BY
+			insSggNm
+	</select>
+	
+
+</mapper>

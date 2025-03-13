@@ -1,0 +1,13 @@
+/* 전체 컨테이너 스타일 */
+.container {
+	width: 1200px;
+	margin: auto;
+	padding: 20px;
+	border-radius: 10px;
+}
+
+/* 헤더 스타일 */
+.header {
+	padding-bottom: 20px;
+	border-bottom: 2px solid #ddd;
+}

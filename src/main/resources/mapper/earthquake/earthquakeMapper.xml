@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pcwk.ehr.earthquake.mapper.EarthquakeMapper">
+
+    <!-- resultMap 정의 -->
+    <resultMap id="searchVOResultMap" type="com.pcwk.ehr.cmn.SearchVO">
+        <result property="searchDiv" column="searchDiv"/>
+        <result property="searchWord" column="searchWord"/>
+    </resultMap>
+
+
+
+    <!-- 검색 조건을 공통으로 처리하는 SQL -->
+    <sql id="doRetrieveWhere">
+        <if test="'' != searchDiv">
+            <choose>
+             <when test="10 == searchDiv">
+                 ORDER BY EQK_REPORT_TIME DESC
+                </when>
+                <when test="20 == searchDiv">
+                    ORDER BY EQK_MT DESC
+                </when>
+            </choose>
+        </if>
+    </sql>
+
+
+<select id="getEQK" parameterType="com.pcwk.ehr.cmn.SearchVO">
+    SELECT EQK_NUM,EQK_AREA__REGION,EQK_REPORT_TIME,EQK_ORIGIN_TIME,EQK_MT, EQK_LAT,
+           EQK_LON, EQK_LOC,EQK_INTENSITY, EQK_COMMENTS,EQK_UPDATE, EQK_ORIGIN_MSC
+    FROM EARTHQUAKE
+    WHERE EQK_AREA__REGION = 3
+    AND EQK_REPORT_TIME LIKE #{searchWord} || '%'
+    <include refid="doRetrieveWhere"/>
+</select>
+
+    <select id="eqkByYear" resultType="com.pcwk.ehr.earthquake.domain.EarthquakeVO">
+        SELECT
+        TO_CHAR(TO_DATE(SUBSTR(EQK_ORIGIN_TIME, 1, 4), 'YYYY'), 'YYYY') AS EARTHQUAKE_YEAR,
+        CASE
+        WHEN EQK_MT >= 3.0 AND  4.0 > EQK_MT THEN '3.0 - 3.9'
+        WHEN EQK_MT >= 4.0 AND  5.0 > EQK_MT  THEN '4.0 - 4.9'
+        WHEN EQK_MT >= 5.0 THEN '5.0~'
+        END AS MAGNITUDE_RANGE,
+        COUNT(*) AS EQK_COUNT
+        FROM
+        EARTHQUAKE
+        WHERE
+        EQK_AREA__REGION = 3
+        AND SUBSTR(EQK_ORIGIN_TIME, 1, 4) > 2015
+        AND EQK_MT >= 3.0
+        GROUP BY
+        TO_CHAR(TO_DATE(SUBSTR(EQK_ORIGIN_TIME, 1, 4), 'YYYY'), 'YYYY'),
+        CASE
+        WHEN EQK_MT >= 3.0 AND 4.0 > EQK_MT THEN '3.0 - 3.9'
+        WHEN EQK_MT >= 4.0 AND 5.0 > EQK_MT THEN '4.0 - 4.9'
+        WHEN EQK_MT >= 5.0 THEN '5.0~'
+        END
+        ORDER BY
+        EARTHQUAKE_YEAR DESC , MAGNITUDE_RANGE
+    </select>
+
+    <select id="eqkOccurrence" resultType="com.pcwk.ehr.earthquake.domain.EarthquakeVO" parameterType="com.pcwk.ehr.cmn.SearchVO">
+        SELECT
+            TO_CHAR(TO_DATE(SUBSTR(EQK_ORIGIN_TIME, 1, 4), 'YYYY'), 'YYYY') AS EARTHQUAKE_YEAR,
+            CASE
+                WHEN EQK_MT >= 2.0 AND 3.0 > EQK_MT THEN '2.0 - 2.9'
+                WHEN EQK_MT >= 3.0 AND 4.0 > EQK_MT THEN '3.0 - 3.9'
+                WHEN EQK_MT >= 4.0 AND 5.0 > EQK_MT THEN '4.0 - 4.9'
+                WHEN EQK_MT >= 5.0 THEN '5.0~'
+                END AS MAGNITUDE_RANGE,
+            EQK_LAT,
+            EQK_LON,
+            COUNT(*) AS EQK_COUNT
+        FROM
+            EARTHQUAKE
+        WHERE
+            EQK_AREA__REGION = 3
+          AND SUBSTR(EQK_ORIGIN_TIME, 1, 4) > '2015'
+          AND EQK_MT >= 2.0
+          AND EQK_REPORT_TIME LIKE #{searchWord} || '%'
+        GROUP BY
+            TO_CHAR(TO_DATE(SUBSTR(EQK_ORIGIN_TIME, 1, 4), 'YYYY'), 'YYYY'),
+            CASE
+                WHEN EQK_MT >= 2.0 AND 3.0 > EQK_MT THEN '2.0 - 2.9'
+                WHEN EQK_MT >= 3.0 AND 4.0 > EQK_MT THEN '3.0 - 3.9'
+                WHEN EQK_MT >= 4.0 AND 5.0 > EQK_MT THEN '4.0 - 4.9'
+                WHEN EQK_MT >= 5.0 THEN '5.0~'
+                END,
+            EQK_LAT,
+            EQK_LON
+        ORDER BY
+            EARTHQUAKE_YEAR DESC, MAGNITUDE_RANGE, EQK_LAT, EQK_LON
+    </select>
+
+
+    <select id="eqkByYearAll" resultType="com.pcwk.ehr.earthquake.domain.EarthquakeVO" parameterType="com.pcwk.ehr.cmn.SearchVO">
+        SELECT
+        TO_CHAR(TO_DATE(SUBSTR(EQK_ORIGIN_TIME, 1, 4), 'YYYY'), 'YYYY') AS EARTHQUAKE_YEAR,
+        CASE
+        WHEN EQK_MT >= 2.0 AND 3.0 > EQK_MT THEN '2.0 - 2.9'
+        WHEN EQK_MT >= 3.0 AND 4.0 > EQK_MT THEN '3.0 - 3.9'
+        WHEN EQK_MT >= 4.0 AND 5.0 > EQK_MT THEN '4.0 - 4.9'
+        WHEN EQK_MT >= 5.0 THEN '5.0~'
+        END AS MAGNITUDE_RANGE,
+        COUNT(*) AS EQK_COUNT
+        FROM
+        EARTHQUAKE
+        WHERE
+        EQK_AREA__REGION = 3
+        AND SUBSTR(EQK_ORIGIN_TIME, 1, 4) > 2015
+        AND EQK_MT >= 2.0
+        AND EQK_REPORT_TIME LIKE #{searchWord} || '%'
+        GROUP BY
+        TO_CHAR(TO_DATE(SUBSTR(EQK_ORIGIN_TIME, 1, 4), 'YYYY'), 'YYYY'),
+        CASE
+        WHEN EQK_MT >= 2.0 AND 3.0 > EQK_MT THEN '2.0 - 2.9'
+        WHEN EQK_MT >= 3.0 AND 4.0 > EQK_MT THEN '3.0 - 3.9'
+        WHEN EQK_MT >= 4.0 AND 5.0 > EQK_MT THEN '4.0 - 4.9'
+        WHEN EQK_MT >= 5.0 THEN '5.0~'
+        END
+        ORDER BY
+        EARTHQUAKE_YEAR DESC, MAGNITUDE_RANGE
+    </select>
+</mapper>

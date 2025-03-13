@@ -1,0 +1,55 @@
+@charset "UTF-8";
+    body {
+      background-color: #f4f4f4; /* 은은한 라이트 그레이 */
+      font-family: 'Roboto', sans-serif;
+    }
+    .navbar {
+      background-color: #343a40; /* 딥 모노톤 네이비 */
+    }
+    .navbar-brand {
+      font-weight: 700;
+    }
+    .quiz-card {
+      max-width: 800px;
+      margin: 40px auto;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      background-color: #ffffff;
+    }
+    .card-header {
+      background-color: #343a40;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px;
+      border-radius: 10px 10px 0 0;
+    }
+    .card-header h2 {
+      margin: 0;
+      font-size: 1.75rem;
+    }
+    .card-body {
+      padding: 30px;
+    }
+    /* 여기서 질문 숨기기 */
+    .question {
+      display: none; /* 모든 질문을 숨김 */
+      margin-bottom: 30px;
+    }
+    .question.active {
+      display: block; /* active 클래스가 있는 질문만 보임 */
+    }
+    .question h4 {
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+    .navigation-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .btn-group-toggle .btn {
+      margin: 5px;
+      flex: 1 1 auto;
+    }

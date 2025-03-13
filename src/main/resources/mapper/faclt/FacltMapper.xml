@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pcwk.ehr.faclt.mapper.FacltMapper">
+
+
+
+	<!-- resultMap 정의 -->
+	<resultMap id="searchVOResultMap"
+		type="com.pcwk.ehr.cmn.SearchVO">
+		<result property="searchDiv" column="searchDiv" />
+		<result property="searchWord" column="searchWord" />
+	</resultMap>
+
+
+
+	<!-- getTotalCount 쿼리 -->
+	<select id="getTotalCount"
+		parameterType="com.pcwk.ehr.cmn.SearchVO">
+		SELECT COUNT(*)
+		FROM FACLT
+		WHERE 1 = 1
+		<if test="searchDiv == 10">
+			AND FCLT_ADDR_LOTNO IN (SELECT user_id FROM FACLT WHERE
+			FCLT_CD LIKE '%' || #{searchWord} || '%')
+		</if>
+		<if test="searchDiv == 20">
+			AND FCLT_ADDR_LOTNO LIKE '%' || #{searchWord} || '%'
+		</if>
+		<if test="searchDiv == 30">
+			AND FCLT_ADDR_LOTNO LIKE '%' || #{searchWord} || '%'
+		</if>
+	</select>
+
+
+	<!-- 검색 조건을 공통으로 처리하는 SQL -->
+	<sql id="doRetrieveWhere">
+		<if test="'' != searchDiv">
+			<choose>
+				<!--<when test="10 == searchDiv"> WHERE title LIKE #{searchWord} || '%' 
+					</when> -->
+				<when test="20 == searchDiv">
+					WHERE FCLT_NM LIKE '%' || #{searchWord} || '%'
+				</when>
+				<when test="30 == searchDiv">
+					WHERE FCLT_ADDR_LOTNO LIKE '%' || #{searchWord} || '%'
+				</when>
+			</choose>
+		</if>
+	</sql>
+
+<select id="getFaclts">
+    SELECT A.*, B.totalCnt
+    FROM (
+        SELECT
+            FCLT_CD,
+            SGG_CD,
+            SE_CD,
+            FCLT_NM,
+            FCLT_DSGN_DAY,
+            FCLT_SE_CD,
+            EMD_CD,
+            EMD_NM,
+            FCLT_ADDR_LOTNO,
+            FCLT_SCL,
+            SCL_UNIT,
+            FCLT_ADDR_RONA,
+            LOT_PROVIN,
+            LOT_MIN,
+            LOT_SEC,
+            LAT_PROVIN,
+            LAT_MIN,
+            LAT_SEC,
+            GRND_UDGD_SE,
+            SHNT_PSBLTY_NOPE,
+            OPN_YN,
+            MNG_INST_NM,
+            ORTM_UTLZ_TYPE,
+            MNG_INST_TELNO,
+            ROAD_NM_CD
+        FROM (
+            SELECT rownum rnum, t1.*
+            FROM (
+                SELECT *
+                FROM FACLT
+                <include refid="doRetrieveWhere" />
+                ORDER BY 
+                    CASE 
+                        WHEN FCLT_ADDR_LOTNO LIKE '서울특별시%' THEN SUBSTR(FCLT_ADDR_LOTNO, INSTR(FCLT_ADDR_LOTNO, ' ') + 1)
+                        ELSE FCLT_ADDR_LOTNO 
+                    END ASC
+            ) t1
+            WHERE (#{pageNo} * (#{pageSize} - 1) + #{pageNo}) >= ROWNUM
+        ) tt1
+        WHERE rnum >= (#{pageSize} * (#{pageNo} - 1) + 1)
+    ) A
+    CROSS JOIN (
+        SELECT COUNT(*) totalCnt
+        FROM FACLT
+        <include refid="doRetrieveWhere" />
+    ) B
+</select>
+
+
+
+
+</mapper>

@@ -1,0 +1,99 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* 페이지 전체를 감싸는 컨테이너 추가 */
+.wrapper {
+  min-height: 91vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* 콘텐츠 영역을 최대한 확장 */
+.container-fluid {
+  flex: 1;
+  padding: 0;
+  margin-top: 50px;
+}
+
+/* 푸터 스타일 */
+footer {
+  margin-top: auto; /* 이 부분이 푸터를 항상 최하단으로 밀어줌 */
+  background-color: #1b2c49;
+  color: #fff;
+  padding: 20px 10px;
+  text-align: center;
+}
+
+/* 나머지 푸터 스타일은 동일 */
+.footer-top {
+  margin-bottom: 20px;
+}
+
+.footer-top ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-top ul li {
+  margin: 0 15px;
+}
+
+.footer-top ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-top ul li a:hover {
+  color: #ffcc00;
+}
+
+.footer-line {
+  border: none;
+  border-top: 1px solid #2e4162;
+  width: 90%;
+  margin: 10px auto;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+}
+
+.footer-links {
+  margin-bottom: 30px;
+}
+
+.footer-links a {
+  margin: 0 15px;
+  font-size: 13px;
+  color: #bfcbdc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.footer-info {
+  margin-bottom: 30px;
+}
+
+.footer-info p {
+  margin: 10px 0;
+  font-size: 12px;
+  color: #bfcbdc;
+}
+
+.footer-copy {
+  font-size: 12px;
+  color: #8fa0b0;
+  margin-top: 20px;
+}

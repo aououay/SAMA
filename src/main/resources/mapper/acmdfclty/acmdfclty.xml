@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pcwk.ehr.acmdfclty.mapper.AcmdfcltyMapper">
+
+    <!-- resultMap 정의 -->
+    <resultMap id="searchVOResultMap" type="com.pcwk.ehr.cmn.SearchVO">
+        <result property="searchDiv" column="searchDiv" />
+        <result property="searchWord" column="searchWord" />
+    </resultMap>
+
+    <!-- getTotalCount 쿼리 (서울특별시 필터 추가) -->
+    <select id="getTotalCount" parameterType="com.pcwk.ehr.cmn.SearchVO">
+        SELECT COUNT(*)
+        FROM EQK_ACMDFCLTY
+        WHERE RN_DTL_ADRES LIKE '서울특별시%' 
+        <if test="searchDiv == 10">
+            AND VT_ACMDFCLTY_NM LIKE '%' || #{searchWord} || '%'
+        </if>
+        <if test="searchDiv == 20">
+            AND DTL_ADRES LIKE '%' || #{searchWord} || '%'
+        </if>
+        <if test="searchDiv == 30">
+            AND EQK_ACMDFCLTY_ADRES LIKE '%' || #{searchWord} || '%'
+        </if>
+    </select>
+
+    <!-- 검색 조건을 공통으로 처리하는 SQL -->
+    <sql id="doRetrieveWhere">
+        WHERE RN_DTL_ADRES LIKE '서울특별시%'  <!-- ✅ 서울특별시 필터 -->
+        <if test="'' != searchDiv">
+            <choose>
+            <!-- <when test="10 == searchDiv">
+                    AND VT_ACMDFCLTY_NM LIKE '%' || #{searchWord} || '%'
+                </when> -->
+                
+                <when test="20 == searchDiv">
+                    AND RN_DTL_ADRES LIKE '%' || #{searchWord} || '%'
+                </when>
+                <when test="30 == searchDiv">
+                    AND VT_ACMDFCLTY_NM LIKE '%' || #{searchWord} || '%'
+                </when>
+            </choose>
+        </if>
+    </sql>
+
+    <!-- 시설 데이터 조회 쿼리 -->
+    <select id="getAcmdfcltyList" resultType="com.pcwk.ehr.acmdfclty.domain.AcmdfcltyVO">
+        SELECT A.*, B.totalCnt
+        FROM (
+            SELECT
+                VT_ACMDFCLTY_NM,  
+                ARCD,              
+                ACMDFCLTY_SN,    
+                HDONG_CD,         
+                ACMD_BULD_MNG_NO, 
+                DTL_ADRES,       
+                VT_ACMD_PSBIL_NMPR, 
+                FCLTY_AR,         
+                BDONG_CD,         
+                RN_DTL_ADRES,     
+                USE_SE_CD,         
+                LO,                
+                LA,                
+                EQK_ACMDFCLTY_ADRES 
+            FROM (
+                SELECT rownum rnum, t1.*
+                FROM (
+                    SELECT *
+                    FROM EQK_ACMDFCLTY  
+                    <include refid="doRetrieveWhere" />  
+                    ORDER BY 
+                        CASE 
+                            WHEN DTL_ADRES LIKE '서울특별시%' THEN SUBSTR(DTL_ADRES, INSTR(DTL_ADRES, ' ') + 1)
+                            ELSE DTL_ADRES 
+                        END ASC
+                ) t1
+                WHERE (#{pageNo} * (#{pageSize} - 1) + #{pageNo}) >= ROWNUM
+            ) tt1
+            WHERE rnum >= (#{pageSize} * (#{pageNo} - 1) + 1)
+        ) A
+        CROSS JOIN (
+            SELECT COUNT(*) totalCnt
+            FROM EQK_ACMDFCLTY  
+            <include refid="doRetrieveWhere" /> 
+        ) B
+    </select>
+
+</mapper>
